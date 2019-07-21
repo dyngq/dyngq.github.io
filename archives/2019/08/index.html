@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,33 +32,31 @@
 
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
 
 
 
 
 
 
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
 
 
 
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
 
 
 
@@ -71,10 +69,10 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -86,21 +84,20 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     }
   };
 </script>
-
-
-  
-
-
-
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="dyngq kang">
 <meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
 <meta property="og:site_name" content="dyngq kang">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dyngq kang">
 
@@ -122,23 +119,14 @@
   };
 </script>
 
-  <title>Archiv | dyngq kang</title>
+  
+  <title>归档 | dyngq kang</title>
   
 
 
 
 
 
-
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?fc9b87db927e595f9cf4045bf87003e2";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
@@ -173,7 +161,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -204,7 +192,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Navigationsleiste an/ausschalten">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -222,9 +210,8 @@
         
         
           
-          <li class="menu-item menu-item-主页">
+          <li class="menu-item menu-item-home">
 
-    
     
     
       
@@ -232,16 +219,15 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
         
         
           
-          <li class="menu-item menu-item-文章 menu-item-active">
+          <li class="menu-item menu-item-archives menu-item-active">
 
-    
     
     
       
@@ -249,16 +235,15 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>文章</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
         
         
         
           
-          <li class="menu-item menu-item-标签">
+          <li class="menu-item menu-item-tags">
 
-    
     
     
       
@@ -273,9 +258,8 @@
         
         
           
-          <li class="menu-item menu-item-种类">
+          <li class="menu-item menu-item-categories">
 
-    
     
     
       
@@ -283,16 +267,15 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>种类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
         
         
           
-          <li class="menu-item menu-item-关于">
+          <li class="menu-item menu-item-about">
 
-    
     
     
       
@@ -311,7 +294,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Suche</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
@@ -331,7 +314,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Suche..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -342,10 +325,6 @@
     </div>
   
 </nav>
-
-
-
-  
 
 
 
@@ -401,7 +380,7 @@
         
           
         
-        Öhm..! Insgesamt 2 Artikel. Bleib dran.
+        嗯..! 目前共计 2 篇日志。 继续努力。
       </span>
       
 
@@ -481,136 +460,124 @@
 
       <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
+
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">dyngq</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
+  
+    <img class="site-author-image" itemprop="image" src="/images/dyngq.jpg" alt="dyngq">
+  
+  <p class="site-author-name" itemprop="name">dyngq</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives">
-                
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">Artikel</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Kategorien</span>
-                  </a>
-                </div>
-              
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">schlagwörter</span>
-                  </a>
-                </div>
-              
-            </nav>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
           
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
 
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
           
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
+            <a href="/tags/">
           
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
 
-          
 
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/dyngq" title="GitHub &rarr; https://github.com/dyngq" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="/dyngqk@163.com" title="E-Mail &rarr; dyngqk@163.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/爱康敏真是极好的" title="Weibo &rarr; https://weibo.com/爱康敏真是极好的" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://www.zhihu.com/people/fei-zhou-xiao-bai-lian-88-88/activities" title="知乎 &rarr; https://www.zhihu.com/people/fei-zhou-xiao-bai-lian-88-88/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
-                </span>
-              
-            </div>
-          
 
-          
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/dyngq" title="GitHub &rarr; https://github.com/dyngq" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:dyngqk@163.com" title="E-Mail &rarr; mailto:dyngqk@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/6880205080" title="Weibo &rarr; https://weibo.com/u/6880205080" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
 
           
           
-
-          
-            
-          
-          
-
         </div>
       </div>
 
@@ -620,7 +587,7 @@
 
     </div>
   </aside>
-  
+  <div id="sidebar-dimmer"></div>
 
 
         
@@ -631,7 +598,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">dyngq</span>
 
@@ -640,8 +607,9 @@
   
 </div>
 
+<!--
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -649,8 +617,9 @@
 
 
 
-  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
 
+-->
 
 
 
@@ -671,9 +640,9 @@
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
-    
-
     
 
     
@@ -698,6 +667,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -716,12 +688,8 @@
 
 
 
-
-
-
-
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
 
   
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
@@ -730,33 +698,28 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
-  
 
 
-  <script src="/js/utils.js?v=7.1.2"></script>
+  <script src="/js/utils.js?v=7.2.0"></script>
 
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.2"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
-
+  <script src="/js/motion.js?v=7.2.0"></script>
 
 
 
   
-
   
 
 
-  <script src="/js/next-boot.js?v=7.1.2"></script>
+  <script src="/js/affix.js?v=7.2.0"></script>
 
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
 
   
 
@@ -765,6 +728,21 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
 
 
 
@@ -1094,73 +1072,26 @@
 
 
   
+
+
+
+
   
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
 
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + '03W9KgH7TDVzTaIcv3fzpG4n-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': '03W9KgH7TDVzTaIcv3fzpG4n-gzGzoHsz',
-                'X-LC-Key': '2otah1bqooBsODfJfCun6HY9',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
 
 
   
@@ -1169,23 +1100,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
