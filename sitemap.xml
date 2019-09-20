@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.dyngq.top/about/index.html</loc>
+    
+    <lastmod>2019-09-20T14:09:27.136Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.dyngq.top/2019/07/21/dyngq/</loc>
     
-    <lastmod>2019-09-16T13:47:02.586Z</lastmod>
+    <lastmod>2019-09-20T13:58:30.501Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://www.dyngq.top/2019/06/06/hello-world/</loc>
     
     <lastmod>2019-09-01T08:07:18.467Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.dyngq.top/about/index.html</loc>
-    
-    <lastmod>2019-09-01T08:07:18.466Z</lastmod>
     
   </url>
   
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/index.html</loc>
+    <loc>http://www.dyngq.top/404.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/404.html</loc>
+    <loc>http://www.dyngq.top/index.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
