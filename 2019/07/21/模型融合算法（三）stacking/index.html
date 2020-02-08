@@ -100,13 +100,13 @@
   };
 </script>
 
-  <meta name="description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法  最经典的一张图:  但是可以不从这个图开始理解，这个图是一个表较复杂，比较不容易过拟合的一种复杂实现，理解stacking更重要的是理解stacking总体的思想。由浅入深，先从整体上把握">
-<meta name="keywords" content="Stacking">
+  <meta name="description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
+<meta name="keywords" content="AI,Ensemble,Stacking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stacking模型融合">
 <meta property="og:url" content="http://www.dyngq.top/2019/07/21/模型融合算法（三）stacking/index.html">
 <meta property="og:site_name" content="dyngq">
-<meta property="og:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法  最经典的一张图:  但是可以不从这个图开始理解，这个图是一个表较复杂，比较不容易过拟合的一种复杂实现，理解stacking更重要的是理解stacking总体的思想。由浅入深，先从整体上把握">
+<meta property="og:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-1.jpg">
 <meta property="og:image" content="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-5.jpg">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="http://www.dyngq.top/2019/07/21/模型融合算法（三）stacking/images/dyngq_2020-01-08-19-14-17.png">
 <meta property="og:image" content="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-1.jpg">
 <meta property="og:image" content="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-4.jpg">
-<meta property="og:updated_time" content="2020-02-07T16:42:11.727Z">
+<meta property="og:updated_time" content="2020-02-08T02:45:41.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stacking模型融合">
-<meta name="twitter:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法  最经典的一张图:  但是可以不从这个图开始理解，这个图是一个表较复杂，比较不容易过拟合的一种复杂实现，理解stacking更重要的是理解stacking总体的思想。由浅入深，先从整体上把握">
+<meta name="twitter:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
 <meta name="twitter:image" content="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-1.jpg">
 
 
@@ -421,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-08 00:42:11" itemprop="dateModified" datetime="2020-02-08T00:42:11+08:00">2020-02-08</time>
+                <time title="修改时间：2020-02-08 10:45:41" itemprop="dateModified" datetime="2020-02-08T10:45:41+08:00">2020-02-08</time>
               </span>
             
           
@@ -492,6 +492,8 @@
 <li>2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错</li>
 <li>3.简单实现一下神经网络的stacking算法</li>
 </ul>
+<a id="more"></a>
+
 <h4 id="最经典的一张图"><a href="#最经典的一张图" class="headerlink" title="最经典的一张图:"></a>最经典的一张图:</h4><ul>
 <li><img src="https://github.com/dyngq/notebooks/blob/master/images/20190427-model-fusion-algorithm/stacking-1.jpg" alt></li>
 <li>但是可以不从这个图开始理解，这个图是一个表较复杂，比较不容易过拟合的一种复杂实现，理解stacking更重要的是理解stacking总体的思想。由浅入深，先从整体上把握，再针对不同的情境复杂优化。</li>
@@ -618,6 +620,10 @@
         
         <div class="post-tags">
           
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/Ensemble/" rel="tag"># Ensemble</a>
+          
             <a href="/tags/Stacking/" rel="tag"># Stacking</a>
           
         </div>
@@ -631,8 +637,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/06/hello-world/" rel="next" title="hello-world">
-                <i class="fa fa-chevron-left"></i> hello-world
+              <a href="/2019/06/06/卷积神经网络 - Convolutional Neural Network- CNN/" rel="next" title="卷积神经网络 - Convolutional Neural Network- CNN">
+                <i class="fa fa-chevron-left"></i> 卷积神经网络 - Convolutional Neural Network- CNN
               </a>
             
           </div>
@@ -740,7 +746,9 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -761,7 +769,19 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
