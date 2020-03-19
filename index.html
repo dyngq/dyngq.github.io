@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-25 17:31:39" itemprop="dateModified" datetime="2019-10-25T17:31:39+08:00">2019-10-25</time>
+                <time title="修改时间：2020-03-20 00:27:33" itemprop="dateModified" datetime="2020-03-20T00:27:33+08:00">2020-03-20</time>
               </span>
             
           
@@ -533,6 +533,7 @@
 </ol>
 <h2 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h2><ol>
 <li><a href="https://github.com/dyngq/sentiment-analysis-project" target="_blank" rel="noopener">本科毕业设计：基于深度学习与词嵌入的情感分析系统设计与实现</a></li>
+<li><a href="https://github.com/dyngq/summary-notebooks-of-postgraduate/tree/master/Python/burst_number" target="_blank" rel="noopener">准考证号“爆破”——解决忘记准考证号无法查询考研初始成绩（校官网）</a></li>
 </ol>
 <h2 id="Competitions"><a href="#Competitions" class="headerlink" title="Competitions"></a>Competitions</h2><ol>
 <li><a href="https://github.com/dyngq/Competitions/tree/master/201903_%E7%A0%94%E7%A9%B6%E7%94%9F%E5%85%A5%E5%AD%A6%E8%80%83%E8%AF%95_%E5%A4%8D%E8%AF%95_PTA%E6%9C%BA%E8%AF%95" target="_blank" rel="noopener">201903_研究生入学考试复试PTA机试_刷题</a></li>
@@ -552,6 +553,7 @@
 <h2 align="right">但行好事，莫问前程</h2>
 <h2 align="right">dyngq</h2>
 </div>
+
           
         
       
@@ -1224,6 +1226,219 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2019/06/08/pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dyngq_kang">
+      <meta itemprop="description" content="但行好事，莫问前程">
+      <meta itemprop="image" content="/images/dream.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dyngq">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/08/pytorch/" class="post-title-link" itemprop="url">pytorch</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-08T00:00:00+08:00">2019-06-08</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-20 00:28:38" itemprop="dateModified" datetime="2020-03-20T00:28:38+08:00">2020-03-20</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/06/08/pytorch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/pytorch/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>Parameter类其实是Tensor的子类</li>
+</ul>
+<h2 id="产生分布的函数"><a href="#产生分布的函数" class="headerlink" title="产生分布的函数"></a>产生分布的函数</h2><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">tensor.uniform_(-10, 10)</td>
+<td align="center">均匀分布</td>
+</tr>
+<tr>
+<td align="center">tensor.normal_(mean, std)</td>
+<td align="center">标准正态分布</td>
+</tr>
+</tbody></table>
+<p><img src="/images/dyngq_2020-02-04-23-43-48.png" alt="&#39;dyngq_images&#39;"></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/08/pytorch/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2019/06/06/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1343,219 +1558,6 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/06/06/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2019/06/06/pytorch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dyngq_kang">
-      <meta itemprop="description" content="但行好事，莫问前程">
-      <meta itemprop="image" content="/images/dream.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dyngq">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/06/pytorch/" class="post-title-link" itemprop="url">pytorch</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-06T00:00:00+08:00">2019-06-06</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-03-19 22:34:06" itemprop="dateModified" datetime="2020-03-19T22:34:06+08:00">2020-03-19</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/06/06/pytorch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/pytorch/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>Parameter类其实是Tensor的子类</li>
-</ul>
-<h2 id="产生分布的函数"><a href="#产生分布的函数" class="headerlink" title="产生分布的函数"></a>产生分布的函数</h2><table>
-<thead>
-<tr>
-<th align="center">函数</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">tensor.uniform_(-10, 10)</td>
-<td align="center">均匀分布</td>
-</tr>
-<tr>
-<td align="center">tensor.normal_(mean, std)</td>
-<td align="center">标准正态分布</td>
-</tr>
-</tbody></table>
-<p><img src="/images/dyngq_2020-02-04-23-43-48.png" alt="&#39;dyngq_images&#39;"></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/06/pytorch/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
