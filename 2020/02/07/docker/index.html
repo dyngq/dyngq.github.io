@@ -109,7 +109,7 @@
 <meta property="og:description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。  window下docker解决方案 docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。 的目前为止最好的解决方案还是docker for">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.dyngq.top/2020/02/07/docker/images/dyngq_2020-02-07-23-47-46.png">
-<meta property="og:updated_time" content="2020-02-08T02:46:05.646Z">
+<meta property="og:updated_time" content="2020-08-30T03:29:23.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker 总结">
 <meta name="twitter:description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。  window下docker解决方案 docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。 的目前为止最好的解决方案还是docker for">
@@ -205,6 +205,10 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
+        <p class="site-subtitle">❤dyngq💕kang❤</p>
+      
     
     
   </div>
@@ -389,7 +393,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dyngq_kang">
-      <meta itemprop="description" content="但行好事，莫问前程">
+      <meta itemprop="description" content="🌞但行好事，莫问前程🌈">
       <meta itemprop="image" content="/images/dream.jpg">
     </span>
 
@@ -444,7 +448,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-08 10:46:05" itemprop="dateModified" datetime="2020-02-08T10:46:05+08:00">2020-02-08</time>
+                <time title="修改时间：2020-08-30 11:29:23" itemprop="dateModified" datetime="2020-08-30T11:29:23+08:00">2020-08-30</time>
               </span>
             
           
@@ -572,18 +576,9 @@
 <h3 id="将容器打包成镜像"><a href="#将容器打包成镜像" class="headerlink" title="将容器打包成镜像"></a>将容器打包成镜像</h3><p>docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</p>
 <p>-a :提交的镜像作者；<br>-c :使用Dockerfile指令来创建镜像；<br>-m :提交时的说明文字；<br>-p :在commit时，将容器暂停。</p>
 <h3 id="Dockerfile示例"><a href="#Dockerfile示例" class="headerlink" title="Dockerfile示例"></a>Dockerfile示例</h3><p><a href="./docker/tianchi_submit_demo/Dockerfile">Dockfile</a></p>
-<pre><code># Base Images
-## 从带有numpy的python镜像
-FROM numpy:1.0
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Base Images</span></span><br><span class="line"><span class="comment">## 从带有numpy的python镜像</span></span><br><span class="line">FROM numpy:1.0</span><br><span class="line"></span><br><span class="line"><span class="comment">## 把当前文件夹里的文件构建到镜像的根目录下</span></span><br><span class="line">ADD . /</span><br><span class="line"></span><br><span class="line"><span class="comment">## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）</span></span><br><span class="line">WORKDIR /</span><br><span class="line">    </span><br><span class="line"><span class="comment">## 镜像启动后统一执行 sh run.sh</span></span><br><span class="line">CMD [<span class="string">"sh"</span>, <span class="string">"run.sh"</span>]</span><br></pre></td></tr></table></figure>
 
-## 把当前文件夹里的文件构建到镜像的根目录下
-ADD . /
-
-## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）
-WORKDIR /
-
-## 镜像启动后统一执行 sh run.sh
-CMD [&quot;sh&quot;, &quot;run.sh&quot;]</code></pre><h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
+<h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
 <li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程的docker教学</a></li>
 <li><a href="https://www.optbbs.com/forum.php?mod=viewthread&ordertype=1&tid=8431044" target="_blank" rel="noopener">docker如何部署您的第一个应用程序</a></li>
 <li>pass</li>
@@ -602,40 +597,9 @@ CMD [&quot;sh&quot;, &quot;run.sh&quot;]</code></pre><h3 id="其他一些常用�
 </ol>
 <p>本次提交的所有文件都在./docker文件夹内</p>
 <p>py文件</p>
-<pre><code># import pandas as pd
-import numpy as np
-import json
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import pandas as pd</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># df = pd.read_csv("/tcdata/num_list.csv")</span></span><br><span class="line"><span class="comment"># df = pd.read_csv("./docker/tianchi_submit_demo/data/tcdata/num_list.csv")</span></span><br><span class="line"><span class="comment"># print(df)</span></span><br><span class="line"></span><br><span class="line">numbers = np.loadtxt(open(<span class="string">"./tcdata/num_list.csv"</span>,<span class="string">"rb"</span>),delimiter=<span class="string">","</span>,skiprows=<span class="number">0</span>,dtype=<span class="string">'int'</span>)</span><br><span class="line"><span class="comment"># numbers = np.loadtxt(open("./docker/tianchi_submit_demo/data/tcdata/num_list.csv","rb"),delimiter=",",skiprows=0,dtype='int')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># numbers = np.random.randint(1,30,size=50,dtype='int32')</span></span><br><span class="line"><span class="comment"># print(numbers)</span></span><br><span class="line"><span class="comment"># np.savetxt('./docker/tianchi_submit_demo/data/tcdata/num_list.csv', numbers,delimiter = ',')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print("hello_world")</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(numbers,type(numbers.tolist()))</span></span><br><span class="line"></span><br><span class="line">r_sum = np.sum(numbers)</span><br><span class="line"></span><br><span class="line">top10 = numbers[np.argpartition(numbers,<span class="number">-10</span>)[<span class="number">-10</span>:]]</span><br><span class="line">top10 = np.sort(top10).tolist()</span><br><span class="line">top10.reverse()</span><br><span class="line"><span class="comment"># print(top10, type(top10))</span></span><br><span class="line"></span><br><span class="line">result = &#123;</span><br><span class="line">    <span class="string">"Q1"</span>: <span class="string">"Hello world"</span>,</span><br><span class="line">    <span class="string">"Q2"</span>: r_sum.tolist(),</span><br><span class="line">    <span class="comment"># C004 注意：TOP10 若包含重复值</span></span><br><span class="line">    <span class="string">"Q3"</span>: top10</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"result.json"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(result, f)</span><br></pre></td></tr></table></figure>
 
-# df = pd.read_csv(&quot;/tcdata/num_list.csv&quot;)
-# df = pd.read_csv(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;)
-# print(df)
-
-numbers = np.loadtxt(open(&quot;./tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
-# numbers = np.loadtxt(open(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
-
-# numbers = np.random.randint(1,30,size=50,dtype=&apos;int32&apos;)
-# print(numbers)
-# np.savetxt(&apos;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&apos;, numbers,delimiter = &apos;,&apos;)
-
-# print(&quot;hello_world&quot;)
-
-# print(numbers,type(numbers.tolist()))
-
-r_sum = np.sum(numbers)
-
-top10 = numbers[np.argpartition(numbers,-10)[-10:]]
-top10 = np.sort(top10).tolist()
-top10.reverse()
-# print(top10, type(top10))
-
-result = {
-    &quot;Q1&quot;: &quot;Hello world&quot;,
-    &quot;Q2&quot;: r_sum.tolist(),
-    # C004 注意：TOP10 若包含重复值
-    &quot;Q3&quot;: top10
-}
-with open(&quot;result.json&quot;, &quot;w&quot;) as f:
-    json.dump(result, f) </code></pre><p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>
+<p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>
 
       
     </div>
@@ -705,8 +669,8 @@ with open(&quot;result.json&quot;, &quot;w&quot;) as f:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/dyngq/" rel="next" title="dyngq">
-                <i class="fa fa-chevron-left"></i> dyngq
+              <a href="/2019/07/21/模型融合算法（三）stacking/" rel="next" title="Stacking模型融合">
+                <i class="fa fa-chevron-left"></i> Stacking模型融合
               </a>
             
           </div>
@@ -779,7 +743,7 @@ with open(&quot;result.json&quot;, &quot;w&quot;) as f:
     <img class="site-author-image" itemprop="image" src="/images/dream.jpg" alt="dyngq_kang">
   
   <p class="site-author-name" itemprop="name">dyngq_kang</p>
-  <div class="site-description motion-element" itemprop="description">但行好事，莫问前程</div>
+  <div class="site-description motion-element" itemprop="description">🌞但行好事，莫问前程🌈</div>
 </div>
 
 

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.dyngq.top/2020/02/07/docker/</loc>
+    
+    <lastmod>2020-08-30T03:29:23.268Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.dyngq.top/2019/07/21/dyngq/</loc>
     
     <lastmod>2020-08-26T03:03:09.985Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://www.dyngq.top/2019/07/21/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%20-%20Convolutional%20Neural%20Network-%20CNN/</loc>
     
     <lastmod>2020-08-25T16:07:34.676Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.dyngq.top/2020/02/07/docker/</loc>
-    
-    <lastmod>2020-02-08T02:46:05.646Z</lastmod>
     
   </url>
   
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/404.html</loc>
+    <loc>http://www.dyngq.top/index.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/index.html</loc>
+    <loc>http://www.dyngq.top/404.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
