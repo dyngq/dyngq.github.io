@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.dyngq.top/2019/06/08/pytorch/</loc>
+    <lastmod>2020-10-05</lastmod>
+  </url>  <url>
     <loc>http://www.dyngq.top/2019/07/21/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89stacking/</loc>
     <lastmod>2020-09-13</lastmod>
   </url>  <url>
@@ -9,9 +12,6 @@
   </url>  <url>
     <loc>http://www.dyngq.top/2020/02/07/docker/</loc>
     <lastmod>2020-09-13</lastmod>
-  </url>  <url>
-    <loc>http://www.dyngq.top/2019/06/08/pytorch/</loc>
-    <lastmod>2020-09-04</lastmod>
   </url>  <url>
     <loc>http://www.dyngq.top/2019/07/21/dyngq/</loc>
     <lastmod>2020-09-04</lastmod>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.dyngq.top/2019/06/08/pytorch/</loc>
+    
+    <lastmod>2020-10-05T09:10:36.265Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.dyngq.top/2019/07/21/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89stacking/</loc>
     
     <lastmod>2020-09-13T12:49:34.425Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.dyngq.top/2020/02/07/docker/</loc>
     
     <lastmod>2020-09-13T12:36:35.037Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.dyngq.top/2019/06/08/pytorch/</loc>
-    
-    <lastmod>2020-09-04T09:15:04.707Z</lastmod>
     
   </url>
   
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/404.html</loc>
+    <loc>http://www.dyngq.top/index.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.dyngq.top/index.html</loc>
+    <loc>http://www.dyngq.top/404.html</loc>
     
     <lastmod>2019-09-01T08:07:18.457Z</lastmod>
     
