@@ -104,20 +104,20 @@
   };
 </script>
 
-  <meta name="description" content="Docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。  window下docker解决方案 docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。 的目前为止最好的解决方案还是docker for">
-<meta name="keywords" content="docker,Sec">
+  <meta name="description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。">
+<meta name="keywords" content="Docker,Sec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 总结">
 <meta property="og:url" content="http://www.dyngq.top/2020/02/07/docker/index.html">
 <meta property="og:site_name" content="dyngq">
-<meta property="og:description" content="Docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。  window下docker解决方案 docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。 的目前为止最好的解决方案还是docker for">
+<meta property="og:description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img.dyngq.top/images/20200913203631.png">
-<meta property="og:updated_time" content="2020-09-13T12:36:35.037Z">
+<meta property="og:image" content="http://www.dyngq.top/2020/02/07/docker/images/dyngq_2020-02-07-23-47-46.png">
+<meta property="og:updated_time" content="2020-11-08T13:40:14.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 总结">
-<meta name="twitter:description" content="Docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。  window下docker解决方案 docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。 的目前为止最好的解决方案还是docker for">
-<meta name="twitter:image" content="https://img.dyngq.top/images/20200913203631.png">
+<meta name="twitter:description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。">
+<meta name="twitter:image" content="http://www.dyngq.top/2020/02/07/docker/images/dyngq_2020-02-07-23-47-46.png">
 
 
 
@@ -437,7 +437,7 @@
                 
               
 
-              <time title="创建时间：2020-02-07 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-07T00:00:00+08:00">2020-02-07</time>
+              <time title="创建时间：2020-02-07 08:45:00" itemprop="dateCreated datePublished" datetime="2020-02-07T08:45:00+08:00">2020-02-07</time>
             </span>
           
 
@@ -452,7 +452,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-09-13 20:36:35" itemprop="dateModified" datetime="2020-09-13T20:36:35+08:00">2020-09-13</time>
+                <time title="修改时间：2020-11-08 21:40:14" itemprop="dateModified" datetime="2020-11-08T21:40:14+08:00">2020-11-08</time>
               </span>
             
           
@@ -518,17 +518,17 @@
       
 
       
-        <h1 id="Docker-总结"><a href="#Docker-总结" class="headerlink" title="Docker 总结"></a>Docker 总结</h1><blockquote>
+        <h1 id="docker-总结"><a href="#docker-总结" class="headerlink" title="docker 总结"></a>docker 总结</h1><blockquote>
 <p>之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 <a href="https://tianchi.aliyun.com/competition/entrance/231759/introduction" target="_blank" rel="noopener">【入门】Docker练习场</a>，梳理了一下docke的基本操作。</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="window下docker解决方案"><a href="#window下docker解决方案" class="headerlink" title="window下docker解决方案"></a>window下docker解决方案</h2><ul>
 <li>docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。</li>
 <li>的目前为止最好的解决方案还是docker for windows，之前的解决方案可能是VM、或者win10子系统WSL里的docker，wsl虽然很方便也有方法能起来docker，但是很容易碰见这样那样的问题，docker守护进程方面很难弄。之所以说docker for windows是最好的解决方案是因为他的新版本解决了对于hyper-v的依赖，使得他自己与VM等不会发生冲突，这就解决了他之前最大的弊端，使用起来没有复杂的障碍与冲突。详细的进步在<a href="https://www.zhihu.com/question/339939686" target="_blank" rel="noopener">知乎：Windows下想使用Linux环境，WSL、Docker、VM应该怎么选择？</a>。</li>
 <li>windows下安装也很简单，<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Welcome to Docker Hub: Download and Take a Tutorial</a>。</li>
 <li>记得开启docker的镜像加速，不然下载镜像会很慢，可以使用阿里云的加速，<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">阿里云加速链接</a>。</li>
 </ul>
-<a id="more"></a>
-
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
 <thead>
 <tr>
@@ -580,9 +580,18 @@
 <h3 id="将容器打包成镜像"><a href="#将容器打包成镜像" class="headerlink" title="将容器打包成镜像"></a>将容器打包成镜像</h3><p>docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</p>
 <p>-a :提交的镜像作者；<br>-c :使用Dockerfile指令来创建镜像；<br>-m :提交时的说明文字；<br>-p :在commit时，将容器暂停。</p>
 <h3 id="Dockerfile示例"><a href="#Dockerfile示例" class="headerlink" title="Dockerfile示例"></a>Dockerfile示例</h3><p><a href="./docker/tianchi_submit_demo/Dockerfile">Dockfile</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Base Images</span></span><br><span class="line"><span class="comment">## 从带有numpy的python镜像</span></span><br><span class="line">FROM numpy:1.0</span><br><span class="line"></span><br><span class="line"><span class="comment">## 把当前文件夹里的文件构建到镜像的根目录下</span></span><br><span class="line">ADD . /</span><br><span class="line"></span><br><span class="line"><span class="comment">## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）</span></span><br><span class="line">WORKDIR /</span><br><span class="line">    </span><br><span class="line"><span class="comment">## 镜像启动后统一执行 sh run.sh</span></span><br><span class="line">CMD [<span class="string">"sh"</span>, <span class="string">"run.sh"</span>]</span><br></pre></td></tr></table></figure>
+<pre><code># Base Images
+## 从带有numpy的python镜像
+FROM numpy:1.0
 
-<h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
+## 把当前文件夹里的文件构建到镜像的根目录下
+ADD . /
+
+## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）
+WORKDIR /
+
+## 镜像启动后统一执行 sh run.sh
+CMD [&quot;sh&quot;, &quot;run.sh&quot;]</code></pre><h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
 <li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程的docker教学</a></li>
 <li><a href="https://www.optbbs.com/forum.php?mod=viewthread&ordertype=1&tid=8431044" target="_blank" rel="noopener">docker如何部署您的第一个应用程序</a></li>
 <li>pass</li>
@@ -601,9 +610,40 @@
 </ol>
 <p>本次提交的所有文件都在./docker文件夹内</p>
 <p>py文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import pandas as pd</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment"># df = pd.read_csv("/tcdata/num_list.csv")</span></span><br><span class="line"><span class="comment"># df = pd.read_csv("./docker/tianchi_submit_demo/data/tcdata/num_list.csv")</span></span><br><span class="line"><span class="comment"># print(df)</span></span><br><span class="line"></span><br><span class="line">numbers = np.loadtxt(open(<span class="string">"./tcdata/num_list.csv"</span>,<span class="string">"rb"</span>),delimiter=<span class="string">","</span>,skiprows=<span class="number">0</span>,dtype=<span class="string">'int'</span>)</span><br><span class="line"><span class="comment"># numbers = np.loadtxt(open("./docker/tianchi_submit_demo/data/tcdata/num_list.csv","rb"),delimiter=",",skiprows=0,dtype='int')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># numbers = np.random.randint(1,30,size=50,dtype='int32')</span></span><br><span class="line"><span class="comment"># print(numbers)</span></span><br><span class="line"><span class="comment"># np.savetxt('./docker/tianchi_submit_demo/data/tcdata/num_list.csv', numbers,delimiter = ',')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print("hello_world")</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(numbers,type(numbers.tolist()))</span></span><br><span class="line"></span><br><span class="line">r_sum = np.sum(numbers)</span><br><span class="line"></span><br><span class="line">top10 = numbers[np.argpartition(numbers,<span class="number">-10</span>)[<span class="number">-10</span>:]]</span><br><span class="line">top10 = np.sort(top10).tolist()</span><br><span class="line">top10.reverse()</span><br><span class="line"><span class="comment"># print(top10, type(top10))</span></span><br><span class="line"></span><br><span class="line">result = &#123;</span><br><span class="line">    <span class="string">"Q1"</span>: <span class="string">"Hello world"</span>,</span><br><span class="line">    <span class="string">"Q2"</span>: r_sum.tolist(),</span><br><span class="line">    <span class="comment"># C004 注意：TOP10 若包含重复值</span></span><br><span class="line">    <span class="string">"Q3"</span>: top10</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"result.json"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(result, f)</span><br></pre></td></tr></table></figure>
+<pre><code># import pandas as pd
+import numpy as np
+import json
 
-<p><img src="https://img.dyngq.top/images/20200913203631.png" alt="&#39;dyngq_images&#39;"></p>
+# df = pd.read_csv(&quot;/tcdata/num_list.csv&quot;)
+# df = pd.read_csv(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;)
+# print(df)
+
+numbers = np.loadtxt(open(&quot;./tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
+# numbers = np.loadtxt(open(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
+
+# numbers = np.random.randint(1,30,size=50,dtype=&apos;int32&apos;)
+# print(numbers)
+# np.savetxt(&apos;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&apos;, numbers,delimiter = &apos;,&apos;)
+
+# print(&quot;hello_world&quot;)
+
+# print(numbers,type(numbers.tolist()))
+
+r_sum = np.sum(numbers)
+
+top10 = numbers[np.argpartition(numbers,-10)[-10:]]
+top10 = np.sort(top10).tolist()
+top10.reverse()
+# print(top10, type(top10))
+
+result = {
+    &quot;Q1&quot;: &quot;Hello world&quot;,
+    &quot;Q2&quot;: r_sum.tolist(),
+    # C004 注意：TOP10 若包含重复值
+    &quot;Q3&quot;: top10
+}
+with open(&quot;result.json&quot;, &quot;w&quot;) as f:
+    json.dump(result, f) </code></pre><p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>
 
       
     </div>
@@ -658,7 +698,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag"># docker</a>
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
             <a href="/tags/Sec/" rel="tag"># Sec</a>
           
@@ -682,6 +722,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/11/08/Linux-权限总结/" rel="prev" title="Linux 权限详解">
+                Linux 权限详解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -757,7 +801,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -780,7 +824,9 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -813,7 +859,9 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -918,7 +966,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-总结"><span class="nav-number">1.</span> <span class="nav-text">Docker 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#window下docker解决方案"><span class="nav-number">1.1.</span> <span class="nav-text">window下docker解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.2.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将容器打包成镜像"><span class="nav-number">1.2.1.</span> <span class="nav-text">将容器打包成镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dockerfile示例"><span class="nav-number">1.2.2.</span> <span class="nav-text">Dockerfile示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他一些常用参考链接"><span class="nav-number">1.2.3.</span> <span class="nav-text">其他一些常用参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天池"><span class="nav-number">1.3.</span> <span class="nav-text">天池</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-总结"><span class="nav-number">1.</span> <span class="nav-text">docker 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#window下docker解决方案"><span class="nav-number">1.1.</span> <span class="nav-text">window下docker解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.2.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将容器打包成镜像"><span class="nav-number">1.2.1.</span> <span class="nav-text">将容器打包成镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dockerfile示例"><span class="nav-number">1.2.2.</span> <span class="nav-text">Dockerfile示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他一些常用参考链接"><span class="nav-number">1.2.3.</span> <span class="nav-text">其他一些常用参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天池"><span class="nav-number">1.3.</span> <span class="nav-text">天池</span></a></li></ol></li></ol></div>
             
 
           </div>
