@@ -20,8 +20,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Sec</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +32,19 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Docker</tag>
+        <tag>Sec</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写在最前]]></title>
+    <url>%2F2019%2F07%2F21%2Fdyngq%2F</url>
+    <content type="text"><![CDATA[Keep going … 不管什么时候开始，开始了就不要停止 Notebooks 卷积神经网络总结 stacking总结 统计学习方法笔记 李宏毅机器学习笔记 关于Papers的总结 Papers_NLP方向论文笔记 Papers_CV方向论文笔记 比较完整全面的总结将会放在这一部分，其他的学习思考会放在Daily-log里面 Projects 本科毕业设计：基于深度学习与词嵌入的情感分析系统设计与实现 准考证号“爆破”——解决忘记准考证号无法查询考研初始成绩（校官网） Competitions 201903_研究生入学考试复试PTA机试_刷题 201904_Datacon大数据安全比赛 201907_绿色计算大赛 Daily_logs 2019-06-05_导师让思考的关于模型对于具体问题的选择问题 2019-06-06_一个印地语的情感分析的预选赛 2019-07-21_关于贝叶斯相关概率论知识的学习与简单总结.md 2019-07-22_服务器搭建博客总结 2019-09-16_尝试破解WiFi密码 但行好事，莫问前程 dyngq]]></content>
+      <categories>
+        <category>dyngq</category>
+      </categories>
+      <tags>
+        <tag>dyngq</tag>
       </tags>
   </entry>
   <entry>
@@ -47,17 +58,6 @@
         <tag>AI</tag>
         <tag>Ensemble</tag>
         <tag>Stacking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[写在最前]]></title>
-    <url>%2F2019%2F07%2F21%2Fdyngq%2F</url>
-    <content type="text"><![CDATA[Keep going … 不管什么时候开始，开始了就不要停止 Notebooks 卷积神经网络总结 stacking总结 统计学习方法笔记 李宏毅机器学习笔记 关于Papers的总结 Papers_NLP方向论文笔记 Papers_CV方向论文笔记 比较完整全面的总结将会放在这一部分，其他的学习思考会放在Daily-log里面 Projects 本科毕业设计：基于深度学习与词嵌入的情感分析系统设计与实现 准考证号“爆破”——解决忘记准考证号无法查询考研初始成绩（校官网） Competitions 201903_研究生入学考试复试PTA机试_刷题 201904_Datacon大数据安全比赛 201907_绿色计算大赛 Daily_logs 2019-06-05_导师让思考的关于模型对于具体问题的选择问题 2019-06-06_一个印地语的情感分析的预选赛 2019-07-21_关于贝叶斯相关概率论知识的学习与简单总结.md 2019-07-22_服务器搭建博客总结 2019-09-16_尝试破解WiFi密码 但行好事，莫问前程 dyngq]]></content>
-      <categories>
-        <category>dyngq</category>
-      </categories>
-      <tags>
-        <tag>dyngq</tag>
       </tags>
   </entry>
   <entry>
