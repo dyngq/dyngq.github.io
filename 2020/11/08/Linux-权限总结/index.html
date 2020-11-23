@@ -100,13 +100,13 @@
   };
 </script>
 
-  <meta name="description" content="Linux 权限详解基本原理    ALL 文件所有者 用户组 其它用户    a u g o   all user group other    加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
-<meta name="keywords" content="Sec,Linux">
+  <meta name="description" content="Linux 权限详解基本原理     ALL 文件所有者 用户组 其它用户     a u g o   all user group other      加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
+<meta name="keywords" content="Linux,Sec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 权限详解">
 <meta property="og:url" content="http://www.dyngq.top/2020/11/08/Linux-权限总结/index.html">
 <meta property="og:site_name" content="dyngq">
-<meta property="og:description" content="Linux 权限详解基本原理    ALL 文件所有者 用户组 其它用户    a u g o   all user group other    加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
+<meta property="og:description" content="Linux 权限详解基本原理     ALL 文件所有者 用户组 其它用户     a u g o   all user group other      加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20201108212435.jpg">
 <meta property="og:image" content="https://img.dyngq.top/images/20201108212443.png">
@@ -117,7 +117,7 @@
 <meta property="og:updated_time" content="2020-11-17T08:36:57.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 权限详解">
-<meta name="twitter:description" content="Linux 权限详解基本原理    ALL 文件所有者 用户组 其它用户    a u g o   all user group other    加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
+<meta name="twitter:description" content="Linux 权限详解基本原理     ALL 文件所有者 用户组 其它用户     a u g o   all user group other      加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file">
 <meta name="twitter:image" content="https://img.dyngq.top/images/20201108212435.jpg">
 
 
@@ -520,28 +520,32 @@
 
       
         <h1 id="Linux-权限详解"><a href="#Linux-权限详解" class="headerlink" title="Linux 权限详解"></a>Linux 权限详解</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p><img src="https://img.dyngq.top/images/20201108212435.jpg" alt="img"></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">ALL</th>
-<th align="center">文件所有者</th>
-<th align="center">用户组</th>
-<th align="center">其它用户</th>
+<th style="text-align:center">ALL</th>
+<th style="text-align:center">文件所有者</th>
+<th style="text-align:center">用户组</th>
+<th style="text-align:center">其它用户</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">a</td>
-<td align="center">u</td>
-<td align="center">g</td>
-<td align="center">o</td>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">u</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">o</td>
 </tr>
 <tr>
-<td align="center">all</td>
-<td align="center">user</td>
-<td align="center">group</td>
-<td align="center">other</td>
+<td style="text-align:center">all</td>
+<td style="text-align:center">user</td>
+<td style="text-align:center">group</td>
+<td style="text-align:center">other</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>加权限 chmod u+rwx,g+rwx,o+rwx file</li>
 <li>减权限 chmod u+rwx,g+rwx,o+rwx file</li>
@@ -552,12 +556,13 @@
 <li>-f : 若该文件权限无法被更改也不要显示错误讯息</li>
 <li>-v : 显示权限变更的详细资料</li>
 <li>-R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更)</li>
-<li>–help : 显示辅助说明</li>
-<li>–version : 显示版本</li>
+<li>—help : 显示辅助说明</li>
+<li>—version : 显示版本</li>
 </ul>
 </li>
 </ul>
-<h3 id="特殊权限"><a href="#特殊权限" class="headerlink" title="特殊权限"></a>特殊权限</h3><table>
+<h3 id="特殊权限"><a href="#特殊权限" class="headerlink" title="特殊权限"></a>特殊权限</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>rwx</th>
@@ -565,7 +570,8 @@
 <th>…</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>X</td>
 <td>特殊执行权限</td>
 <td>只有当文件为目录文件，或者其他类型的用户有可执行权限时，才将文件权限设置可执行</td>
@@ -580,7 +586,9 @@
 <td>粘贴位</td>
 <td>设置粘贴位，只有超级用户可以设置该位，只有文件所有者u可以使用该位</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="查看权限"><a href="#查看权限" class="headerlink" title="查看权限"></a>查看权限</h3><blockquote>
 <p>ls -la</p>
 </blockquote>
@@ -593,64 +601,68 @@
 <h2 id="八进制-快捷表示"><a href="#八进制-快捷表示" class="headerlink" title="八进制 快捷表示"></a>八进制 快捷表示</h2><blockquote>
 <p>根据 3位 二进制 来一一对应</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">#</th>
-<th align="center">权限</th>
-<th align="center">rwx</th>
-<th align="center">二进制</th>
+<th style="text-align:center">#</th>
+<th style="text-align:center">权限</th>
+<th style="text-align:center">rwx</th>
+<th style="text-align:center">二进制</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">7</td>
-<td align="center">读 + 写 + 执行</td>
-<td align="center">rwx</td>
-<td align="center">111</td>
+<tbody>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">读 + 写 + 执行</td>
+<td style="text-align:center">rwx</td>
+<td style="text-align:center">111</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">读 + 写</td>
-<td align="center">rw-</td>
-<td align="center">110</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">读 + 写</td>
+<td style="text-align:center">rw-</td>
+<td style="text-align:center">110</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">读 + 执行</td>
-<td align="center">r-x</td>
-<td align="center">101</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">读 + 执行</td>
+<td style="text-align:center">r-x</td>
+<td style="text-align:center">101</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">只读</td>
-<td align="center">r–</td>
-<td align="center">100</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">只读</td>
+<td style="text-align:center">r—</td>
+<td style="text-align:center">100</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">写 + 执行</td>
-<td align="center">-wx</td>
-<td align="center">011</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">写 + 执行</td>
+<td style="text-align:center">-wx</td>
+<td style="text-align:center">011</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">只写</td>
-<td align="center">-w-</td>
-<td align="center">010</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">只写</td>
+<td style="text-align:center">-w-</td>
+<td style="text-align:center">010</td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">只执行</td>
-<td align="center">–x</td>
-<td align="center">001</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">只执行</td>
+<td style="text-align:center">—x</td>
+<td style="text-align:center">001</td>
 </tr>
 <tr>
-<td align="center">0</td>
-<td align="center">无</td>
-<td align="center">—</td>
-<td align="center">000</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">—-</td>
+<td style="text-align:center">000</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>777 : rwxrwxrwx : ugo (a)</li>
 <li>755 : rwx </li>
@@ -719,9 +731,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Sec/" rel="tag"># Sec</a>
-          
             <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Sec/" rel="tag"># Sec</a>
           
         </div>
       
@@ -1155,6 +1167,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

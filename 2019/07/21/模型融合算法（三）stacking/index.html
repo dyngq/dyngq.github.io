@@ -529,7 +529,6 @@
 <li>3.简单实现一下神经网络的stacking算法</li>
 </ul>
 <a id="more"></a>
-
 <ul>
 <li><strong>最经典的一张图:</strong></li>
 <li><img src="https://img.dyngq.top/images/20200904151649.jpg" alt></li>
@@ -537,8 +536,7 @@
 <li>stacking算法基于一个简单的思想，与其使用一些平凡的函数（比如硬投票）来聚合集成所有模型预测，那为什么不训练一个模型来执行这些聚合呢。</li>
 </ul>
 <h2 id="总体概述："><a href="#总体概述：" class="headerlink" title="总体概述："></a>总体概述：</h2><ul>
-<li><p>stacking原则上可以分成若干层级，但层数多不一定效果越好，一般采用两层结构。</p>
-</li>
+<li>stacking原则上可以分成若干层级，但层数多不一定效果越好，一般采用两层结构。</li>
 <li><p>因此，我们可以把stacking过程看作是两个级别，级别0和级别1。</p>
 <ul>
 <li>0级:  也就是对应第一层，0级模型就是我们需要堆叠的多个模型，也称为<strong>预测器</strong>。可以是随机森林SVM等等多种模型，也可以只有一种模型。对这些模型在训练集上进行正常训练。</li>
@@ -547,28 +545,20 @@
 </li>
 <li><p><img src="https://img.dyngq.top/images/20200904151637.jpg" alt="整体思想"></p>
 </li>
-<li><p><img src="https://img.dyngq.top/images/20200904151644.jpg" alt="训练第一层预测器"></p>
-</li>
-<li><p><img src="https://img.dyngq.top/images/20200904151653.jpg" alt="训练第二层混合器"></p>
-</li>
-<li><p>stacking一般采用预留集的方法训练1级模型（元学习器），如图所示，训练集被拆分为2部分（注意，这里<strong>不是</strong>要几折也<strong>不是</strong>要拆分成训练集验证集测试集），子集1正常训练模型，得到n个预测器。让刚刚得到的n个预测器在预留集（子集2）上进行预测，（由于之前一直没有见过子集2里的数据，所以可以确保预测是干净的），这样就得到了n个预测值。将这些预测值作为输入特征，创建一个新的训练集（n维），保留原来的label作为label，在这个新的训练集上训练1级模型（元学习器/混合器），让它学习使用预测器的预测来预测目标值。</p>
-</li>
+<li><img src="https://img.dyngq.top/images/20200904151644.jpg" alt="训练第一层预测器"></li>
+<li><img src="https://img.dyngq.top/images/20200904151653.jpg" alt="训练第二层混合器"></li>
+<li>stacking一般采用预留集的方法训练1级模型（元学习器），如图所示，训练集被拆分为2部分（注意，这里<strong>不是</strong>要几折也<strong>不是</strong>要拆分成训练集验证集测试集），子集1正常训练模型，得到n个预测器。让刚刚得到的n个预测器在预留集（子集2）上进行预测，（由于之前一直没有见过子集2里的数据，所以可以确保预测是干净的），这样就得到了n个预测值。将这些预测值作为输入特征，创建一个新的训练集（n维），保留原来的label作为label，在这个新的训练集上训练1级模型（元学习器/混合器），让它学习使用预测器的预测来预测目标值。</li>
 </ul>
 <ul>
-<li><p><img src="https://img.dyngq.top/images/20200904151656.jpg" alt></p>
-</li>
+<li><img src="https://img.dyngq.top/images/20200904151656.jpg" alt></li>
 <li><p><img src="https://img.dyngq.top/images/20200904151658.jpg" alt></p>
 </li>
 <li><p>当然，就像之前说的，stacking可以有多层，比如三层。</p>
 </li>
-<li><p>第一层是预测器，第二层是多个混合器（混合器可以有多种，随机森林、线性回归等等），第三层是又一层的混合器。</p>
-</li>
-<li><p>这是就需要讲训练集分成三部分，在三层上“干净的”训练。</p>
-</li>
-<li><p>原理如下图：                                                                 </p>
-</li>
-<li><p><img src="https://img.dyngq.top/images/20200904151700.jpg" alt>                      </p>
-</li>
+<li>第一层是预测器，第二层是多个混合器（混合器可以有多种，随机森林、线性回归等等），第三层是又一层的混合器。</li>
+<li>这是就需要讲训练集分成三部分，在三层上“干净的”训练。</li>
+<li>原理如下图：                                                                 </li>
+<li><img src="https://img.dyngq.top/images/20200904151700.jpg" alt>                      </li>
 </ul>
 <h2 id="常见的stacking方法解释"><a href="#常见的stacking方法解释" class="headerlink" title="常见的stacking方法解释"></a>常见的stacking方法解释</h2><blockquote>
 <p>第二部分：下面是网上最常见的stacking方法解释(也就是文章已开始的图片所描述的)       (神经网络的stacking应用在下一部分)</p>
@@ -589,13 +579,13 @@
 </ul>
 <h2 id="第三部分：神经网络的stacking"><a href="#第三部分：神经网络的stacking" class="headerlink" title="第三部分：神经网络的stacking"></a>第三部分：神经网络的stacking</h2><ul>
 <li>有一篇专门的英文博客介绍了传统机器学习以及神经网络的stacking，文末链接。</li>
-<li><hr>
-</li>
+</ul>
+<hr>
+<ul>
 <li>做了京东评论的情感分析，尝试使用了stacking。</li>
 <li>后来毕业设计老师建议使用英文数据集，相对于中文噪声小等，所以以后还会尝试在IMDB和Twitter数据集上的复杂神经网络模型上进行stacking。</li>
-<li><hr>
-</li>
 </ul>
+<hr>
 <p>参考资料：</p>
 <ul>
 <li>1.最完整的，包括深度学习<ul>
@@ -1099,6 +1089,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

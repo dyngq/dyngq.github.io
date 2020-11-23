@@ -101,7 +101,7 @@
 </script>
 
   <meta name="description" content="docker 总结 之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 【入门】Docker练习场，梳理了一下docke的基本操作。">
-<meta name="keywords" content="Docker,Sec">
+<meta name="keywords" content="Sec,Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 总结">
 <meta property="og:url" content="http://www.dyngq.top/2020/02/07/docker/index.html">
@@ -518,61 +518,64 @@
 <p>之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 <a href="https://tianchi.aliyun.com/competition/entrance/231759/introduction" target="_blank" rel="noopener">【入门】Docker练习场</a>，梳理了一下docke的基本操作。</p>
 </blockquote>
 <a id="more"></a>
-
 <h2 id="window下docker解决方案"><a href="#window下docker解决方案" class="headerlink" title="window下docker解决方案"></a>window下docker解决方案</h2><ul>
 <li>docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。</li>
 <li>的目前为止最好的解决方案还是docker for windows，之前的解决方案可能是VM、或者win10子系统WSL里的docker，wsl虽然很方便也有方法能起来docker，但是很容易碰见这样那样的问题，docker守护进程方面很难弄。之所以说docker for windows是最好的解决方案是因为他的新版本解决了对于hyper-v的依赖，使得他自己与VM等不会发生冲突，这就解决了他之前最大的弊端，使用起来没有复杂的障碍与冲突。详细的进步在<a href="https://www.zhihu.com/question/339939686" target="_blank" rel="noopener">知乎：Windows下想使用Linux环境，WSL、Docker、VM应该怎么选择？</a>。</li>
 <li>windows下安装也很简单，<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Welcome to Docker Hub: Download and Take a Tutorial</a>。</li>
 <li>记得开启docker的镜像加速，不然下载镜像会很慢，可以使用阿里云的加速，<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">阿里云加速链接</a>。</li>
 </ul>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">命令</th>
-<th align="center">操作</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">操作</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">docker images</td>
-<td align="center">查看已存在镜像</td>
+<tbody>
+<tr>
+<td style="text-align:center">docker images</td>
+<td style="text-align:center">查看已存在镜像</td>
 </tr>
 <tr>
-<td align="center">docker ps</td>
-<td align="center">查看正在运行的容器</td>
+<td style="text-align:center">docker ps</td>
+<td style="text-align:center">查看正在运行的容器</td>
 </tr>
 <tr>
-<td align="center">docker ps -a</td>
-<td align="center">查看所有容器</td>
+<td style="text-align:center">docker ps -a</td>
+<td style="text-align:center">查看所有容器</td>
 </tr>
 <tr>
-<td align="center">docker run -it [打包的镜像名称]:[tag] bash</td>
-<td align="center">启动镜像</td>
+<td style="text-align:center">docker run -it [打包的镜像名称]:[tag] bash</td>
+<td style="text-align:center">启动镜像</td>
 </tr>
 <tr>
-<td align="center">docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</td>
-<td align="center">将容器打包成镜像</td>
+<td style="text-align:center">docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</td>
+<td style="text-align:center">将容器打包成镜像</td>
 </tr>
 <tr>
-<td align="center">docker rm</td>
-<td align="center">删除容器</td>
+<td style="text-align:center">docker rm</td>
+<td style="text-align:center">删除容器</td>
 </tr>
 <tr>
-<td align="center">docker rmi</td>
-<td align="center">删除镜像</td>
+<td style="text-align:center">docker rmi</td>
+<td style="text-align:center">删除镜像</td>
 </tr>
 <tr>
-<td align="center">docker bulid -t [打包的镜像名称]:[tag]</td>
-<td align="center">根据Dockerfile打包镜像</td>
+<td style="text-align:center">docker bulid -t [打包的镜像名称]:[tag]</td>
+<td style="text-align:center">根据Dockerfile打包镜像</td>
 </tr>
 <tr>
-<td align="center">docker start</td>
-<td align="center">启动容器</td>
+<td style="text-align:center">docker start</td>
+<td style="text-align:center">启动容器</td>
 </tr>
 <tr>
-<td align="center">docker attach</td>
-<td align="center">进入容器</td>
+<td style="text-align:center">docker attach</td>
+<td style="text-align:center">进入容器</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="将容器打包成镜像"><a href="#将容器打包成镜像" class="headerlink" title="将容器打包成镜像"></a>将容器打包成镜像</h3><p>docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</p>
 <p>-a :提交的镜像作者；<br>-c :使用Dockerfile指令来创建镜像；<br>-m :提交时的说明文字；<br>-p :在commit时，将容器暂停。</p>
 <h3 id="Dockerfile示例"><a href="#Dockerfile示例" class="headerlink" title="Dockerfile示例"></a>Dockerfile示例</h3><p><a href="./docker/tianchi_submit_demo/Dockerfile">Dockfile</a></p>
@@ -587,9 +590,10 @@ ADD . /
 WORKDIR /
 
 ## 镜像启动后统一执行 sh run.sh
-CMD [&quot;sh&quot;, &quot;run.sh&quot;]</code></pre><h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
+CMD [&quot;sh&quot;, &quot;run.sh&quot;]
+</code></pre><h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul>
 <li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程的docker教学</a></li>
-<li><a href="https://www.optbbs.com/forum.php?mod=viewthread&ordertype=1&tid=8431044" target="_blank" rel="noopener">docker如何部署您的第一个应用程序</a></li>
+<li><a href="https://www.optbbs.com/forum.php?mod=viewthread&amp;ordertype=1&amp;tid=8431044" target="_blank" rel="noopener">docker如何部署您的第一个应用程序</a></li>
 <li>pass</li>
 </ul>
 <h2 id="天池"><a href="#天池" class="headerlink" title="天池"></a>天池</h2><blockquote>
@@ -614,12 +618,12 @@ import json
 # df = pd.read_csv(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;)
 # print(df)
 
-numbers = np.loadtxt(open(&quot;./tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
-# numbers = np.loadtxt(open(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&apos;int&apos;)
+numbers = np.loadtxt(open(&quot;./tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&#39;int&#39;)
+# numbers = np.loadtxt(open(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&#39;int&#39;)
 
-# numbers = np.random.randint(1,30,size=50,dtype=&apos;int32&apos;)
+# numbers = np.random.randint(1,30,size=50,dtype=&#39;int32&#39;)
 # print(numbers)
-# np.savetxt(&apos;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&apos;, numbers,delimiter = &apos;,&apos;)
+# np.savetxt(&#39;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&#39;, numbers,delimiter = &#39;,&#39;)
 
 # print(&quot;hello_world&quot;)
 
@@ -639,7 +643,8 @@ result = {
     &quot;Q3&quot;: top10
 }
 with open(&quot;result.json&quot;, &quot;w&quot;) as f:
-    json.dump(result, f) </code></pre><p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>
+    json.dump(result, f) 
+</code></pre><p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>
 
       
     </div>
@@ -694,9 +699,9 @@ with open(&quot;result.json&quot;, &quot;w&quot;) as f:
         
         <div class="post-tags">
           
-            <a href="/tags/Docker/" rel="tag"># Docker</a>
-          
             <a href="/tags/Sec/" rel="tag"># Sec</a>
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
         </div>
       
@@ -1130,6 +1135,13 @@ with open(&quot;result.json&quot;, &quot;w&quot;) as f:
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
