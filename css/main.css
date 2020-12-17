@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #da0632;
+  background: #ff1cff;
 }
 .feed-link,
 .chat {
@@ -3069,4 +3069,16 @@ ul.breadcrumb li+li:last-child {
 ::-moz-selection {
   background: #5cacee;
   color: #f7f7f7;
+}
+body {
+  background: url("https://img.dyngq.top/images/20201217211529.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+.footer {
+  color: #afa2e0;
+}
+.footer a {
+  color: #f0d784;
 }
