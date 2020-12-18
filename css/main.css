@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #797ad7;
+  background: #17ff06;
 }
 .feed-link,
 .chat {
@@ -3071,7 +3071,7 @@ ul.breadcrumb li+li:last-child {
   color: #f7f7f7;
 }
 body {
-  background: url("https://img.dyngq.top/images/20201217222601.jpg");
+  background: url("https://img.dyngq.top/images/20201218101253.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -3081,4 +3081,60 @@ body {
 }
 .footer a {
   color: #f0d784;
+}
+.main-inner {
+  margin-top: 10px;
+  opacity: 0.94;
+  border-radius: 10px;
+}
+.header-inner {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.65) none repeat scroll !important;
+  border-radius: 10px;
+  z-index: 10;
+}
+.post-block {
+  border-radius: 10px;
+}
+.sidebar-inner {
+  background: rgba(255,255,255,0.75) none repeat scroll !important;
+}
+.header {
+  width: 85%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
+}
+.container .main-inner {
+  width: 85%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .main-inner {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .container .main-inner {
+    width: 100%;
+  }
+}
+.content-wrap {
+  width: calc(100% - 265px);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-wrap {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100%;
+  }
 }
