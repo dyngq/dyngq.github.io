@@ -100,13 +100,13 @@
   };
 </script>
 
-  <meta name="description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
+  <meta name="description" content="1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
 <meta name="keywords" content="AI,Ensemble,Stacking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stacking 模型融合">
 <meta property="og:url" content="http://www.dyngq.top/2019/07/21/模型融合算法（三）stacking/index.html">
 <meta property="og:site_name" content="dyngq">
-<meta property="og:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
+<meta property="og:description" content="1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20200904151649.jpg">
 <meta property="og:image" content="https://img.dyngq.top/images/20200904151637.jpg">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20200904151704.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20200904151711.jpg">
 <meta property="og:image" content="https://img.dyngq.top/images/20200904151715.jpg">
-<meta property="og:updated_time" content="2020-11-08T13:39:27.233Z">
+<meta property="og:updated_time" content="2021-02-06T12:30:07.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stacking 模型融合">
-<meta name="twitter:description" content="Stacking模型融合 1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
+<meta name="twitter:description" content="1.介绍一下stacking的原理等 2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错 3.简单实现一下神经网络的stacking算法">
 <meta name="twitter:image" content="https://img.dyngq.top/images/20200904151649.jpg">
 
 
@@ -473,7 +473,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-11-08 21:39:27" itemprop="dateModified" datetime="2020-11-08T21:39:27+08:00">2020-11-08</time>
+                <time title="修改时间：2021-02-06 20:30:07" itemprop="dateModified" datetime="2021-02-06T20:30:07+08:00">2021-02-06</time>
               </span>
             
           
@@ -539,7 +539,7 @@
       
 
       
-        <h1 id="Stacking模型融合"><a href="#Stacking模型融合" class="headerlink" title="Stacking模型融合"></a>Stacking模型融合</h1><ul>
+        <ul>
 <li>1.介绍一下stacking的原理等</li>
 <li>2.机器学习算法进行stacking很常见，像mlxtend等库对stacking算法封装还不错</li>
 <li>3.简单实现一下神经网络的stacking算法</li>
@@ -694,8 +694,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/21/dyngq/" rel="prev" title="写在最前">
-                写在最前 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/07/docker/" rel="prev" title="Docker 总结">
+                Docker 总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -959,7 +959,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Stacking模型融合"><span class="nav-number">1.</span> <span class="nav-text">Stacking模型融合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总体概述："><span class="nav-number">1.1.</span> <span class="nav-text">总体概述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的stacking方法解释"><span class="nav-number">1.2.</span> <span class="nav-text">常见的stacking方法解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是比较好最普遍的解释（来自网上，文末链接）："><span class="nav-number">1.2.1.</span> <span class="nav-text">下面是比较好最普遍的解释（来自网上，文末链接）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分：神经网络的stacking"><span class="nav-number">1.3.</span> <span class="nav-text">第三部分：神经网络的stacking</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#总体概述："><span class="nav-number">1.</span> <span class="nav-text">总体概述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的stacking方法解释"><span class="nav-number">2.</span> <span class="nav-text">常见的stacking方法解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是比较好最普遍的解释（来自网上，文末链接）："><span class="nav-number">2.1.</span> <span class="nav-text">下面是比较好最普遍的解释（来自网上，文末链接）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分：神经网络的stacking"><span class="nav-number">3.</span> <span class="nav-text">第三部分：神经网络的stacking</span></a></li></ol></div>
             
 
           </div>
