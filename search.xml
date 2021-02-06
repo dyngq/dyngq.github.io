@@ -32,8 +32,19 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Sec</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[特征工程 - feature engineering]]></title>
+    <url>%2F2020%2F08%2F18%2F%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[数据和特征，往往决定了结果的上限； 而算法和优化通常是为了接近这个上限。]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +55,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Docker</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>

@@ -91,9 +91,34 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
+      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
+    
       <category term="Linux" scheme="http://www.dyngq.top/tags/Linux/"/>
     
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
+  </entry>
+  
+  <entry>
+    <title>特征工程 - feature engineering</title>
+    <link href="http://www.dyngq.top/2020/08/18/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    <id>http://www.dyngq.top/2020/08/18/特征工程/</id>
+    <published>2020-08-18T00:40:00.000Z</published>
+    <updated>2021-02-06T12:34:43.095Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>数据和特征，往往决定了结果的上限；</p><p>而算法和优化通常是为了接近这个上限。</p></blockquote><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;数据和特征，往往决定了结果的上限；&lt;/p&gt;
+&lt;p&gt;而算法和优化通常是为了接近这个上限。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://www.dyngq.top/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="http://www.dyngq.top/tags/AI/"/>
     
   </entry>
   
@@ -117,9 +142,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
       <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
+    
+      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
     
   </entry>
   
