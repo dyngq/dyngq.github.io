@@ -74,7 +74,7 @@
     <link href="http://www.dyngq.top/2020/08/18/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
     <id>http://www.dyngq.top/2020/08/18/特征工程/</id>
     <published>2020-08-18T00:40:00.000Z</published>
-    <updated>2021-02-06T15:40:24.076Z</updated>
+    <updated>2021-02-07T13:53:55.003Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>数据和特征，往往决定了结果的上限；</p><p>而算法和优化通常是为了接近这个上限。</p></blockquote><a id="more"></a><h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2>]]></content>
     
@@ -116,9 +116,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
       <category term="Linux" scheme="http://www.dyngq.top/tags/Linux/"/>
+    
+      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
     
   </entry>
   
@@ -142,9 +142,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
-    
       <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
+    
+      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
     
   </entry>
   
@@ -269,6 +269,34 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>恶意代码分析 - malware analysis</title>
+    <link href="http://www.dyngq.top/1996/01/01/%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>http://www.dyngq.top/1996/01/01/恶意代码分析/</id>
+    <published>1996-01-01T00:40:00.000Z</published>
+    <updated>2021-02-07T14:27:53.046Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>恶意代码分析与检测</p></blockquote><h2 id="0x00-PE文件结构"><a href="#0x00-PE文件结构" class="headerlink" title="0x00 PE文件结构"></a>0x00 PE文件结构</h2><h2 id="0x01-静态分析"><a href="#0x01-静态分析" class="headerlink" title="0x01 静态分析"></a>0x01 静态分析</h2><h3 id="1-常用工具"><a href="#1-常用工具" class="headerlink" title="1. 常用工具"></a>1. 常用工具</h3><ul><li>SdutyPE </li><li>PEID</li><li>PEView</li><li>IDA Pro</li></ul><h3 id="2-动态链接库"><a href="#2-动态链接库" class="headerlink" title="2. 动态链接库"></a>2. 动态链接库</h3><p>注意一些常用的动态链接库，比如</p><ul><li><em>ws2_32</em>.<em>dll</em>是Windows Sockets应用程序接口， 用于支持Internet和网络应用程序。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;恶意代码分析与检测&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;0x00-PE文件结构&quot;&gt;&lt;a href=&quot;#0x00-PE文件结构&quot; class=&quot;headerlink&quot; title=&quot;0x00 PE文件结构&quot;&gt;&lt;/a&gt;0x00 PE文件
+      
+    
+    </summary>
+    
+      <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
+    
+    
+      <category term="Reverse" scheme="http://www.dyngq.top/tags/Reverse/"/>
     
   </entry>
   
