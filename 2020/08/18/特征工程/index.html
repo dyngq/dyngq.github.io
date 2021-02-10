@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193902.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193904.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210182028.png">
-<meta property="og:updated_time" content="2021-02-10T13:25:00.685Z">
+<meta property="og:updated_time" content="2021-02-10T13:59:36.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征工程 &amp; word2vector &amp; L1 L2 正则 &amp; (Batch) Normalization">
 <meta name="twitter:description" content="数据和特征，往往决定了结果的上限； 而算法和优化通常是为了接近这个上限。">
@@ -523,7 +523,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">4.1k</span>
+              <span title="本文字数">4.2k</span>
             </span>
           
 
@@ -664,6 +664,7 @@ S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<st
 <p>NEG不使用复杂的哈夫曼树，而是使用<strong>随机负采样</strong>，大幅度提高性能</p>
 <p>NCE 细节有点复杂，本质上是利用已知的概率密度函数来估计未知的概率密度函数。简单来说，如果已知概率密度X，未知Y，如果知道X和Y的关系，Y也就求出来了。</p>
 <p>在训练的时候，需要给正例和负例。Hierarchical Softmax是把负例放在二叉树的根节点上，而NEG，是随机挑选一些负例。</p>
+<p>负采样的本质：每次让一个训练样本只更新部分权重，其他权重全部固定；减少计算量；（一定程度上还可以增加随机性）</p>
 </blockquote>
 <p>样本少了，逻辑回归，似然函数，随机梯度上升</p>
 <h2 id="0x04-L1范数，L2范数-【-】"><a href="#0x04-L1范数，L2范数-【-】" class="headerlink" title="0x04 L1范数，L2范数 【!】"></a>0x04 L1范数，L2范数 【!】</h2><p>范数 通用公式：</p>
