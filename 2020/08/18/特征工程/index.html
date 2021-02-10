@@ -112,8 +112,8 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210210211742.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210194143.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210195245.png">
-<meta property="og:image" content="d:/Pictures/markdown.img/image-20210210211448210.png">
-<meta property="og:image" content="d:/Pictures/markdown.img/image-20210210211505585.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210210220557.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210210220601.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210211027.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210203254.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210203338.png">
@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193902.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193904.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210182028.png">
-<meta property="og:updated_time" content="2021-02-10T13:59:36.531Z">
+<meta property="og:updated_time" content="2021-02-10T14:07:05.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征工程 &amp; word2vector &amp; L1 L2 正则 &amp; (Batch) Normalization">
 <meta name="twitter:description" content="数据和特征，往往决定了结果的上限； 而算法和优化通常是为了接近这个上限。">
@@ -555,7 +555,7 @@
 <p>不适合：决策树类（信息增益比 与是否归一化无关） </p>
 </blockquote>
 <h3 id="1-1-归一化"><a href="#1-1-归一化" class="headerlink" title="1-1 归一化"></a>1-1 归一化</h3><ol>
-<li><p>等比缩放 $x^{’} =\frac{x-min(x)}{x_{max}-x_{min}},x\in[0,1]$</p>
+<li><p>等比缩放 ${x^{’} =\frac{x-min(x)}{x_{max}-x_{min}},x\in[0,1]}$</p>
 </li>
 <li><p>均值归一化 mean normalization $x^{’} =\frac{x-mean(x)}{x_{max}-x_{min}}, x\in[-1,1]$ </p>
 </li>
@@ -650,8 +650,8 @@ z = \frac{x-\mu}{\sigma}</script></li>
 <script type="math/tex; mode=display">
 S(x) = \frac{1}{1+e^{-x_{}}}</script><p><strong>softmax</strong> 又称归一化指数函数:</p>
 <script type="math/tex; mode=display">
-S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<strong>伯努利分布</strong><img src="D:\Pictures\markdown.img\image-20210210211448210.png" alt="image-20210210211448210"></p>
-<p>而Softmax输出的是<strong>多项分布</strong> <img src="D:\Pictures\markdown.img\image-20210210211505585.png" alt="image-20210210211505585"></p>
+S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<strong>伯努利分布</strong><img src="https://img.dyngq.top/images/20210210220557.png" alt="image-20210210211448210" style="zoom:80%;"></p>
+<p>而Softmax输出的是<strong>多项分布</strong> <img src="https://img.dyngq.top/images/20210210220601.png" alt="image-20210210211505585" style="zoom: 80%;"></p>
 <p>同样都是<strong>二分类</strong>的情况下，两者时<strong>等价</strong>的，</p>
 <p>有人说sigmoid会输出两个值，但是这两个值只是两次结果而已，不具有可加性，而且，应该是网络的设计问题，sigmoid的全连接只需要(n,1)即可，那就只有一个值了，而softmax需要(n, 2)，输出两个值。</p>
 <p><img src="https://img.dyngq.top/images/20210210211027.png" alt="image-20210210211024273"></p>
