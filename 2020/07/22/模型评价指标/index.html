@@ -118,7 +118,7 @@
 <meta property="og:image" content="d:/Pictures/markdown.img/image-20210212213607844.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210211010031.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210211010046.png">
-<meta property="og:updated_time" content="2021-02-12T13:36:11.216Z">
+<meta property="og:updated_time" content="2021-02-23T16:03:51.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模型评价">
 <meta name="twitter:description" content="常用的模型评价指标以及他们的一些问题">
@@ -514,7 +514,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.5k</span>
+              <span title="本文字数">2.8k</span>
             </span>
           
 
@@ -639,8 +639,13 @@ TPR = \frac{TP}{P} = \frac{TP}{TP + FN}</script></li>
 </ul>
 </li>
 <li><p>标准差 SD </p>
+</li>
+<li><p>马修斯相关系数 —- <strong>MCC</strong></p>
 <ul>
-<li></li>
+<li><script type="math/tex; mode=display">
+MCC = \frac{TP*TN-TP*FN}{\sqrt{(TP+FP)*(TP+FN)*(TN+FP)*(TN+FN)} }</script></li>
+<li><p>“马修斯相关系数 —- MCC 主要用于衡量二分类问题，其综合考虑了 TP TN, FP , FN， 是一个比较均衡的指标， 对于样本不均衡情况下也可以使用。MCC的取值范围在 <strong>[-1, 1]</strong>， 取值为1 表示预测与实际完全一致， 取值为0表示预测的结果还不如随机预测的结果， -1 表示预测结果与实际的结果完全不一致。因此我们看到， MCC 本质上描述了预测结果与实际结果之间的相关系数。”</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1107,7 +1112,7 @@ TPR = \frac{TP}{P} = \frac{TP}{TP + FN}</script></li>
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">25k</span>
   
 
   
