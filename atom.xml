@@ -74,9 +74,9 @@
     <link href="http://www.dyngq.top/2020/11/12/%E6%89%8B%E6%8E%A8SVM/"/>
     <id>http://www.dyngq.top/2020/11/12/手推SVM/</id>
     <published>2020-11-11T16:00:01.000Z</published>
-    <updated>2021-03-03T14:03:32.355Z</updated>
+    <updated>2021-03-03T14:06:49.616Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p><strong>间隔；对偶；核技巧；</strong></p><p>手推SVM；</p><p>整里SVM相关问题；</p></blockquote><a id="more"></a><p>Large-Margin Linear Classification</p><p>最大间隔线性分类器</p><h2 id="0x01-间隔"><a href="#0x01-间隔" class="headerlink" title="0x01 间隔"></a>0x01 间隔</h2><p>Quadratic Programming <strong>二次规划问题</strong></p><p>SVM的分类结果只与支持向量有关，除了支持向量以外，其他的系数均为0.</p><h2 id="0x02-对偶"><a href="#0x02-对偶" class="headerlink" title="0x02 对偶"></a>0x02 对偶</h2><h2 id="0x03-核技巧"><a href="#0x03-核技巧" class="headerlink" title="0x03 核技巧"></a>0x03 核技巧</h2><p>把输入数据<strong>映射</strong>到一个新的(更<strong>高维</strong>)的特征空间，本质思想类似于加入<strong>非线性</strong></p><p>具体实现在于将原公式中的内积替换成<strong>核函数</strong></p><p><img src="https://img.dyngq.top/images/20210303171622.png" alt="image-20210303171620564" style="zoom: 25%;"></p><p><strong>RBF</strong></p><p><img src="https://img.dyngq.top/images/20210303174004.png" alt="image-20210303174002791" style="zoom:25%;"></p><p><strong>SMO</strong></p><p>QP问题最坏时间复杂度为$O(N_{3})$，我们要做的就是利用优化算法尽量避免最坏时间复杂度。</p><p><img src="https://img.dyngq.top/images/20210303180741.png" alt="image-20210303180740172" style="zoom:33%;"></p><p>合页损失，随机SVM</p><p>合页损失 hinge loss，看起来比较像relu，$max{0, 1-y_{i}(\omega·x+b)}$</p><p><img src="D:\Pictures\markdown.img\image-20210303191721173.png" alt="image-20210303191721173"><img src="D:\Pictures\markdown.img\image-20210303191729994.png" alt="image-20210303191729994"><img src="D:\Pictures\markdown.img\image-20210303191738649.png" alt="image-20210303191738649"></p><p><img src="D:\Pictures\markdown.img\image-20210303191801718.png" alt="image-20210303191801718"></p><p>纪念一下2021年大年初一。</p><p><img src="https://img.dyngq.top/images/20210212003919.png" alt="image-20210212003914235" style="zoom:25%;"></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p><strong>间隔；对偶；核技巧；</strong></p><p>手推SVM；</p><p>整里SVM相关问题；</p></blockquote><a id="more"></a><p>Large-Margin Linear Classification</p><p>最大间隔线性分类器</p><h2 id="0x01-间隔"><a href="#0x01-间隔" class="headerlink" title="0x01 间隔"></a>0x01 间隔</h2><p>Quadratic Programming <strong>二次规划问题</strong></p><p>SVM的分类结果只与支持向量有关，除了支持向量以外，其他的系数均为0. 这也是SVM高效的原因。</p><h2 id="0x02-对偶"><a href="#0x02-对偶" class="headerlink" title="0x02 对偶"></a>0x02 对偶</h2><h2 id="0x03-核技巧"><a href="#0x03-核技巧" class="headerlink" title="0x03 核技巧"></a>0x03 核技巧</h2><p>把输入数据<strong>映射</strong>到一个新的(更<strong>高维</strong>)的特征空间，本质思想类似于加入<strong>非线性</strong></p><p>具体实现在于将原公式中的内积替换成<strong>核函数</strong></p><p><img src="https://img.dyngq.top/images/20210303171622.png" alt="image-20210303171620564" style="zoom: 25%;"></p><p><strong>RBF</strong></p><p><img src="https://img.dyngq.top/images/20210303174004.png" alt="image-20210303174002791" style="zoom:25%;"></p><h2 id="0x04-SMO"><a href="#0x04-SMO" class="headerlink" title="0x04 SMO"></a>0x04 SMO</h2><p>QP问题最坏时间复杂度为$O(N_{3})$，我们要做的就是利用优化算法尽量避免最坏时间复杂度。</p><p><img src="https://img.dyngq.top/images/20210303180741.png" alt="image-20210303180740172" style="zoom:33%;"></p><p>合页损失，随机SVM</p><p>合页损失 hinge loss，看起来比较像relu，$max{0, 1-y_{i}(\omega·x+b)}$</p><p><img src="D:\Pictures\markdown.img\image-20210303191721173.png" alt="image-20210303191721173"><img src="D:\Pictures\markdown.img\image-20210303191729994.png" alt="image-20210303191729994"><img src="D:\Pictures\markdown.img\image-20210303191738649.png" alt="image-20210303191738649"></p><p><img src="D:\Pictures\markdown.img\image-20210303191801718.png" alt="image-20210303191801718"></p><p>最后这一部分比较乱，大体理解SMO思想即可。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol><li><a href="https://www.bilibili.com/video/BV1oJ411U7Y8?p=4" target="_blank" rel="noopener">猫都能看懂的SVM【从概念理解、优化方法到代码实现】</a></li><li><a href="https://www.bilibili.com/video/BV1Hs411w7ci?p=4&amp;t=8" target="_blank" rel="noopener">机器学习-白板推导系列(六)-支持向量机SVM（Support Vector Machine）</a></li><li></li></ol>]]></content>
     
     <summary type="html">
     
@@ -191,9 +191,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
       <category term="Linux" scheme="http://www.dyngq.top/tags/Linux/"/>
+    
+      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
     
   </entry>
   
@@ -217,9 +217,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
-    
       <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
+    
+      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
     
   </entry>
   

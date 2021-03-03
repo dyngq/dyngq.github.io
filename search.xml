@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[手推SVM]]></title>
     <url>%2F2020%2F11%2F12%2F%E6%89%8B%E6%8E%A8SVM%2F</url>
-    <content type="text"><![CDATA[间隔；对偶；核技巧； 手推SVM； 整里SVM相关问题； Large-Margin Linear Classification 最大间隔线性分类器 0x01 间隔Quadratic Programming 二次规划问题 SVM的分类结果只与支持向量有关，除了支持向量以外，其他的系数均为0. 0x02 对偶0x03 核技巧把输入数据映射到一个新的(更高维)的特征空间，本质思想类似于加入非线性 具体实现在于将原公式中的内积替换成核函数 RBF SMO QP问题最坏时间复杂度为$O(N_{3})$，我们要做的就是利用优化算法尽量避免最坏时间复杂度。 合页损失，随机SVM 合页损失 hinge loss，看起来比较像relu，$max{0, 1-y_{i}(\omega·x+b)}$ 纪念一下2021年大年初一。]]></content>
+    <content type="text"><![CDATA[间隔；对偶；核技巧； 手推SVM； 整里SVM相关问题； Large-Margin Linear Classification 最大间隔线性分类器 0x01 间隔Quadratic Programming 二次规划问题 SVM的分类结果只与支持向量有关，除了支持向量以外，其他的系数均为0. 这也是SVM高效的原因。 0x02 对偶0x03 核技巧把输入数据映射到一个新的(更高维)的特征空间，本质思想类似于加入非线性 具体实现在于将原公式中的内积替换成核函数 RBF 0x04 SMOQP问题最坏时间复杂度为$O(N_{3})$，我们要做的就是利用优化算法尽量避免最坏时间复杂度。 合页损失，随机SVM 合页损失 hinge loss，看起来比较像relu，$max{0, 1-y_{i}(\omega·x+b)}$ 最后这一部分比较乱，大体理解SMO思想即可。 参考资料 猫都能看懂的SVM【从概念理解、优化方法到代码实现】 机器学习-白板推导系列(六)-支持向量机SVM（Support Vector Machine）]]></content>
       <categories>
         <category>AI</category>
       </categories>
@@ -76,8 +76,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Linux</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>
@@ -88,8 +88,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Sec</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
