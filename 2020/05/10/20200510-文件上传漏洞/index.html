@@ -100,18 +100,34 @@
   };
 </script>
 
-  <meta name="description" content="树类模型的发展与总结">
-<meta name="keywords" content="ML">
+  <meta name="description" content="简单总结一下文件上传漏洞的一些绕过姿势与防御；">
+<meta name="keywords" content="Sec">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从决策树，随机森林，到XGBoost">
-<meta property="og:url" content="http://www.dyngq.top/2020/10/01/20201001-从决策树，随机森林，到XGBoost/index.html">
+<meta property="og:title" content="文件上传漏洞">
+<meta property="og:url" content="http://www.dyngq.top/2020/05/10/20200510-文件上传漏洞/index.html">
 <meta property="og:site_name" content="dyngq">
-<meta property="og:description" content="树类模型的发展与总结">
+<meta property="og:description" content="简单总结一下文件上传漏洞的一些绕过姿势与防御；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-04T12:12:07.134Z">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222038.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304221530.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222619.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222612.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222607.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222602.png">
+<meta property="og:image" content="d:/Pictures/markdown.img/image-20200515222358315.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222557.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222553.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222544.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222736.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222746.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222748.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222750.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210304222753.png">
+<meta property="og:updated_time" content="2021-03-04T14:28:45.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
-<meta name="twitter:description" content="树类模型的发展与总结">
+<meta name="twitter:title" content="文件上传漏洞">
+<meta name="twitter:description" content="简单总结一下文件上传漏洞的一些绕过姿势与防御；">
+<meta name="twitter:image" content="https://img.dyngq.top/images/20210304222038.png">
 
 
 
@@ -119,7 +135,7 @@
 
   
   
-  <link rel="canonical" href="http://www.dyngq.top/2020/10/01/20201001-从决策树，随机森林，到XGBoost/">
+  <link rel="canonical" href="http://www.dyngq.top/2020/05/10/20200510-文件上传漏洞/">
 
 
 
@@ -130,7 +146,7 @@
 </script>
 
   
-  <title>从决策树，随机森林，到XGBoost | dyngq</title>
+  <title>文件上传漏洞 | dyngq</title>
   
 
 
@@ -403,7 +419,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2020/10/01/20201001-从决策树，随机森林，到XGBoost/">
+    <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2020/05/10/20200510-文件上传漏洞/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dyngq_kang">
@@ -420,7 +436,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从决策树，随机森林，到XGBoost
+          <h1 class="post-title" itemprop="name headline">文件上传漏洞
 
               
             
@@ -447,7 +463,7 @@
                 
               
 
-              <time title="创建时间：2020-10-01 00:00:01" itemprop="dateCreated datePublished" datetime="2020-10-01T00:00:01+08:00">2020-10-01</time>
+              <time title="创建时间：2020-05-10 13:23:00" itemprop="dateCreated datePublished" datetime="2020-05-10T13:23:00+08:00">2020-05-10</time>
             </span>
           
 
@@ -462,7 +478,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Sec/" itemprop="url" rel="index"><span itemprop="name">Sec</span></a></span>
 
                 
                 
@@ -480,8 +496,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2020/10/01/20201001-从决策树，随机森林，到XGBoost/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/10/01/20201001-从决策树，随机森林，到XGBoost/" itemprop="commentCount"></span>
+                <a href="/2020/05/10/20200510-文件上传漏洞/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/10/20200510-文件上传漏洞/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -503,7 +519,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">10</span>
+              <span title="本文字数">1k</span>
             </span>
           
 
@@ -525,9 +541,85 @@
 
       
         <blockquote>
-<p>树类模型的发展与总结</p>
+<p>简单总结一下文件上传漏洞的一些绕过姿势与防御；</p>
 </blockquote>
 <a id="more"></a>
+<p>题库：<a href="https://github.com/c0ny1/upload-labs" target="_blank" rel="noopener">https://github.com/c0ny1/upload-labs</a></p>
+<p>综述：<a href="https://zhuanlan.zhihu.com/p/259985000" target="_blank" rel="noopener">Webshell研究综述-阿里云能力建设团队</a></p>
+<h2 id="0x00-漏洞简介"><a href="#0x00-漏洞简介" class="headerlink" title="0x00 漏洞简介"></a>0x00 漏洞简介</h2><p>存在条件</p>
+<ol>
+<li>存在上传点</li>
+<li>可以上传动态文件</li>
+<li>上传目录有执行权限，并且上传的文件可执行</li>
+<li>可访问到上传的动态文件</li>
+</ol>
+<p><img src="https://img.dyngq.top/images/20210304222038.png" alt="image-20210304222036807"></p>
+<h2 id="0x01-基本姿势"><a href="#0x01-基本姿势" class="headerlink" title="0x01 基本姿势"></a>0x01 基本姿势</h2><ul>
+<li>基本的服务端检测包括MIME检测等，此类可以通过抓包修改等简单绕过</li>
+<li>内容过滤，可以考虑copy命令合并图片和脚本</li>
+<li>强混淆<ul>
+<li><a href="https://github.com/sunge/Weevely" target="_blank" rel="noopener">https://github.com/sunge/Weevely</a></li>
+</ul>
+</li>
+<li>Webshell收集项目<ul>
+<li><a href="https://github.com/tennc/webshell" target="_blank" rel="noopener">https://github.com/tennc/webshell</a></li>
+</ul>
+</li>
+<li>多个filename</li>
+<li>目录穿越             ../../../         .././.././../ (./是为了防止../../被过滤)</li>
+<li>解析漏洞 首先根据指纹确定中间件的版本<ul>
+<li>确定是否存在00阶段类型的漏洞</li>
+</ul>
+</li>
+</ul>
+<h2 id="0x02-高级姿势"><a href="#0x02-高级姿势" class="headerlink" title="0x02 高级姿势"></a>0x02 高级姿势</h2><ol>
+<li>重绘图<ul>
+<li>找到不被转换的部分</li>
+<li><a href="https://github.com/RickGray/Bypass-PHP-GD-Process-To-RCE" target="_blank" rel="noopener">https://github.com/RickGray/Bypass-PHP-GD-Process-To-RCE</a></li>
+</ul>
+</li>
+<li>文件包含与PHPINFO<ul>
+<li><a href="https://github.com/hxer/vulnapp.git" target="_blank" rel="noopener">https://github.com/hxer/vulnapp.git</a></li>
+</ul>
+</li>
+<li>在线解压缩漏洞<ul>
+<li>webshell解压到网站目录（可使用../目录穿越）</li>
+<li>文件软链接的方式，将根目录等敏感目录软连接到自己的文件，之后将软链接压缩上传</li>
+<li><img src="https://img.dyngq.top/images/20210304221530.png" alt="image-20210304221528581"></li>
+</ul>
+</li>
+</ol>
+<h2 id="0x03-防御"><a href="#0x03-防御" class="headerlink" title="0x03 防御"></a>0x03 防御</h2><p><img src="https://img.dyngq.top/images/20210304222619.png" alt="image-20210304222127470"></p>
+<h2 id="0x04-一些CTF题目"><a href="#0x04-一些CTF题目" class="headerlink" title="0x04 一些CTF题目"></a>0x04 一些CTF题目</h2><h3 id="4-1-weekly-ctf-07-00截断"><a href="#4-1-weekly-ctf-07-00截断" class="headerlink" title="4-1 weekly-ctf-07 00截断"></a>4-1 weekly-ctf-07 00截断</h3><p>首先，这个问题的难点在于不只是后缀验证一次，</p>
+<ol>
+<li>上传的时候必须是jpg png gif，就是下图的灰色箭头；content-type倒是不重要</li>
+<li>红色箭头的路径会和你的文件名进行一次拼接，拼接之后再进行一次检测，这次要求你必须是php后缀</li>
+<li>所以解决办法只能是让地址生效，拼接后后面的地方失效</li>
+</ol>
+<p>这个题的重点在于这个文件路径是可控的</p>
+<p><img src="https://img.dyngq.top/images/20210304222612.png" alt="image-20200515221430265" style="zoom:50%;"></p>
+<p>那关键点就在这儿了，如何操作让a.php后边拼接部分失效呢，最简单的就是最流行的00截断法，这个要在16进制界面更改，下图2</p>
+<p><img src="https://img.dyngq.top/images/20210304222607.png" alt="image-20200515221950885" style="zoom:50%;"></p>
+<p><img src="https://img.dyngq.top/images/20210304222602.png" alt="image-20200515222415720" style="zoom:50%;"></p>
+<p>这一行的0d 0a是什么意思呢</p>
+<p><img src="D:\Pictures\markdown.img\image-20200515222358315.png" alt="image-20200515222358315"></p>
+<p>所以要留空，留一个字符，可以是空格等</p>
+<p><img src="https://img.dyngq.top/images/20210304222557.png" alt="image-20200515222654609" style="zoom:50%;"></p>
+<p><img src="https://img.dyngq.top/images/20210304222553.png" alt="image-20200515222714987" style="zoom:50%;"></p>
+<p>只需要把留空的字符改为00，forward一下就可以出flag了</p>
+<p><img src="https://img.dyngq.top/images/20210304222544.png" alt="image-20200515222811594" style="zoom: 50%;"></p>
+<h3 id="4-2-任意上传-JS形式一句话-菜刀使用"><a href="#4-2-任意上传-JS形式一句话-菜刀使用" class="headerlink" title="4-2 任意上传 JS形式一句话 菜刀使用"></a>4-2 任意上传 JS形式一句话 菜刀使用</h3><p><img src="https://img.dyngq.top/images/20210304222736.png" alt="image-20200525192531360" style="zoom: 80%;"></p>
+<p><img src="https://img.dyngq.top/images/20210304222746.png" alt="image-20200525193041272"></p>
+<p><img src="https://img.dyngq.top/images/20210304222748.png" alt="image-20200525193156651"></p>
+<p><img src="https://img.dyngq.top/images/20210304222750.png" alt="image-20200525192402433"></p>
+<p><img src="https://img.dyngq.top/images/20210304222753.png" alt="image-20200525193030249"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/259985000" target="_blank" rel="noopener">Webshell研究综述-阿里云能力建设团队</a></li>
+<li><a href="https://blog.csdn.net/zpy1998zpy/article/details/80545408" target="_blank" rel="noopener">关于00截断原理的一些思考</a></li>
+<li><a href="https://xz.aliyun.com/t/3937" target="_blank" rel="noopener">利用htaccess绕黑名单，mail绕过disable function</a></li>
+<li><a href="https://xz.aliyun.com/t/1189/" target="_blank" rel="noopener">文件包含漏洞(绕过姿势)</a></li>
+<li><a href="https://blog.51cto.com/0x007/1694928" target="_blank" rel="noopener">文件上传之黑名单验证绕过</a></li>
+</ol>
 
       
     </div>
@@ -582,7 +674,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/ML/" rel="tag"># ML</a>
+            <a href="/tags/Sec/" rel="tag"># Sec</a>
           
         </div>
       
@@ -595,8 +687,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/10/01/20210304-人工智能赋能安全应用案例集(相关资料分享)/" rel="next" title="20210304-人工智能赋能安全应用案例集(相关资料分享)">
-                <i class="fa fa-chevron-left"></i> 20210304-人工智能赋能安全应用案例集(相关资料分享)
+              <a href="/2020/04/08/20200408-Linux-权限总结/" rel="next" title="Linux 权限简析">
+                <i class="fa fa-chevron-left"></i> Linux 权限简析
               </a>
             
           </div>
@@ -605,8 +697,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/10/23/20201023-My First SCI - An Intrusion Detection Method Based on Decision Tree-Recursive Feature Elimination in Ensemble Learning/" rel="prev" title="My First SCI - An Intrusion Detection Method Based on Decision Tree-Recursive Feature Elimination in Ensemble Learning">
-                My First SCI - An Intrusion Detection Method Based on Decision Tree-Recursive Feature Elimination in Ensemble Learning <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/13/20200513-大数据相关整理/" rel="prev" title="大数据相关整理">
+                大数据相关整理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -655,8 +747,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -859,6 +960,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-漏洞简介"><span class="nav-number">1.</span> <span class="nav-text">0x00 漏洞简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-基本姿势"><span class="nav-number">2.</span> <span class="nav-text">0x01 基本姿势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-高级姿势"><span class="nav-number">3.</span> <span class="nav-text">0x02 高级姿势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-防御"><span class="nav-number">4.</span> <span class="nav-text">0x03 防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-一些CTF题目"><span class="nav-number">5.</span> <span class="nav-text">0x04 一些CTF题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-weekly-ctf-07-00截断"><span class="nav-number">5.1.</span> <span class="nav-text">4-1 weekly-ctf-07 00截断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-任意上传-JS形式一句话-菜刀使用"><span class="nav-number">5.2.</span> <span class="nav-text">4-2 任意上传 JS形式一句话 菜刀使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top motion-element">
@@ -1033,46 +1151,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

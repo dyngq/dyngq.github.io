@@ -8,8 +8,8 @@
         <category>AI</category>
       </categories>
       <tags>
-        <tag>AI</tag>
         <tag>CNN</tag>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
@@ -55,6 +55,17 @@
       </categories>
       <tags>
         <tag>ML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[20210304-人工智能赋能安全应用案例集(相关资料分享)]]></title>
+    <url>%2F2020%2F10%2F01%2F20210304-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%B5%8B%E8%83%BD%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B%E9%9B%86(%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB)%2F</url>
+    <content type="text"><![CDATA[分享一些最近看到的相关资料 人工智能赋能安全应用案例集.pdf 人工智能安全白皮书2020.pdf AI安全白皮书-华为-ai-security-white-paper-cn.pdf 404师傅经典项目：https://github.com/404notf0und/AI-for-Security-Learning 人工智能赋能安全应用案例集]]></content>
+      <categories>
+        <category>Sec</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
@@ -135,6 +146,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[文件上传漏洞]]></title>
+    <url>%2F2020%2F05%2F10%2F20200510-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%2F</url>
+    <content type="text"><![CDATA[简单总结一下文件上传漏洞的一些绕过姿势与防御； 题库：https://github.com/c0ny1/upload-labs 综述：Webshell研究综述-阿里云能力建设团队 0x00 漏洞简介存在条件 存在上传点 可以上传动态文件 上传目录有执行权限，并且上传的文件可执行 可访问到上传的动态文件 0x01 基本姿势 基本的服务端检测包括MIME检测等，此类可以通过抓包修改等简单绕过 内容过滤，可以考虑copy命令合并图片和脚本 强混淆 https://github.com/sunge/Weevely Webshell收集项目 https://github.com/tennc/webshell 多个filename 目录穿越 ../../../ .././.././../ (./是为了防止../../被过滤) 解析漏洞 首先根据指纹确定中间件的版本 确定是否存在00阶段类型的漏洞 0x02 高级姿势 重绘图 找到不被转换的部分 https://github.com/RickGray/Bypass-PHP-GD-Process-To-RCE 文件包含与PHPINFO https://github.com/hxer/vulnapp.git 在线解压缩漏洞 webshell解压到网站目录（可使用../目录穿越） 文件软链接的方式，将根目录等敏感目录软连接到自己的文件，之后将软链接压缩上传 0x03 防御 0x04 一些CTF题目4-1 weekly-ctf-07 00截断首先，这个问题的难点在于不只是后缀验证一次， 上传的时候必须是jpg png gif，就是下图的灰色箭头；content-type倒是不重要 红色箭头的路径会和你的文件名进行一次拼接，拼接之后再进行一次检测，这次要求你必须是php后缀 所以解决办法只能是让地址生效，拼接后后面的地方失效 这个题的重点在于这个文件路径是可控的 那关键点就在这儿了，如何操作让a.php后边拼接部分失效呢，最简单的就是最流行的00截断法，这个要在16进制界面更改，下图2 这一行的0d 0a是什么意思呢 所以要留空，留一个字符，可以是空格等 只需要把留空的字符改为00，forward一下就可以出flag了 4-2 任意上传 JS形式一句话 菜刀使用 参考资料 Webshell研究综述-阿里云能力建设团队 关于00截断原理的一些思考 利用htaccess绕黑名单，mail绕过disable function 文件包含漏洞(绕过姿势) 文件上传之黑名单验证绕过]]></content>
+      <categories>
+        <category>Sec</category>
+      </categories>
+      <tags>
+        <tag>Sec</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 权限简析]]></title>
     <url>%2F2020%2F04%2F08%2F20200408-Linux-%E6%9D%83%E9%99%90%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[基本原理 加权限 chmod u+rwx,g+rwx,o+rwx file 减权限 chmod u+rwx,g+rwx,o+rwx file a代表u+g+o，chmod a+rwx file + 表示增加权限、- 表示取消权限、= 表示唯一设定权限。 其他参数 -c : 若该文件权限确实已经更改，才显示其更改动作 -f : 若该文件权限无法被更改也不要显示错误讯息 -v : 显示权限变更的详细资料 -R : 对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更) —help : 显示辅助说明 —version : 显示版本 ALL 文件所有者 用户组 其它用户 a u g o all user group other 特殊权限 rwx 读写执行 … X 特殊执行权限 只有当文件为目录文件，或者其他类型的用户有可执行权限时，才将文件权限设置可执行 s setuid/gid 当文件被执行时，根据who参数指定的用户类型设置文件的setuid或者setgid权限 t 粘贴位 设置粘贴位，只有超级用户可以设置该位，只有文件所有者u可以使用该位 查看权限 ls -la 第一位 d 代表文件夹 ./ 代表当前目录 ../代表父目录 八进制 快捷表示 根据 3位 二进制 来一一对应 # 权限 rwx 二进制 7 读 + 写 + 执行 rwx 111 6 读 + 写 rw- 110 5 读 + 执行 r-x 101 4 只读 r— 100 3 写 + 执行 -wx 011 2 只写 -w- 010 1 只执行 —x 001 0 无 —- 000 777 : rwxrwxrwx : ugo (a) 755 : rwx 实际操作 参考链接 Linux chmod命令 inode-wiki]]></content>
@@ -212,8 +234,8 @@
         <category>AI</category>
       </categories>
       <tags>
-        <tag>AI</tag>
         <tag>CNN</tag>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
