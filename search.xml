@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[手撕BackPropagation (BP_Neural_Network)]]></title>
-    <url>%2F2020%2F11%2F21%2F%E6%89%8B%E6%92%95BackPropagation-BP-Neural-Network%2F</url>
+    <url>%2F2020%2F12%2F12%2F%E6%89%8B%E6%92%95BackPropagation-BP-Neural-Network%2F</url>
     <content type="text"><![CDATA[深度学习基础；反向传播； 手撕一下推导过程。 0x00 BP神经网络结构 输入层，隐藏层（神经元）*，输出层。 一种简单的示例结构: 其实理解神经网络的计算过程，计算图是最合适的。参考[2] 0x01 梯度&amp;链式法则梯度 神经网络常常采用随机梯度下降的方法，来使得损失降低，参数逼近最优解。 所以，梯度是什么？ 损失函数对参数的导数 {\frac{∂C_{}}{∂w_{1}}}、{\frac{∂C_{}}{∂b_{1}}}、{\frac{∂C_{}}{∂w_{2}}}、{\frac{∂C_{}}{∂b_{2}}}、... 参数的梯度乘以学习率就是该参数所需要更新(+/-)的值。 链式法则 微积分的重要定理，示例如下 0x02 整体流程 正向传播，根据input计算出output，与此同时呢，会计算和记录当前的中间变量，以便反向传播时不必重复计算。 根据损失函数计算误差，记为 C (cost)。 反向传播，反向计算并记录，以便更新每一层的权重， θ = \{w_1,b_1,w_2,b_2,...,w_{n-1},b_{n-1},w_{n},b_{n}\} w^1 = w^0-lr*{\frac{∂C_{}}{∂w_{1}}} b^1 = b^0-lr*{\frac{∂C_{}}{∂b_{0}}}其中，lr是自定义的学习率。所以问题就是求参数对损失函数的微分，这一步就需要使用求微分的链式法则。 如图一所示，我们要求w1对C的偏导，就需要根据路径，根据计算图，链式的去求解。 {\frac{∂C_{}}{∂w_{1}}} = {\frac{∂C_{}}{∂w_{1}}}但其实这更容易被理解成正向传播，所以我个人喜欢这么表示（具体原因下一部分会讲）: {\frac{∂C_{}}{∂w_{1}}} = {\frac{∂C_{}}{∂w_{1}}} 现代神经网络一般分为两步，求梯度，梯度更新。(参考[3]) 以pytorch举例 loss.backward() 反向传播 backward()会根据tensor的requires_grad属性（true\false）计算梯度。 其他需要的数据在forward时已经存储。 optimizer.step() 优化器更新参数。 以下部分将进行详细说明 正向传播首先，我们需要知道，直接正向传播来求，可不可以 在某种意义上是可以的，只要运算完成，根据存储的大量中间量以及最终结果，运用链式法则肯定是可以算的，那为什么还需要反向传播呢。 首先来看正向传播怎么算，这里把网络加一层 下边两个图都展示了，正向传播直接计算的话，中间变量重复性极大，每次都要计算的这些重复算式的话，计算量冗余太大，这就是正向传播，类似于正向搜索的弊端。 反向传播 因为正向传播的缺点，所以要介绍反向传播的解决方式 反向传播，从根传点往回传，每个结点内求和后继续传，直到叶结点停止，叶结点的值内求和即为梯度。 单个纯手推 那么另外，为什么需要正向传播记录的中间变量，也就是一些中间输出值呢。 图-6.2中李宏毅老师表示的比较清楚，计算梯度需要两部分，${\frac{∂C_{}}{∂w_{}}}={\frac{∂z_{}}{∂w_{}}}*{\frac{∂C_{}}{∂z_{}}}$；其中第一部分${\frac{∂z_{}}{∂w_{}}}$是需要正向传播过程中计算并且记录的，推导一下的话也就是一些中间输出；第二部分${\frac{∂C_{}}{∂z_{}}}$才是反向传播中计算的。 通用推导 损失函数 训练的目的呢，就是要减小我们的训练误差，而误差呢，一般都是由自己定义或选择的一种函数，用来表示预测值与真实值之间的差距。 基于向量的反向传播 基于标量的推到可能还算简单，但是真正运用到实际的向量运算中可能就有麻烦了。这里我们以CS231n的课后作业举例，其比较具有代表性。 参考资料 如何直观地解释 backpropagation 算法？ - YE Y的回答 - 知乎 如何直观形象的理解方向导数与梯度以及它们之间的关系？ ∂x Δx dx？: 知乎 台大李宏毅！1. 李宏毅主页 2. Youtube]]></content>
       <categories>
         <category>AI</category>
@@ -28,6 +28,28 @@
     <title><![CDATA[手推SVM]]></title>
     <url>%2F2020%2F11%2F12%2F%E6%89%8B%E6%8E%A8SVM%2F</url>
     <content type="text"><![CDATA[间隔；对偶；核技巧； 手推SVM； 整里SVM相关问题； Large-Margin Linear Classification 最大间隔线性分类器 决策函数为 $f(x) = sign(\omega^{}x+b^{})$ 推导过程因为本人写字习惯斜着，所以比较乱。对此表示抱歉。附录里会放一张整体的推导过程图片，比较清晰。 整体推导图 0x01 间隔1-1 硬间隔基本硬间隔的优化表示 展开 将后边部分缩放为1，再经过变形之后得到： 整理一下，原问题为： 带约束的不好优化，所以引入拉格朗日乘子 原问题就没有了w,b的约束，再因为原问题具有强对偶性，求解原问题等价于求解对偶问题，所以转化为对偶问题 下一步，利用凸优化的特性求解最小化的拉格朗如对偶问题 得到 最后结合KKT条件解除最终解 1-2 软间隔由于很多情况下数据集中存在噪声等情况，无法求解到最终解，所以引入了含有噪声的优化函数。 Quadratic Programming 二次规划问题 SVM的分类结果只与支持向量有关，除了支持向量以外，其他的系数均为0. 这也是SVM高效的原因。 0x02 拉格朗日对偶性目的在于不求解带有约束的原问题，通过引入拉格朗日乘子的方式来直接求解。第一节中已经说明，从label处开始。 0x03 核技巧把输入数据映射到一个新的(更高维)的特征空间，本质思想类似于加入非线性 具体实现在于将原公式中的内积替换成核函数 RBF 0x04 SMO 序列最小化优化QP问题最坏时间复杂度为$O(N_{3})$，我们要做的就是利用优化算法尽量避免最坏时间复杂度。 将原N的参数的问题分解为2个2个的子问题，直到全部满足KKT条件为止。 因为子问题存在解析解，所以就算子问题很多，整体上也是加速效果。 合页损失，随机SVM 合页损失 hinge loss，看起来比较像relu，$max{0, 1-y_{i}(\omega·x+b)}$ 最后这一部分比较乱，大体理解SMO思想即可。 参考资料 猫都能看懂的SVM【从概念理解、优化方法到代码实现】 机器学习-白板推导系列(六)-支持向量机SVM（Support Vector Machine） 附录整体推导过程]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[My First SCI - An Intrusion Detection Method Based on Decision Tree-Recursive Feature Elimination in Ensemble Learning]]></title>
+    <url>%2F2020%2F10%2F23%2FMy%20First%20SCI%20-%20An%20Intrusion%20Detection%20Method%20Based%20on%20Decision%20Tree-Recursive%20Feature%20Elimination%20in%20Ensemble%20Learning%2F</url>
+    <content type="text"><![CDATA[https://doi.org/10.1155/2020/2835023； An Intrusion Detection Method Based on Decision Tree-Recursive Feature Elimination in Ensemble Learning https://doi.org/10.1155/2020/2835023]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从决策树，随机森林，到XGBoost]]></title>
+    <url>%2F2020%2F10%2F01%2F%E4%BB%8E%E5%86%B3%E7%AD%96%E6%A0%91%EF%BC%8C%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%8C%E5%88%B0XGBoost%2F</url>
+    <content type="text"><![CDATA[树类模型的发展与总结]]></content>
       <categories>
         <category>AI</category>
       </categories>
@@ -71,7 +93,29 @@
   <entry>
     <title><![CDATA[不讲道理的BERT]]></title>
     <url>%2F2020%2F07%2F07%2F%E4%B8%8D%E8%AE%B2%E9%81%93%E7%90%86%E7%9A%84BERT%2F</url>
-    <content type="text"><![CDATA[不讲道理的BERT；]]></content>
+    <content type="text"><![CDATA[不管三七二十一直接上BERT的BERT；]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[恶意代码分析 - malware analysis]]></title>
+    <url>%2F2020%2F06%2F01%2F%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[恶意代码分析与检测 0x00 PE文件结构0x01 静态分析1. 常用工具 SdutyPE PEID PEView IDA Pro 2. 动态链接库注意一些常用的动态链接库，比如 ws2_32.dll是Windows Sockets应用程序接口， 用于支持Internet和网络应用程序。 0x02 动态分析]]></content>
+      <categories>
+        <category>Sec</category>
+      </categories>
+      <tags>
+        <tag>Reverse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从CNN，VGG，Inception，ResNet，到EfficientNet]]></title>
+    <url>%2F2020%2F05%2F20%2F%E4%BB%8ECNN%EF%BC%8Cvgg%EF%BC%8Cinception%EF%BC%8Cresnet%EF%BC%8C%E5%88%B0EfficientNet%2F</url>
+    <content type="text"><![CDATA[CNN类模型的发展与总结；]]></content>
       <categories>
         <category>AI</category>
       </categories>
@@ -87,8 +131,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Sec</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -99,8 +143,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Docker</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>
@@ -148,17 +192,6 @@
       </categories>
       <tags>
         <tag>dyngq</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[恶意代码分析 - malware analysis]]></title>
-    <url>%2F1996%2F01%2F01%2F%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[恶意代码分析与检测 0x00 PE文件结构0x01 静态分析1. 常用工具 SdutyPE PEID PEView IDA Pro 2. 动态链接库注意一些常用的动态链接库，比如 ws2_32.dll是Windows Sockets应用程序接口， 用于支持Internet和网络应用程序。]]></content>
-      <categories>
-        <category>Sec</category>
-      </categories>
-      <tags>
-        <tag>Reverse</tag>
       </tags>
   </entry>
 </search>
