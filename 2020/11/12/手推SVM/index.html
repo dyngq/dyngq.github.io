@@ -126,7 +126,7 @@
 <meta property="og:image" content="d:/Pictures/markdown.img/image-20210303191738649.png">
 <meta property="og:image" content="d:/Pictures/markdown.img/image-20210303191801718.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210304170729.png">
-<meta property="og:updated_time" content="2021-03-04T09:07:50.102Z">
+<meta property="og:updated_time" content="2021-03-04T09:10:02.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手推SVM">
 <meta name="twitter:description" content="间隔；对偶；核技巧； 手推SVM； 整里SVM相关问题；">
@@ -561,15 +561,15 @@
 <p>将后边部分缩放为1，再经过变形之后得到：</p>
 <p><img src="https://img.dyngq.top/images/20210304165304.png" alt="image-20210304165205054"></p>
 <p>整理一下，原问题为：</p>
-<p><img src="https://img.dyngq.top/images/20210304165307.png" alt="image-20210304165231998"></p>
+<p><img src="https://img.dyngq.top/images/20210304165307.png" alt="image-20210304165231998" style="zoom: 80%;"></p>
 <p>带约束的不好优化，所以引入拉格朗日乘子<span id="la"> </span></p>
-<p><img src="https://img.dyngq.top/images/20210304165356.png" alt="image-20210304165354347"></p>
+<p><img src="https://img.dyngq.top/images/20210304165356.png" alt="image-20210304165354347" style="zoom: 50%;"></p>
 <p>原问题就没有了w,b的约束，再因为原问题具有<strong>强对偶性</strong>，求解原问题等价于求解对偶问题，所以转化为对偶问题</p>
-<p><img src="https://img.dyngq.top/images/20210304165611.png" alt="image-20210304165607819"></p>
+<p><img src="https://img.dyngq.top/images/20210304165611.png" alt="image-20210304165607819" style="zoom:50%;"></p>
 <p>下一步，利用凸优化的特性求解最小化的拉格朗如对偶问题</p>
-<p><img src="https://img.dyngq.top/images/20210304165755.png" alt="image-20210304165740781"></p>
+<p><img src="https://img.dyngq.top/images/20210304165755.png" alt="image-20210304165740781" style="zoom:67%;"></p>
 <p>得到</p>
-<p><img src="https://img.dyngq.top/images/20210304165757.png" alt="image-20210304165753233"></p>
+<p><img src="https://img.dyngq.top/images/20210304165757.png" alt="image-20210304165753233" style="zoom:67%;"></p>
 <p>最后结合KKT条件解除最终解</p>
 <p><img src="https://img.dyngq.top/images/20210304165855.png" alt="image-20210304165852279"></p>
 <h3 id="1-2-软间隔"><a href="#1-2-软间隔" class="headerlink" title="1-2 软间隔"></a>1-2 软间隔</h3><p>由于很多情况下数据集中存在噪声等情况，无法求解到最终解，所以引入了含有噪声的优化函数。</p>
