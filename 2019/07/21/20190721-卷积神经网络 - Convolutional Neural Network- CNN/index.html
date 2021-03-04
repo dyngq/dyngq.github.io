@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1.gif?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="0x01 应用场景： 卷积神经网络是用于计算机视觉任务的最佳机器学习模型。即使在非常小的数据集上也可以从头开始训练一个卷积神经网络，而且得到的结果还不错。 用于图像分类问题。数据集越大越好（保证质量的前提下），但是CNN可以处理那些训练集较小的问题">
+<meta name="keywords" content="AI,CNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卷积神经网络 - Convolutional Neural Network- CNN">
+<meta property="og:url" content="http://www.dyngq.top/2019/07/21/20190721-卷积神经网络 - Convolutional Neural Network- CNN/index.html">
+<meta property="og:site_name" content="dyngq">
+<meta property="og:description" content="0x01 应用场景： 卷积神经网络是用于计算机视觉任务的最佳机器学习模型。即使在非常小的数据集上也可以从头开始训练一个卷积神经网络，而且得到的结果还不错。 用于图像分类问题。数据集越大越好（保证质量的前提下），但是CNN可以处理那些训练集较小的问题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151838.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151840.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151843.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151845.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151848.gif">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151850.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151855.gif">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151858.gif">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151901.gif">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151904.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151908.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151910.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151914.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151917.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151921.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151925.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904151927.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152103.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152119.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152120.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152123.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152130.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152132.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20200904152134.png">
+<meta property="og:updated_time" content="2021-02-06T12:30:11.996Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="卷积神经网络 - Convolutional Neural Network- CNN">
+<meta name="twitter:description" content="0x01 应用场景： 卷积神经网络是用于计算机视觉任务的最佳机器学习模型。即使在非常小的数据集上也可以从头开始训练一个卷积神经网络，而且得到的结果还不错。 用于图像分类问题。数据集越大越好（保证质量的前提下），但是CNN可以处理那些训练集较小的问题">
+<meta name="twitter:image" content="https://img.dyngq.top/images/20200904151838.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://www.dyngq.top/2019/07/21/20190721-卷积神经网络 - Convolutional Neural Network- CNN/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>卷积神经网络 - Convolutional Neural Network- CNN | dyngq</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6467e8e3fa2bec14b47b747aa2fa48ad";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dyngq</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle"><b>当信息安全遇上智能算法</b><br>❤dyngq💕kang❤</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-所有文章">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-list-ul"></i> <br>所有文章</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-摄影小站">
+
+    
+    
+      
+    
+
+    
+
+    <a href="https://life.dyngq.top" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br>摄影小站</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/dyngq" class="github-corner" title="dyngq-github" aria-label="dyngq-github" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.dyngq.top/2019/07/21/20190721-卷积神经网络 - Convolutional Neural Network- CNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dyngq_kang">
+      <meta itemprop="description" content="🌞但行好事，莫问前程🌈">
+      <meta itemprop="image" content="/images/dream.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dyngq">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">卷积神经网络 - Convolutional Neural Network- CNN
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-21 08:40:00" itemprop="dateCreated datePublished" datetime="2019-07-21T08:40:00+08:00">2019-07-21</time>
+            </span>
+          
+
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/07/21/20190721-卷积神经网络 - Convolutional Neural Network- CNN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/21/20190721-卷积神经网络 - Convolutional Neural Network- CNN/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">5.8k</span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0x01-应用场景："><a href="#0x01-应用场景：" class="headerlink" title="0x01 应用场景："></a>0x01 应用场景：</h2><ul>
+<li>卷积神经网络是用于计算机视觉任务的最佳机器学习模型。即使在非常小的数据集上也可以从头开始训练一个卷积神经网络，而且得到的结果还不错。</li>
+<li>用于图像分类问题。数据集越大越好（保证质量的前提下），但是CNN可以处理那些训练集较小的问题</li>
+</ul>
+<a id="more"></a>
+<h3 id="组成：卷积层-池化层"><a href="#组成：卷积层-池化层" class="headerlink" title="组成：卷积层 池化层"></a>组成：卷积层 池化层</h3><ul>
+<li>它的人工神经元可以响应一部分覆盖范围内的周围单元，对于大型图像处理有出色表现。它包括卷积层和池化层。此外一般还有需要分类器，在预训练中一般会冻结卷积基（卷积+池化），通过调节训练分类器实现在小规模数据集上的训练精度提高。</li>
+<li>一般用最大池化层，原因在于特征中往往编码了某种模式或概念在特征图的不同位置是否存在（因此得名特征图），而观察不同特征的最大值而不是平均值能够给出更多的信息。</li>
+<li>卷积层不同点<ul>
+<li>密集连接层和卷积层的根本区别在于， Dense 层从输入特征空间中学到的是全局模式，而卷积层学到的是局部模式。图像可以被分解为局部模式，如边缘、纹理等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0x02-卷积神经网络具有两个有趣的性质"><a href="#0x02-卷积神经网络具有两个有趣的性质" class="headerlink" title="0x02 卷积神经网络具有两个有趣的性质"></a>0x02 卷积神经网络具有两个有趣的性质</h2><ul>
+<li><strong>平移不变性</strong><ul>
+<li>卷积神经网络学到的模式具有平移不变性（translation invariant）。</li>
+<li>卷积神经网络在图像右下角学到某个模式之后，它可以在任何地方识别这个模式，比如左上角。</li>
+<li>这使得卷积神经网络在处理图像时可以高效利用数据（因为<strong>视觉世界从根本上具有平移不变性</strong>），它只需要更少的训练样本就可以学到具有泛化能力的数据表示。</li>
+</ul>
+</li>
+<li>CNN可以学到<strong>模式的空间层次结构</strong><ul>
+<li>第一个卷积层将学习较小的局部模式（比如边缘），第二个卷积层将学习由第一层特征组成的更大的模式，以此类推。</li>
+<li>这使得卷积神经网络可以有效地学习越来越复杂、越来越抽象的视觉概念（因为<strong>视觉世界从根本上具有空间层次结构</strong>）。</li>
+<li><img src="https://img.dyngq.top/images/20200904151838.png" alt="图 1.1"></li>
+<li><img src="https://img.dyngq.top/images/20200904151840.png" alt="图 1.2"></li>
+</ul>
+</li>
+</ul>
+<h2 id="0x03-特征图"><a href="#0x03-特征图" class="headerlink" title="0x03 特征图"></a>0x03 特征图</h2><ul>
+<li>3D张量（高度宽度通道数）的卷积也叫特征图</li>
+<li>含义：深度轴的每个纬度都是一个特征（或者说是过滤器）</li>
+<li>卷积运算，输入特征图，从输入特征图中提取图块，并对所有这些图块应用相同的变换，生成输出特征图</li>
+<li>该输出特征图仍是一个 3D 张量，具有宽度和高度，其深度可以任意取值，因为输出深度是层的参数，深度轴的不同通道不再像 RGB 输入那样代表特定颜色，而是代表过滤器（filter）。过滤器对输入数据的某一方面进行编码。</li>
+</ul>
+<h2 id="0x04-卷积由两个关键参数所定义"><a href="#0x04-卷积由两个关键参数所定义" class="headerlink" title="0x04 卷积由两个关键参数所定义"></a>0x04 卷积由两个关键参数所定义</h2><ul>
+<li>从输入中提取的图块尺寸,通常是 3×3 或 5×5.</li>
+<li>输出特征图的深度：卷积所计算的过滤器的数量。</li>
+</ul>
+<h2 id="0x05"><a href="#0x05" class="headerlink" title="0x05"></a>0x05</h2><h3 id="01-卷积的工作原理"><a href="#01-卷积的工作原理" class="headerlink" title="01 卷积的工作原理"></a>01 卷积的工作原理</h3><ul>
+<li>在 3D 输入特征图上滑动（slide）这些 3×3 或 5×5 的窗口，在每个可能的位置停止并提取周围特征的 3D 图块［形状为 (window_height, window_width, input_depth) ］。</li>
+<li>然后每个3D 图块与学到的同一个权重矩阵［叫作卷积核（convolution kernel）］做张量积，转换成形状为 (output_depth,) 的 1D 向量。</li>
+<li>然后对所有这些向量进行空间重组，使其转换为形状为 (height, width, output_depth) 的 3D 输出特征图。</li>
+<li><p>输出特征图中的每个空间位置都对应于输入特征图中的相同位置（比如输出的右下角包含了输入右下角的信息）。<br><img src="https://img.dyngq.top/images/20200904151843.png" alt="图 5.1"><br><img src="https://img.dyngq.top/images/20200904151845.png" alt="图 5.2.1"><br><img src="https://img.dyngq.top/images/20200904151848.gif" alt="图 5.2.2"><br><img src="https://img.dyngq.top/images/20200904151850.png" alt="图 5.3"></p>
+</li>
+<li><p>输出的宽度和高度可能与输入的宽度和高度不同。不同的原因可能有两点。</p>
+<ul>
+<li>边界效应，可以通过对输入特征图进行填充来抵消。</li>
+<li>使用了步幅（stride）。卷积步幅，步进卷积。</li>
+<li><strong>Gif动图</strong>说明。</li>
+<li><img src="https://img.dyngq.top/images/20200904151855.gif" alt="图 5.4"><br><img src="https://img.dyngq.top/images/20200904151858.gif" alt="图 5.5"><br><img src="https://img.dyngq.top/images/20200904151901.gif" alt="图 5.6"></li>
+</ul>
+</li>
+</ul>
+<h3 id="02-添加非线性激活"><a href="#02-添加非线性激活" class="headerlink" title="02 添加非线性激活"></a>02 添加非线性激活</h3><h4 id="ReLU（修正线性单元）层"><a href="#ReLU（修正线性单元）层" class="headerlink" title="ReLU（修正线性单元）层"></a>ReLU（修正线性单元）层</h4><ul>
+<li>在每个卷积层之后，通常会立即应用一个非线性层（或激活层）。其目的是给一个在卷积层中刚经过线性计算操作（只是数组元素依次（element wise）相乘与求和）的系统引入非线性特征。过去，人们用的是像双曲正切和 S 型函数这样的非线性方程，但研究者发现 ReLU 层效果好得多，因为神经网络能够在准确度不发生明显改变的情况下把训练速度提高很多（由于计算效率增加）。它同样能帮助减轻梯度消失的问题——由于梯度以指数方式在层中消失，导致网络较底层的训练速度非常慢。ReLU 层对输入内容的所有值都应用了函数 f(x) = max(0, x)。用基本术语来说，这一层把所有的负激活（negative activation）都变为零。这一层会增加模型乃至整个神经网络的非线性特征，而且不会影响卷积层的感受野。（参见 Geoffrey Hinton（即深度学习之父）的论文：Rectified Linear Units Improve Restricted Boltzmann Machines）<br><img src="https://img.dyngq.top/images/20200904151904.png" alt="&#39;dyngq_images&#39;"></li>
+<li><a href="https://www.cnblogs.com/luofeel/p/8654931.html" target="_blank" rel="noopener">此部分参考链接</a></li>
+</ul>
+<h3 id="03-感受野"><a href="#03-感受野" class="headerlink" title="03 感受野"></a>03 感受野</h3><ul>
+<li>感受野</li>
+<li>常用一种特殊方法，如下图右边一列所示，卷积之后位置不变，空白部分进行填充的方法。</li>
+<li>而感受野就是右列的 以每一个实体位置为中心 对应的输入图的信息映射的包含的部分。<br><img src="https://img.dyngq.top/images/20200904151908.png" alt="&#39;dyngq_images&#39;"><br><img src="https://img.dyngq.top/images/20200904151910.png" alt="&#39;dyngq_images&#39;"></li>
+<li><a href="https://blog.csdn.net/u010725283/article/details/78593410" target="_blank" rel="noopener">参考链接,对CNN感受野一些理解</a></li>
+</ul>
+<h3 id="04-特征图和感受野"><a href="#04-特征图和感受野" class="headerlink" title="04 特征图和感受野"></a>04 特征图和感受野</h3><p>二维卷积层输出的二维数组可以看作是输入在空间维度（宽和高）上某一级的表征，也叫特征图（feature map）。影响元素xx的前向计算的所有可能输入区域（可能大于输入的实际尺寸）叫做xx的感受野（receptive field）。以图5.1为例，输入中阴影部分的四个元素是输出中阴影部分元素的感受野。我们将图5.1中形状为2×22×2的输出记为YY，并考虑一个更深的卷积神经网络：将YY与另一个形状为2×22×2的核数组做互相关运算，输出单个元素zz。那么，zz在YY上的感受野包括YY的全部四个元素，在输入上的感受野包括其中全部9个元素。可见，我们可以通过更深的卷积神经网络使特征图中单个元素的感受野变得更加广阔，从而捕捉输入上更大尺寸的特征。</p>
+<p>我们常使用“元素”一词来描述数组或矩阵中的成员。在神经网络的术语中，这些元素也可称为“单元”。当含义明确时，本书不对这两个术语做严格区分。</p>
+<h2 id="0x06-最大池化"><a href="#0x06-最大池化" class="headerlink" title="0x06 最大池化"></a>0x06 最大池化</h2><ul>
+<li>在每个 MaxPooling2D 层之后，特征图的尺寸都会减半。</li>
+<li>最大池化的作用：对特征图进行下采样，与步进卷积类似。</li>
+<li>使用下采样的原因<ul>
+<li>一是减少需要处理的特征图的元素个数</li>
+<li>二是通过让连续卷积层的观察窗口越来越大（即窗口覆盖原始输入的比例越来越大），从而引入空间过滤器的层级结构。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0x07-在小型数据集上从头开始训练一个卷积神经网络"><a href="#0x07-在小型数据集上从头开始训练一个卷积神经网络" class="headerlink" title="0x07 在小型数据集上从头开始训练一个卷积神经网络"></a>0x07 在小型数据集上从头开始训练一个卷积神经网络</h2><ul>
+<li>数据集越大一般相对越好，只用几十个样本训练卷积神经网络就解决一个复杂问题是不可能的，但如果模型很小，并做了很好的正则化，同时任务非常简单，那么几百个样本可能就足够了。</li>
+<li>讨论猫狗图像分类，数据集中包含 4000 张猫和狗的图像（2000 张猫的图像，2000 张狗的图像）。我们将 2000 张图像用于训练，1000 张用于验证，1000张用于测试。</li>
+<li>模型<ul>
+<li>可以看到：</li>
+<li>由于边界效应：每个卷积层之后，就减少两行两列</li>
+<li>由于最大池化，每个池化层之后，缩小为原来的一半</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img.dyngq.top/images/20200904151914.png" alt="图 7.1"></p>
+<ul>
+<li>数据预处理<ul>
+<li>读取图像文件。</li>
+<li>将 JPEG 文件解码为 RGB 像素网格。</li>
+<li>将这些像素网格转换为浮点数张量。</li>
+<li>将像素值（0~255 范围内）缩放到 [0, 1] 区间（神经网络喜欢处理较小的输入值）。</li>
+</ul>
+</li>
+<li>Keras 拥有自动完成这些步骤的工具，它包含ImageDataGenerator 类，可以快速创建 Python 生成器，能够将硬盘上的图像文件自动转换为预处理好的张量批量。</li>
+<li>训练好模型后，保存模型</li>
+<li>通过可视化两个图像 训练精度和验证精度 和 训练损失和验证损失，发现第几轮开始过拟合。</li>
+<li>因为训练样本相对较少（2000 个），所以过拟合是最关心的问题。</li>
+</ul>
+<h2 id="0x08-互相关运算"><a href="#0x08-互相关运算" class="headerlink" title="0x08 互相关运算"></a>0x08 互相关运算</h2><blockquote>
+<p>深度度学习中的卷积运算实际上是互相关运算是个面试题考点</p>
+</blockquote>
+<p><img src="https://img.dyngq.top/images/20200904151917.png" alt="&#39;dyngq_images&#39;"></p>
+<pre><code>import torch 
+from torch import nn
+
+def corr2d(X, K):  # 本函数已保存在d2lzh_pytorch包中方便以后使用
+    h, w = K.shape
+    Y = torch.zeros((X.shape[0] - h + 1, X.shape[1] - w + 1))
+    for i in range(Y.shape[0]):
+        for j in range(Y.shape[1]):
+            Y[i, j] = (X[i: i + h, j: j + w] * K).sum()
+    return Y
+</code></pre><p><img src="https://img.dyngq.top/images/20200904151921.png" alt="&#39;dyngq_images&#39;"></p>
+<h2 id="0x09-二维卷积层"><a href="#0x09-二维卷积层" class="headerlink" title="0x09 二维卷积层"></a>0x09 二维卷积层</h2><p>二维卷积层将输入和卷积核做互相关运算，并加上一个标量偏差来得到输出。卷积层的模型参数包括了卷积核和标量偏差。在训练模型的时候，通常我们先对卷积核随机初始化，然后不断迭代卷积核和偏差。</p>
+<p>下面基于corr2d函数来实现一个自定义的二维卷积层。在构造函数<strong>init</strong>里我们声明weight和bias这两个模型参数。前向计算函数forward则是直接调用corr2d函数再加上偏差。</p>
+<pre><code>class Conv2D(nn.Module):
+    def __init__(self, kernel_size):
+        super(Conv2D, self).__init__()
+        self.weight = nn.Parameter(torch.randn(kernel_size))
+        self.bias = nn.Parameter(torch.randn(1))
+
+    def forward(self, x):
+        return corr2d(x, self.weight) + self.bias
+</code></pre><p>卷积窗口形状为p×qp×q的卷积层称为p×qp×q卷积层。同样，p×qp×q卷积或p×qp×q卷积核说明卷积核的高和宽分别为pp和qq。</p>
+<h4 id="深度度学习中的卷积运算实际上是互相关运算"><a href="#深度度学习中的卷积运算实际上是互相关运算" class="headerlink" title="　深度度学习中的卷积运算实际上是互相关运算"></a>　深度度学习中的卷积运算实际上是互相关运算</h4><p>实际上，卷积运算与互相关运算类似。为了得到卷积运算的输出，我们只需将核数组左右翻转并上下翻转，再与输入数组做互相关运算。可见，卷积运算和互相关运算虽然类似，但如果它们使用相同的核数组，对于同一个输入，输出往往并不相同。</p>
+<p>那么，你也许会好奇卷积层为何能使用互相关运算替代卷积运算。其实，在深度学习中核数组都是学出来的：卷积层无论使用互相关运算或卷积运算都不影响模型预测时的输出。为了解释这一点，假设卷积层使用互相关运算学出图5.1中的核数组。设其他条件不变，使用卷积运算学出的核数组即图5.1中的核数组按上下、左右翻转。也就是说，图5.1中的输入与学出的已翻转的核数组再做卷积运算时，依然得到图5.1中的输出。为了与大多数深度学习文献一致，如无特别说明，本书中提到的卷积运算均指互相关运算。</p>
+<h2 id="0x10-解决过拟合"><a href="#0x10-解决过拟合" class="headerlink" title="0x10 解决过拟合"></a>0x10 解决过拟合</h2><h3 id="1-正则化"><a href="#1-正则化" class="headerlink" title="1.正则化"></a>1.正则化</h3><ul>
+<li>dropout</li>
+<li>权重衰减（L2 正则化）</li>
+</ul>
+<h3 id="2-数据增强"><a href="#2-数据增强" class="headerlink" title="2.数据增强"></a>2.数据增强</h3><ul>
+<li>其方法是利用多种能够生成可信图像的随机变换来增加（augment）样本。</li>
+<li>其目标是，模型在训练时不会两次查看完全相同的图像。</li>
+<li>这让模型能够观察到数据的更多内容，从而具有更好的泛化能力。</li>
+<li>在 Keras 中，这可以通过对 ImageDataGenerator 实例读取的图像执行多次随机变换来实现</li>
+<li>需要注意的是，不能增强验证数据</li>
+<li><img src="https://img.dyngq.top/images/20200904151925.png" alt="图 2.2.1"></li>
+</ul>
+<h3 id="3-使用预训练的卷积神经网络"><a href="#3-使用预训练的卷积神经网络" class="headerlink" title="3.使用预训练的卷积神经网络"></a>3.使用预训练的卷积神经网络</h3><ul>
+<li>预训练网络（pretrained network）是一个保存好的网络，之前已在大型数据集（通常是大规模图像分类任务）上训练好。如果这个原始数据集足够大且足够通用，那么预训练网络学到的特征的空间层次结构可以有效地作为视觉世界的通用模型，因此这些特征可用于各种不同的计算机视觉问题，即使这些新问题涉及的类别和原始任务完全不同。</li>
+<li>使用预训练网络有两种方法：特征提取（feature extraction）和微调模型（fine-tuning）。</li>
+</ul>
+<h4 id="3-1-特征提取"><a href="#3-1-特征提取" class="headerlink" title="3.1 特征提取"></a>3.1 特征提取</h4><ul>
+<li>对于卷积神经网络而言，特征提取就是取出之前训练好的网络的卷积基，在上面运行新数据，然后在输出上面训练一个新的分类器</li>
+<li>卷积基学到的表示可能更加通用，因此更适合重复使用。所以，仅重复使用卷积基，训练密集连接分类器。</li>
+<li><img src="https://img.dyngq.top/images/20200904151927.png" alt="图 3.3.1"></li>
+<li>特征提取有两种方法<ul>
+<li>不使用数据增强的快速特征提取<ul>
+<li>直接调用 conv_base 模型的 predict 方法来从这些图像中提取特征，将输出保存成硬盘中的 Numpy 数组，然后用这个数据作为输入，输入到独立的密集连接分类器中（注意要使用 dropout 正则化），计算量很小，计算代价低。</li>
+</ul>
+</li>
+<li>使用数据增强的特征提取<ul>
+<li>扩展 conv_base 模型，然后在输入数据上端到端地运行模型。</li>
+<li>新定义的模型不只有Dense层，也包括了conv_base模型，但是这个模型卷积基需要冻结（freeze），因为如果不冻结的话，那么卷积基之前学到的表示将会在训练过程中被修改。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-微调模型"><a href="#3-2-微调模型" class="headerlink" title="3.2 微调模型"></a>3.2 微调模型</h4><ul>
+<li>对于用于特征提取的冻结的模型基，微调是指将其顶部的几层“解冻”，并将这解冻的几层和新增加的部分（本例中是全连接分类器）联合训练（见图 5-19）。之所以叫作微调，是因为它只是略微调整了所复用模型中更加抽象的表示，以便让这些表示与手头的问题更加相关。</li>
+<li>之所以只解冻微调模型底部的一小部分层，是因为：<ul>
+<li>卷积基中更靠底部的层编码的是更加通用的可复用特征，而更靠顶部的层编码的是更专业化的特征。微调这些更专业化的特征更加有用，因为它们需要在你的新问题上改变用途。微调更靠底部的层，得到的回报会更少。</li>
+<li>训练的参数越多，过拟合的风险越大。卷积基有 1500 万个参数，所以在你的小型数据集上训练这么多参数是有风险的。<br><img src="https://img.dyngq.top/images/20200904152103.png" alt="图 3.3.2"></li>
+</ul>
+</li>
+</ul>
+<h2 id="0x11-卷积神经网络的可视化"><a href="#0x11-卷积神经网络的可视化" class="headerlink" title="0x11 卷积神经网络的可视化"></a>0x11 卷积神经网络的可视化</h2><p>虽然对于某些类型的深度学习模型来说，深度学习模型是“黑盒”，即模型学到的表示很难用人类可以理解的方式来提取和呈现。<br>但对卷积神经网络来说绝对不是这样。卷积神经网络学到的表示非常适合可视化，很大程度上是因为它们是视觉概念的表示。</p>
+<ul>
+<li>可视化卷积神经网络的中间输出（中间激活）：有助于理解卷积神经网络连续的层如何<br>对输入进行变换，也有助于初步了解卷积神经网络每个过滤器的含义。</li>
+<li>可视化卷积神经网络的过滤器：有助于精确理解卷积神经网络中每个过滤器容易接受的<br>视觉模式或视觉概念。</li>
+<li>可视化图像中类激活的热力图：有助于理解图像的哪个部分被识别为属于某个类别，从<br>而可以定位图像中的物体。</li>
+</ul>
+<h3 id="1-0"><a href="#1-0" class="headerlink" title="1.0"></a>1.0</h3><p><img src="https://img.dyngq.top/images/20200904152119.png" alt><br><img src="https://img.dyngq.top/images/20200904152120.png" alt><br><img src="https://img.dyngq.top/images/20200904152123.png" alt></p>
+<h3 id="2-0"><a href="#2-0" class="headerlink" title="2.0"></a>2.0</h3><ul>
+<li>随着层数的加深，卷积神经网络中的过滤器变得越来越复杂，越来越精细。</li>
+<li>模型第一层（ block1_conv1 ）的过滤器对应简单的方向边缘和颜色（还有一些是彩色边缘）。</li>
+<li>block2_conv1 层的过滤器对应边缘和颜色组合而成的简单纹理。</li>
+<li>更高层的过滤器类似于自然图像中的纹理：羽毛、眼睛、树叶等。<br><img src="https://img.dyngq.top/images/20200904152130.png" alt><br><img src="https://img.dyngq.top/images/20200904152132.png" alt></li>
+</ul>
+<h3 id="3-0"><a href="#3-0" class="headerlink" title="3.0"></a>3.0</h3><p><img src="https://img.dyngq.top/images/20200904152134.png" alt></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p>《python深度学习》(《deep learning with python》(by Francois Chollet))</p>
+</li>
+<li><p><a href="https://mp.weixin.qq.com/s/N85gA350s-lS5p-Q-vgeRA" target="_blank" rel="noopener">秒懂各种深度CNN操作-机器学习算法与Python学习</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/ThorKing01/article/details/90482242" target="_blank" rel="noopener">卷积神经网络（CNN）中卷积的实现</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/hejunlin1992/p/8686838.html" target="_blank" rel="noopener">CNN 理解神经网络中卷积(大小，通道数，深度)</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/luofeel/p/8654931.html" target="_blank" rel="noopener">CNN（卷积神经网络）是什么？有何入门简介或文章吗？ 机器之心</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/u010725283/article/details/78593410" target="_blank" rel="noopener">对CNN感受野一些理解</a></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    感谢阅读！
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/dog.gif" alt="dyngq_kang 感谢您的阅读！祝您工作顺利，幸福快乐！">
+        <p>感谢您的阅读！祝您工作顺利，幸福快乐！</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/01/20190701-似然函数和贝叶斯定理/" rel="next" title="似然函数和贝叶斯定理">
+                <i class="fa fa-chevron-left"></i> 似然函数和贝叶斯定理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/21/20190721-模型融合算法（三）stacking/" rel="prev" title="Stacking 模型融合">
+                Stacking 模型融合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/dream.jpg" alt="dyngq_kang">
+  
+  <p class="site-author-name" itemprop="name">dyngq_kang</p>
+  <div class="site-description motion-element" itemprop="description">🌞但行好事，莫问前程🌈</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/dyngq/" title="GitHub &rarr; https://github.com/dyngq/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:dyngqk@163.com" title="E-Mail &rarr; mailto:dyngqk@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/6880205080/" title="Weibo &rarr; https://weibo.com/u/6880205080/" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/fei-zhou-xiao-bai-lian-88-88/activities/" title="Zhihu &rarr; https://www.zhihu.com/people/fei-zhou-xiao-bai-lian-88-88/activities/" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>Zhihu</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://twitter.com/dyngq/" title="Twitter &rarr; https://twitter.com/dyngq/" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://instagram.com/woaikangyanyan/" title="Instagram &rarr; https://instagram.com/woaikangyanyan/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://seaii-blog.com/" title="Seaii &rarr; https://seaii-blog.com/" rel="noopener" target="_blank"><i class="fa fa-fw fa-won"></i>Seaii</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://space.bilibili.com/95518349/" title="bilibili &rarr; https://space.bilibili.com/95518349/" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube-play"></i>bilibili</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-应用场景："><span class="nav-number">1.</span> <span class="nav-text">0x01 应用场景：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组成：卷积层-池化层"><span class="nav-number">1.1.</span> <span class="nav-text">组成：卷积层 池化层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-卷积神经网络具有两个有趣的性质"><span class="nav-number">2.</span> <span class="nav-text">0x02 卷积神经网络具有两个有趣的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-特征图"><span class="nav-number">3.</span> <span class="nav-text">0x03 特征图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-卷积由两个关键参数所定义"><span class="nav-number">4.</span> <span class="nav-text">0x04 卷积由两个关键参数所定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05"><span class="nav-number">5.</span> <span class="nav-text">0x05</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-卷积的工作原理"><span class="nav-number">5.1.</span> <span class="nav-text">01 卷积的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-添加非线性激活"><span class="nav-number">5.2.</span> <span class="nav-text">02 添加非线性激活</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU（修正线性单元）层"><span class="nav-number">5.2.1.</span> <span class="nav-text">ReLU（修正线性单元）层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-感受野"><span class="nav-number">5.3.</span> <span class="nav-text">03 感受野</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04-特征图和感受野"><span class="nav-number">5.4.</span> <span class="nav-text">04 特征图和感受野</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x06-最大池化"><span class="nav-number">6.</span> <span class="nav-text">0x06 最大池化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x07-在小型数据集上从头开始训练一个卷积神经网络"><span class="nav-number">7.</span> <span class="nav-text">0x07 在小型数据集上从头开始训练一个卷积神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x08-互相关运算"><span class="nav-number">8.</span> <span class="nav-text">0x08 互相关运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x09-二维卷积层"><span class="nav-number">9.</span> <span class="nav-text">0x09 二维卷积层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#深度度学习中的卷积运算实际上是互相关运算"><span class="nav-number">9.0.1.</span> <span class="nav-text">　深度度学习中的卷积运算实际上是互相关运算</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#0x10-解决过拟合"><span class="nav-number">10.</span> <span class="nav-text">0x10 解决过拟合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-正则化"><span class="nav-number">10.1.</span> <span class="nav-text">1.正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据增强"><span class="nav-number">10.2.</span> <span class="nav-text">2.数据增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用预训练的卷积神经网络"><span class="nav-number">10.3.</span> <span class="nav-text">3.使用预训练的卷积神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-特征提取"><span class="nav-number">10.3.1.</span> <span class="nav-text">3.1 特征提取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-微调模型"><span class="nav-number">10.3.2.</span> <span class="nav-text">3.2 微调模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x11-卷积神经网络的可视化"><span class="nav-number">11.</span> <span class="nav-text">0x11 卷积神经网络的可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-0"><span class="nav-number">11.1.</span> <span class="nav-text">1.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0"><span class="nav-number">11.2.</span> <span class="nav-text">2.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-0"><span class="nav-number">11.3.</span> <span class="nav-text">3.0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">12.</span> <span class="nav-text">参考资料</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dyngq_kang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">29k</span>
+  
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+-->
+
+
+
+<div style="display:inline-block">
+  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">鲁ICP备2020035568号-1</a>
+
+</div>
+
+<div style="display:inline-block">
+ <span style="padding-left:25px;background:url(/images/beian.png) no-repeat left center" rel="nofollow">
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode= 37078102001234" rel="noopener" target="_blank">鲁公网安备 37078102001234号</a></span>
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+  </div>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '03W9KgH7TDVzTaIcv3fzpG4n-gzGzoHsz',
+    appKey: '2otah1bqooBsODfJfCun6HY9',
+    placeholder: 'Just do it,',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
