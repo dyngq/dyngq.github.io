@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[人工智能赋能安全应用案例集(相关资料分享)]]></title>
+    <url>%2F2021%2F03%2F04%2F20210304-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%B5%8B%E8%83%BD%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B%E9%9B%86(%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB)%2F</url>
+    <content type="text"><![CDATA[分享一些最近看到的相关资料 人工智能赋能安全应用案例集.pdf 下载 人工智能安全白皮书2020.pdf 下载 AI安全白皮书-华为-ai-security-white-paper-cn.pdf 下载 404师傅经典项目：https://github.com/404notf0und/AI-for-Security-Learning 人工智能赋能安全应用案例集]]></content>
+      <categories>
+        <category>Sec</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[手撕BackPropagation (BP_Neural_Network)]]></title>
     <url>%2F2020%2F12%2F12%2F20201212-%E6%89%8B%E6%92%95BackPropagation-BP-Neural-Network%2F</url>
     <content type="text"><![CDATA[深度学习基础；反向传播； 手撕一下推导过程。 0x00 BP神经网络结构 输入层，隐藏层（神经元）*，输出层。 一种简单的示例结构: 其实理解神经网络的计算过程，计算图是最合适的。参考[2] 0x01 梯度&amp;链式法则梯度 神经网络常常采用随机梯度下降的方法，来使得损失降低，参数逼近最优解。 所以，梯度是什么？ 损失函数对参数的导数 {\frac{∂C_{}}{∂w_{1}}}、{\frac{∂C_{}}{∂b_{1}}}、{\frac{∂C_{}}{∂w_{2}}}、{\frac{∂C_{}}{∂b_{2}}}、... 参数的梯度乘以学习率就是该参数所需要更新(+/-)的值。 链式法则 微积分的重要定理，示例如下 0x02 整体流程 正向传播，根据input计算出output，与此同时呢，会计算和记录当前的中间变量，以便反向传播时不必重复计算。 根据损失函数计算误差，记为 C (cost)。 反向传播，反向计算并记录，以便更新每一层的权重， θ = \{w_1,b_1,w_2,b_2,...,w_{n-1},b_{n-1},w_{n},b_{n}\} w^1 = w^0-lr*{\frac{∂C_{}}{∂w_{1}}} b^1 = b^0-lr*{\frac{∂C_{}}{∂b_{0}}}其中，lr是自定义的学习率。所以问题就是求参数对损失函数的微分，这一步就需要使用求微分的链式法则。 如图一所示，我们要求w1对C的偏导，就需要根据路径，根据计算图，链式的去求解。 {\frac{∂C_{}}{∂w_{1}}} = {\frac{∂C_{}}{∂w_{1}}}但其实这更容易被理解成正向传播，所以我个人喜欢这么表示（具体原因下一部分会讲）: {\frac{∂C_{}}{∂w_{1}}} = {\frac{∂C_{}}{∂w_{1}}} 现代神经网络一般分为两步，求梯度，梯度更新。(参考[3]) 以pytorch举例 loss.backward() 反向传播 backward()会根据tensor的requires_grad属性（true\false）计算梯度。 其他需要的数据在forward时已经存储。 optimizer.step() 优化器更新参数。 以下部分将进行详细说明 正向传播首先，我们需要知道，直接正向传播来求，可不可以 在某种意义上是可以的，只要运算完成，根据存储的大量中间量以及最终结果，运用链式法则肯定是可以算的，那为什么还需要反向传播呢。 首先来看正向传播怎么算，这里把网络加一层 下边两个图都展示了，正向传播直接计算的话，中间变量重复性极大，每次都要计算的这些重复算式的话，计算量冗余太大，这就是正向传播，类似于正向搜索的弊端。 反向传播 因为正向传播的缺点，所以要介绍反向传播的解决方式 反向传播，从根传点往回传，每个结点内求和后继续传，直到叶结点停止，叶结点的值内求和即为梯度。 单个纯手推 那么另外，为什么需要正向传播记录的中间变量，也就是一些中间输出值呢。 图-6.2中李宏毅老师表示的比较清楚，计算梯度需要两部分，${\frac{∂C_{}}{∂w_{}}}={\frac{∂z_{}}{∂w_{}}}*{\frac{∂C_{}}{∂z_{}}}$；其中第一部分${\frac{∂z_{}}{∂w_{}}}$是需要正向传播过程中计算并且记录的，推导一下的话也就是一些中间输出；第二部分${\frac{∂C_{}}{∂z_{}}}$才是反向传播中计算的。 通用推导 损失函数 训练的目的呢，就是要减小我们的训练误差，而误差呢，一般都是由自己定义或选择的一种函数，用来表示预测值与真实值之间的差距。 基于向量的反向传播 基于标量的推到可能还算简单，但是真正运用到实际的向量运算中可能就有麻烦了。这里我们以CS231n的课后作业举例，其比较具有代表性。 参考资料 如何直观地解释 backpropagation 算法？ - YE Y的回答 - 知乎 如何直观形象的理解方向导数与梯度以及它们之间的关系？ ∂x Δx dx？: 知乎 台大李宏毅！1. 李宏毅主页 2. Youtube]]></content>
@@ -55,17 +66,6 @@
       </categories>
       <tags>
         <tag>ML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20210304-人工智能赋能安全应用案例集(相关资料分享)]]></title>
-    <url>%2F2020%2F10%2F01%2F20210304-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%B5%8B%E8%83%BD%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B%E9%9B%86(%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB)%2F</url>
-    <content type="text"><![CDATA[分享一些最近看到的相关资料 人工智能赋能安全应用案例集.pdf 下载 人工智能安全白皮书2020.pdf 下载 AI安全白皮书-华为-ai-security-white-paper-cn.pdf 下载 404师傅经典项目：https://github.com/404notf0und/AI-for-Security-Learning 人工智能赋能安全应用案例集]]></content>
-      <categories>
-        <category>Sec</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +187,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Docker</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>
@@ -257,8 +257,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Docker</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>
