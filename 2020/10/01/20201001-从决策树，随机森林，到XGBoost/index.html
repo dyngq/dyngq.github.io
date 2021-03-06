@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="dyngq">
 <meta property="og:description" content="树类模型的发展与总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-06T14:41:21.788Z">
+<meta property="og:updated_time" content="2021-03-06T14:43:30.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
 <meta name="twitter:description" content="树类模型的发展与总结">
@@ -587,6 +587,8 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
 <li>没有更多特征</li>
 </ol>
 <h3 id="1-3-CART回归"><a href="#1-3-CART回归" class="headerlink" title="1-3 CART回归"></a>1-3 CART回归</h3><p>回归需要特别拿出来说要下，因为其他两个只能进行分类</p>
+<p>cart可以实现<strong>最小二乘回归树</strong></p>
+<p>采用<strong>平方损失</strong></p>
 <h3 id="1-4-剪枝"><a href="#1-4-剪枝" class="headerlink" title="1-4 剪枝"></a>1-4 剪枝</h3><p><strong>后剪枝</strong> CART</p>
 <p>一般采用递归的方式</p>
 <p>$g(t)=\frac{C(t)-C(T_{t})}{\left|t\right|-1}$</p>
