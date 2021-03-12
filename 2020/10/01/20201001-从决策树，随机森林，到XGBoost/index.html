@@ -109,7 +109,7 @@
 <meta property="og:description" content="树类模型的发展与总结">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20210311192912.png">
-<meta property="og:updated_time" content="2021-03-12T14:11:01.243Z">
+<meta property="og:updated_time" content="2021-03-12T14:39:02.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
 <meta name="twitter:description" content="树类模型的发展与总结">
@@ -618,7 +618,7 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
 <h3 id="2-2-Bagging"><a href="#2-2-Bagging" class="headerlink" title="2-2 Bagging"></a>2-2 Bagging</h3><p>并行</p>
 <p>样本集分离子样本集，最终基分类器投票</p>
 <p>目的在于缩小方差</p>
-<h3 id="2-3-Stacking"><a href="#2-3-Stacking" class="headerlink" title="2-3 Stacking"></a>2-3 Stacking</h3><p><a href>之前写的专门介绍stacking的文章</a></p>
+<h3 id="2-3-Stacking"><a href="#2-3-Stacking" class="headerlink" title="2-3 Stacking"></a>2-3 Stacking</h3><p>之前写过专门介绍stacking的文章：<a href="https://dyngq.top/2019/07/21/20190721-%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89stacking/" target="_blank" rel="noopener">Stacking 模型融合</a></p>
 <h2 id="0x02-Adaboost"><a href="#0x02-Adaboost" class="headerlink" title="0x02 Adaboost"></a>0x02 Adaboost</h2><p>以ID3决策树为例，其实什么基分类器都可以；不过树形结构简单、且比较容易产生随机结果。</p>
 <p>Adaboost采用<strong>前向分步算法</strong>，通俗理解也就是串行思想，逐步优化基分类器；</p>
 <ol>
