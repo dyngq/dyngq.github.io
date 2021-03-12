@@ -108,10 +108,12 @@
 <meta property="og:site_name" content="dyngq">
 <meta property="og:description" content="树类模型的发展与总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-10T12:01:10.638Z">
+<meta property="og:image" content="https://img.dyngq.top/images/20210311192912.png">
+<meta property="og:updated_time" content="2021-03-11T12:43:20.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
 <meta name="twitter:description" content="树类模型的发展与总结">
+<meta name="twitter:image" content="https://img.dyngq.top/images/20210311192912.png">
 
 
 
@@ -503,7 +505,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.1k</span>
+              <span title="本文字数">4k</span>
             </span>
           
 
@@ -616,8 +618,9 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
 <h3 id="2-2-Bagging"><a href="#2-2-Bagging" class="headerlink" title="2-2 Bagging"></a>2-2 Bagging</h3><p>并行</p>
 <p>样本集分离子样本集，最终基分类器投票</p>
 <p>目的在于缩小方差</p>
-<h3 id="2-3-Stacking"><a href="#2-3-Stacking" class="headerlink" title="2-3 Stacking"></a>2-3 Stacking</h3><h2 id="0x02-Adaboost"><a href="#0x02-Adaboost" class="headerlink" title="0x02 Adaboost"></a>0x02 Adaboost</h2><p>以ID3决策树为例，其实什么基分类器都可以；不过树形结构简单、且比较容易产生随机结果。</p>
-<p>Adaboost采用<strong>前向分布算法</strong>，通俗理解也就是串行思想，逐步优化基分类器；</p>
+<h3 id="2-3-Stacking"><a href="#2-3-Stacking" class="headerlink" title="2-3 Stacking"></a>2-3 Stacking</h3><p><a href>之前写的专门介绍stacking的文章</a></p>
+<h2 id="0x02-Adaboost"><a href="#0x02-Adaboost" class="headerlink" title="0x02 Adaboost"></a>0x02 Adaboost</h2><p>以ID3决策树为例，其实什么基分类器都可以；不过树形结构简单、且比较容易产生随机结果。</p>
+<p>Adaboost采用<strong>前向分步算法</strong>，通俗理解也就是串行思想，逐步优化基分类器；</p>
 <ol>
 <li>在当前数据集的权重分布情况下，训练基分类器；</li>
 <li>计算错误率</li>
@@ -625,7 +628,150 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
 </ol>
 <p>训练误差是指数级下降的；</p>
 <p>不需要考虑误差下界，AdaBoost具有适应性，也就是名字里的adaptive；</p>
-<h2 id="0x03-GDBT"><a href="#0x03-GDBT" class="headerlink" title="0x03 GDBT"></a>0x03 GDBT</h2><h2 id="0x04-XGBoost"><a href="#0x04-XGBoost" class="headerlink" title="0x04 XGBoost"></a>0x04 XGBoost</h2><h2 id="0x05-LightGBM"><a href="#0x05-LightGBM" class="headerlink" title="0x05 LightGBM"></a>0x05 LightGBM</h2>
+<h2 id="0x03-GDBT"><a href="#0x03-GDBT" class="headerlink" title="0x03 GDBT"></a>0x03 GDBT</h2><p>GBDT主要的优点有：</p>
+<ul>
+<li><ul>
+<li>1) 可以灵活处理各种类型的数据，包括连续值和离散值。</li>
+<li>2) 在相对少的调参时间情况下，预测的准确率也可以比较高。这个是相对SVM来说的。</li>
+<li>3）使用一些健壮的损失函数，对异常值的鲁棒性非常强。比如 Huber损失函数和Quantile损失函数。</li>
+</ul>
+</li>
+<li><p>from百面机器学习：</p>
+</li>
+<li><ul>
+<li><ul>
+<li>预测阶段计算速度较快，树与树之间可以并行化计算</li>
+<li>在分布稠密的数据机上，泛化能力和表达能力都比较好</li>
+<li>具有较好的解释性和鲁棒性</li>
+<li>能够自动发现特征质检的高阶关系</li>
+<li>不需要做特殊预处理（比如归一化）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>GBDT的主要缺点有：</p>
+<ul>
+<li><ul>
+<li>由于弱学习器之间存在依赖关系，难以并行训练数据。不过可以通过自采样的SGBT来达到部分并行。</li>
+<li>在高维稀疏数据上，表现不如SVM或神经网络</li>
+<li>在处理文本分类特征问题上，相对其他模型优势不如在处理数值特征时明显</li>
+<li>训练过程需要串行，只能在决策树内部采用一些局部并行手段提高训练速度</li>
+</ul>
+</li>
+</ul>
+<h2 id="0x04-XGBoost"><a href="#0x04-XGBoost" class="headerlink" title="0x04 XGBoost"></a>0x04 XGBoost</h2><p>XGBoost是GDBT的工程实现，</p>
+<p>主要改进：</p>
+<ol>
+<li>数学上：<ul>
+<li>二阶泰勒展开</li>
+<li>正则化项</li>
+</ul>
+</li>
+<li>工程上：<ul>
+<li>训练阶段中树的分裂阶段可以并行</li>
+<li>可以处理缺失值</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://img.dyngq.top/images/20210311192912.png" alt="image-20210311192859008"></p>
+<ul>
+<li><p><strong>适用于树模型的正则项</strong></p>
+<ul>
+<li>包含了输的叶子节点个数、每个叶子节点输出分数的L2平方和</li>
+<li>正则化项γ起到了一定的预剪枝的效果</li>
+<li>xgboost采用预剪枝策略，只有分裂后的增益大于0才会进行分裂。</li>
+</ul>
+</li>
+<li><p><strong>抽样</strong></p>
+</li>
+<li><ul>
+<li><strong>列抽样</strong>（column subsampling）。xgboost借鉴了随机森林的做法，支持列抽样（即每次的输入特征不是全部特征），不仅能降低过拟合，还能减少计算，这也是xgboost异于传统gbdt的一个特性。</li>
+<li><strong>行抽样</strong>：传统GBDT在每轮迭代时使用全部的数据；XGB则采用了类似RF的策略，支持对数据进行采样</li>
+</ul>
+</li>
+<li><p><strong>并行化处理</strong>：</p>
+</li>
+<li><ul>
+<li>在训练之前，预先对每个特征内部进行了排序找出候选切割点，然后保存为block结构，后面的迭代中重复地使用这个结构，大大减小计算量。</li>
+<li>在进行<strong>节点的分裂</strong>时，需要计算每个特征的增益，最终选增益最大的那个特征去做分裂，那么各个特征的增益计算就可以开多线程进行，即在不同的特征属性上采用多线程并行方式寻找最佳分割点。</li>
+</ul>
+</li>
+<li><p>参数</p>
+<ul>
+<li><p>XGB架构参数</p>
+</li>
+<li><ul>
+<li><p>booster：CART、或者线性模型、或者DART</p>
+</li>
+<li><p>n_estimator：</p>
+</li>
+<li><p>objective：</p>
+</li>
+<li><ul>
+<li>分类：MSE</li>
+<li>分类：二分类用logistic、多分类用softma</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>弱学习器参数</p>
+</li>
+<li><ul>
+<li>max_depth：树的深度</li>
+<li>min_child_weight：最小子节点的权重。如果某个子节点权重小于这个阈值，则不会在分裂。使用的是该节点所有二阶导数的和</li>
+<li>gamma：分裂所带来的损失最小阈值，大于此值，才能继续分裂</li>
+<li>subsample：子采样参数，无放回抽样</li>
+<li>colsample_bytree 整棵树的特征采样比例</li>
+<li>colsample_bylevel 某层的特征采样比例</li>
+<li>colsample_bynode 某一个树节点的特征采样比例</li>
+<li>reg_alpha：L1正则化参数</li>
+<li>reg_lambda： L2正则化参数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li><ul>
+<li><p>其他</p>
+</li>
+<li><ul>
+<li><p>n_jobs控制算法的并发线程数</p>
+</li>
+<li><p>scale_pos_weight用于类别不平衡的时候，负例和正例的比例。类似于sklearn中的class_weight</p>
+</li>
+<li><p>importance_type则可以查询各个特征的重要性程度。最后可以通过调用booster的get_score方法获取对应的特征权重。</p>
+</li>
+<li><ul>
+<li>“weight”通过特征被选中作为分裂特征的计数来计算重要性</li>
+<li>“gain”和“total_gain”则通过分别计算特征被选中做分裂特征时带来的平均增益和总增益来计算重要性</li>
+<li>“cover”和 “total_cover”通过计算特征被选中做分裂时的平均样本覆盖度和总体样本覆盖度来来计算重要性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Shrinkage（缩减）</strong>，相当于学习速率（xgboost中的eta）。每次迭代，增加新的模型，在前面成上一个小于1的系数，降低优化的速度，每次走一小步逐步逼近最优模型比每次走一大步逼近更加容易避免过拟合现象；</p>
+</li>
+</ul>
+<h2 id="0x05-LightGBM"><a href="#0x05-LightGBM" class="headerlink" title="0x05 LightGBM"></a>0x05 LightGBM</h2><p>LightGBM 由微软提出，主要用于解决 GDBT 在海量数据中遇到的问题，以便其可以更好更快地用于工业实践中。</p>
+<p>从 LightGBM 名字我们可以看出其是轻量级（Light）的梯度提升机（GBM），其相对 XGBoost 具有训练速度快、内存占用低的特点。</p>
+<ol>
+<li>单边梯度抽样算法；</li>
+<li>直方图算法；</li>
+<li>互斥特征捆绑算法；</li>
+<li>基于最大深度的 Leaf-wise 的垂直生长算法；</li>
+<li>类别特征最优分割；</li>
+<li>特征并行和数据并行；</li>
+<li>缓存优化。</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="　参考"></a>　参考</h2><p><a href="https://zhuanlan.zhihu.com/p/87885678" target="_blank" rel="noopener">【机器学习】决策树（下）——XGBoost、LightGBM（非常详细）</a></p>
+
       
     </div>
 
@@ -975,7 +1121,7 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-决策树"><span class="nav-number">1.</span> <span class="nav-text">0x01 决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-整体技术"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 整体技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-需要用到的公式"><span class="nav-number">1.2.</span> <span class="nav-text">1-1 需要用到的公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-ID3-C4-5-CART"><span class="nav-number">1.3.</span> <span class="nav-text">1-2 ID3 C4.5 CART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-CART回归"><span class="nav-number">1.4.</span> <span class="nav-text">1-3 CART回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-剪枝"><span class="nav-number">1.5.</span> <span class="nav-text">1-4 剪枝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-集成学习"><span class="nav-number">2.</span> <span class="nav-text">0x02 集成学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-偏差-方差"><span class="nav-number">2.1.</span> <span class="nav-text">2-0 偏差 方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Boosting"><span class="nav-number">2.2.</span> <span class="nav-text">2-1 Boosting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Bagging"><span class="nav-number">2.3.</span> <span class="nav-text">2-2 Bagging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Stacking"><span class="nav-number">2.4.</span> <span class="nav-text">2-3 Stacking</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-Adaboost"><span class="nav-number">3.</span> <span class="nav-text">0x02 Adaboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-GDBT"><span class="nav-number">4.</span> <span class="nav-text">0x03 GDBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-XGBoost"><span class="nav-number">5.</span> <span class="nav-text">0x04 XGBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-LightGBM"><span class="nav-number">6.</span> <span class="nav-text">0x05 LightGBM</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-决策树"><span class="nav-number">1.</span> <span class="nav-text">0x01 决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-整体技术"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 整体技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-需要用到的公式"><span class="nav-number">1.2.</span> <span class="nav-text">1-1 需要用到的公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-ID3-C4-5-CART"><span class="nav-number">1.3.</span> <span class="nav-text">1-2 ID3 C4.5 CART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-CART回归"><span class="nav-number">1.4.</span> <span class="nav-text">1-3 CART回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-剪枝"><span class="nav-number">1.5.</span> <span class="nav-text">1-4 剪枝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-集成学习"><span class="nav-number">2.</span> <span class="nav-text">0x02 集成学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-偏差-方差"><span class="nav-number">2.1.</span> <span class="nav-text">2-0 偏差 方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Boosting"><span class="nav-number">2.2.</span> <span class="nav-text">2-1 Boosting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Bagging"><span class="nav-number">2.3.</span> <span class="nav-text">2-2 Bagging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Stacking"><span class="nav-number">2.4.</span> <span class="nav-text">2-3 Stacking</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-Adaboost"><span class="nav-number">3.</span> <span class="nav-text">0x02 Adaboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-GDBT"><span class="nav-number">4.</span> <span class="nav-text">0x03 GDBT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-XGBoost"><span class="nav-number">5.</span> <span class="nav-text">0x04 XGBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-LightGBM"><span class="nav-number">6.</span> <span class="nav-text">0x05 LightGBM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">　参考</span></a></li></ol></div>
             
 
           </div>
@@ -1015,7 +1161,7 @@ Gini(D, A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gini(D_{2})</scri
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">33k</span>
+    <span title="站点总字数">35k</span>
   
 
   
