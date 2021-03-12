@@ -164,8 +164,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Sec</tag>
         <tag>Linux</tag>
+        <tag>Sec</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +187,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Sec</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -242,6 +242,28 @@
     <title><![CDATA[似然函数和贝叶斯定理]]></title>
     <url>%2F2019%2F07%2F01%2F20190701-%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0%E5%92%8C%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%AE%9A%E7%90%86%2F</url>
     <content type="text"><![CDATA[似然函数和贝叶斯定理 似然函数 已知结果估计概率。 似然函数 极大似然估计 如何理解似然函数，请看这个： 知乎回答：如何理解似然函数 用其中的一句话概括就是： p(x|θ)也是一个有着两个变量的函数。如果，你将θ设为常量，则你会得到一个概率函数（关于x的函数）；如果，你将x设为常量你将得到似然函数（关于θ的函数）。 贝叶斯定理 贝叶斯想解决的问题就是一个逆概率问题，正常情况已知有几个黑球几个红球来计算概率，而贝叶斯与之相反，贝叶斯想要通过往外抽球的结果来判断其中黑色球红色球的比例关系。 用在实际问题上就比较好理解了，比如天气预测，你不知道天上有几个红球和黑球，只知道到目前为止抽过多少球是什么球，所以对于天气的预测其实就可以是一种逆概率问题。 后验概率 = 先验概率 × 可能性函数 可能性函数是指一个可以是先验概率更接近真实概率的一个调整因子 如何理解贝叶斯定理，请看这个 ：知乎文章：如何理解贝叶斯（本文下边很多思想都是来自这篇文章） Part I : 生活中的贝叶斯 贝叶斯的底层思想就是： 如果我能掌握一个事情的全部信息，我当然能计算出一个客观概率（古典概率、正向概率）。 可是生活中绝大多数决策面临的信息都是不全的，我们手中只有有限的信息。既然无法得到全面的信息，我们就在信息有限的情况下，尽可能做出一个好的预测。也就是，在主观判断的基础上，可以先估计一个值（先验概率），然后根据观察的新信息不断修正(可能性函数)。 总结： P（A|B）= P（A）* 调整因子 计算B发生的条件下A发生的概率，它等于先出P（A）先验概率，后边加一个调整因子。 调整因子 = P（B|A） / P（B） P（B） = P（B|A） P（A） + P（B|A’） P（A’） Part II ：贝叶斯与机器学习 贝叶斯定理与人脑的工作机制很像，这也是为什么它能成为机器学习的基础。 如果你仔细观察小孩学习新东西的这个能力，会发现，很多东西根本就是看一遍就会。比如我3岁的外甥，看了我做俯卧撑的动作，也做了一次这个动作，虽然动作不标准，但是也是有模有样。 同样的，我告诉他一个新单词，他一开始并不知道这个词是什么意思，但是他可以根据当时的情景，先来个猜测（先验概率/主观判断）。一有机会，他就会在不同的场合说出这个词，然后观察你的反应。如果我告诉他用对了，他就会进一步记住这个词的意思，如果我告诉他用错了，他就会进行相应调整。（可能性函数/调整因子）。经过这样反复的猜测、试探、调整主观判断，就是贝叶斯定理思维的过程。 同样的，我们成人也在用贝叶斯思维来做出决策。比如，你和女神在聊天的时候，如果对方说出“虽然”两个字，你大概就会猜测，对方后继九成的可能性会说出“但是”。我们的大脑看起来就好像是天生在用贝叶斯定理，即根据生活的经历有了主观判断（先验概率），然后根据搜集新的信息来修正（可能性函数/调整因子），最后做出高概率的预测（后验概率）。 Part III ：贝叶斯是怎么样被训练的（train） 这是在这个暑假中需要学习和解决的问题]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[植树节-有趣的码上种树-腾讯极客技术挑战赛]]></title>
+    <url>%2F2019%2F06%2F30%2F20210312-%E6%A4%8D%E6%A0%91%E8%8A%82-%E6%9C%89%E8%B6%A3%E7%9A%84%E7%A0%81%E4%B8%8A%E7%A7%8D%E6%A0%91-%E8%85%BE%E8%AE%AF%E6%9E%81%E5%AE%A2%E6%8A%80%E6%9C%AF%E6%8C%91%E6%88%98%E8%B5%9B%2F</url>
+    <content type="text"><![CDATA[比较有意思的比赛，简单过了两关 点一下种树按钮就可以种一棵树了，是通过某个接口实现的，在程序源码中可以找到JS的位置； 整体逻辑是，点一下按钮，带着用户的token请求第一个链接，获得几个值，通过对获取到的值的运算，获得进一步的结果，带着结果请求第二个链接，就可以完成种树了。 关键在于箭头指的方向，获取到的值应该怎么运算 第一步，可以先burp抓包看一下实现逻辑，顺便获取到自己的token 请求完之后，又抓到发送一条新请求；这个请求发完之后就完成了种树。 所以先看一下第一步请求到了什么， 三个字段，其中c相当于题号，关系着请求哪一个js； a是要运算的值； t相当于种树编号，不用运算； 10000棵树之前，js是 123456window.A274075A = asyncfunction(&#123; a&#125;) &#123; return new Promise(_ = &gt;setTimeout(__ = &gt;_(a[0]), 2000))&#125; 1W~10W 123456window.A3C2EA99 = asyncfunction(&#123; a&#125;) &#123; return new Promise(_ = &gt;setTimeout(__ = &gt;_(a[0] * a[0] + a[0]), 2000))&#125; 10~25W 开始麻烦了，最近太忙了，真是没有时间去解了 请求到是一串乱码，但是明显是base64加密的，解密后整理一下即可 1234567891011121314151617181920212223242526eval(atob( var _0xe936 = ['A5473788']; (function(_0x48e85c, _0xe936d8) &#123; var _0x23fc5a = function(_0x2858d9) &#123; while (--_0x2858d9) &#123; _0x48e85c['push'](_0x48e85c['shift']()); &#125; &#125;; _0x23fc5a(++_0xe936d8); &#125; (_0xe936, 0x196)); var _0x23fc = function(_0x48e85c, _0xe936d8) &#123; _0x48e85c = _0x48e85c - 0x0; var _0x23fc5a = _0xe936[_0x48e85c]; return _0x23fc5a; &#125;; window[_0x23fc('0x0')] = function(_0x335437) &#123; var _0x1aac02 = 0x30d3f; for (var _0x3bed6a = 0x30d3f; _0x3bed6a &gt; 0x0; _0x3bed6a--) &#123; var _0x375340 = 0x0; for (var _0x1ddb77 = 0x0; _0x1ddb77 &lt; _0x3bed6a; _0x1ddb77++) &#123; _0x375340 += _0x335437['a'][0x0]; &#125; _0x375340 % _0x335437['a'][0x2] == _0x335437['a'][0x1] &amp;&amp; _0x3bed6a &lt; _0x1aac02 &amp;&amp; (_0x1aac02 = _0x3bed6a); &#125; return _0x1aac02; &#125;;)) 最后附上前10W的简单代码，哈哈，水平还是不够呀，溜了溜了，硬蹭进了前100名，肯定很快就被挤出去了 12345678910111213141516171819202122232425import requestsfrom bs4 import BeautifulSoupimport jsonimport reimport pandas as pdimport csvimport timeheaders=&#123; 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'&#125;# 00000489422529DB90F9AE48E0F9D8E0while(1): url = f'http://159.75.70.9:8081/pull?u=0000083547D054D91E8D106EFA199372' reponse = requests.get(url,headers=headers) a = json.loads(reponse.text) print(a['c'],a['a'][0],a['t']) aa = a['a'][0] aa = aa*(aa+1) tt = a['t'] url_ = f'http://159.75.70.9:8081/push?t=&#123;tt&#125;&amp;a=&#123;aa&#125;' reponse_ = requests.get(url_,headers=headers) a_ = json.loads(reponse_.text) print(a_) time.sleep(0)]]></content>
+      <categories>
+        <category>Sec</category>
+      </categories>
+      <tags>
+        <tag>Sec</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基于深度学习与词嵌入的情感分析系统设计与实现]]></title>
+    <url>%2F2019%2F06%2F30%2F20190630-%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AF%8D%E5%B5%8C%E5%85%A5%E7%9A%84%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[本科毕业设计 论文及部分代码： https://github.com/dyngq/sentiment-analysis-project]]></content>
       <categories>
         <category>AI</category>
       </categories>
