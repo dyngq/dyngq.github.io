@@ -192,13 +192,38 @@
   </entry>
   
   <entry>
+    <title>从sigmoid，softmax，到交叉熵，到focal-loss.md</title>
+    <link href="http://www.dyngq.top/2020/09/21/20200921-%E4%BB%8Esigmoid%EF%BC%8Csoftmax%EF%BC%8C%E5%88%B0%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%8C%E5%88%B0focal-loss/"/>
+    <id>http://www.dyngq.top/2020/09/21/20200921-从sigmoid，softmax，到交叉熵，到focal-loss/</id>
+    <published>2020-09-21T12:21:01.000Z</published>
+    <updated>2021-03-15T08:17:01.846Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>sigmoid，softmax；</p><p>交叉熵损失，样本不均衡的focalloss损失；</p></blockquote><a id="more"></a><h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;sigmoid，softmax；&lt;/p&gt;
+&lt;p&gt;交叉熵损失，样本不均衡的focalloss损失；&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://www.dyngq.top/categories/AI/"/>
+    
+    
+      <category term="ML" scheme="http://www.dyngq.top/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>概率与统计 （分布、熵）</title>
     <link href="http://www.dyngq.top/2020/09/09/20200909-%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/"/>
     <id>http://www.dyngq.top/2020/09/09/20200909-概率统计/</id>
     <published>2020-09-09T01:01:34.000Z</published>
-    <updated>2021-03-11T05:56:24.566Z</updated>
+    <updated>2021-03-14T13:55:42.144Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>概率 统计 相关基本知识；</p><p>会学习写边补充。</p></blockquote><a id="more"></a><h2 id="0x01-分布"><a href="#0x01-分布" class="headerlink" title="0x01 分布"></a>0x01 分布</h2><h2 id="0x02-假设检验"><a href="#0x02-假设检验" class="headerlink" title="0x02 假设检验"></a>0x02 假设检验</h2><h2 id="0x03-相关概念"><a href="#0x03-相关概念" class="headerlink" title="0x03 相关概念"></a>0x03 相关概念</h2><h3 id="3-1-偏差（Bias）与方差（Variance）"><a href="#3-1-偏差（Bias）与方差（Variance）" class="headerlink" title="3-1 偏差（Bias）与方差（Variance）"></a>3-1 偏差（Bias）与方差（Variance）</h3><ul><li>对于模型的集成学习来说<ul><li><strong>偏差</strong>是指由有所采样得到的大小为m的训练数据集，训练出的所有模型的输出的平均值真实模型输出之间的偏差；</li><li><strong>方差</strong>是指有所有采样得到的大小为m的训练数据集，训练出的所有模型的输出的方差；</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>概率 统计 相关基本知识；</p><p>会学习写边补充。</p></blockquote><a id="more"></a><h2 id="0x01-分布"><a href="#0x01-分布" class="headerlink" title="0x01 分布"></a>0x01 分布</h2><h2 id="0x02-假设检验"><a href="#0x02-假设检验" class="headerlink" title="0x02 假设检验"></a>0x02 假设检验</h2><h2 id="0x03-相关概念"><a href="#0x03-相关概念" class="headerlink" title="0x03 相关概念"></a>0x03 相关概念</h2><h3 id="3-1-偏差（Bias）与方差（Variance）"><a href="#3-1-偏差（Bias）与方差（Variance）" class="headerlink" title="3-1 偏差（Bias）与方差（Variance）"></a>3-1 偏差（Bias）与方差（Variance）</h3><ul><li>对于模型的集成学习来说<ul><li><strong>偏差</strong>是指由有所采样得到的大小为m的训练数据集，训练出的所有模型的输出的平均值真实模型输出之间的偏差；</li><li><strong>方差</strong>是指有所有采样得到的大小为m的训练数据集，训练出的所有模型的输出的方差；</li></ul></li></ul><h3 id="3-2-熵-相关"><a href="#3-2-熵-相关" class="headerlink" title="3-2 熵 相关"></a>3-2 熵 相关</h3><h4 id="3-2-1-相对熵（KL散度）"><a href="#3-2-1-相对熵（KL散度）" class="headerlink" title="3-2-1 相对熵（KL散度）"></a>3-2-1 相对熵（KL散度）</h4><p><img src="https://img.dyngq.top/images/20210314215322.png" alt="image-20210314215320964"></p><h4 id="3-2-2-交叉熵-Cross-entropy"><a href="#3-2-2-交叉熵-Cross-entropy" class="headerlink" title="3-2-2 交叉熵 Cross entropy"></a>3-2-2 交叉熵 Cross entropy</h4><p><img src="https://img.dyngq.top/images/20210314215501.png" alt="image-20210314215500210"></p>]]></content>
     
     <summary type="html">
     
@@ -286,6 +311,31 @@
     
     
       <category term="NLP" scheme="http://www.dyngq.top/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优化方法，激活函数</title>
+    <link href="http://www.dyngq.top/2020/06/18/20200618-%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%8C%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.dyngq.top/2020/06/18/20200618-优化方法，激活函数/</id>
+    <published>2020-06-18T00:40:00.000Z</published>
+    <updated>2021-03-15T08:22:41.096Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>总结机器学习常用的优化方法；</p><p>总结深度学习常用的激活函数；</p></blockquote><a id="more"></a><h2 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;总结机器学习常用的优化方法；&lt;/p&gt;
+&lt;p&gt;总结深度学习常用的激活函数；&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://www.dyngq.top/categories/AI/"/>
+    
+    
+      <category term="AI" scheme="http://www.dyngq.top/tags/AI/"/>
     
   </entry>
   
@@ -460,57 +510,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
       <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
     
-  </entry>
-  
-  <entry>
-    <title>试着破解一下wifi密码</title>
-    <link href="http://www.dyngq.top/2019/09/16/20190916-%E8%AF%95%E7%9D%80%E7%A0%B4%E8%A7%A3%E4%B8%80%E4%B8%8Bwifi%E5%AF%86%E7%A0%81/"/>
-    <id>http://www.dyngq.top/2019/09/16/20190916-试着破解一下wifi密码/</id>
-    <published>2019-09-15T16:00:01.000Z</published>
-    <updated>2021-03-04T11:23:28.526Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>刚来实验室，问到实验室的2.4g频段wifi密码，但是5g频段密码没人知道。</p></blockquote><a id="more"></a><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="最大的问题"><a href="#最大的问题" class="headerlink" title="最大的问题"></a>最大的问题</h3><ul><li>网卡问题，很多旧方法需要旧设备，但旧设备没法识别5g频段网络。</li><li>VMware虚拟机里的很难识别网卡，很难进行桥接，扫不到无线网络。</li><li>win10的WSL里的ubuntu或者kali等可以是被wifi0，但是无法监听。</li><li>原来旧电脑的安装了Ubuntu双系统，但是网卡太老检测不到5g信号。</li><li>最后制作了一个简单的Ubuntu18.04的U盘启动，通过Ubuntu live暂时使用unix系统进行监听和攻击。</li></ul><h3 id="整体进程"><a href="#整体进程" class="headerlink" title="整体进程"></a>整体进程</h3><ul><li>基本上按照kali(aircrack-ng)破解wifi的思路</li><li><a href="https://blog.csdn.net/qq_36119192/article/details/84254622" target="_blank" rel="noopener">参考链接:Aircrack-ng破解无线WIFI密码</a></li><li>我的步骤基本上和这个是一样的，因为是在临时的live ubuntu上弄的，没有截图写笔记，只是导出了最后有用的cap文件，所以不再累述。</li><li>有一个地方需要注意，那就是单纯的检测一般不会检测到5g频段，需要在airmon-ng的时候加入频率参数，sudo airodump-ng -C 5180-5825 wlo1mon。并且实践发现只需要加一次即可，之后的任何命令都可以侦测到5g频段。<a href="https://blog.csdn.net/keheinash/article/details/87970057" target="_blank" rel="noopener">参考链接:解决airodump-ng工具无法搜索5GHz频段的方法</a></li><li>……</li><li>但是根本没有人连接这个5g频段的wifi，自然没法对用户进行攻击抓握手包，卡主。。。</li><li>吃饭回来突然想起来之前的192.168.0.1只是自己猜出来的，所以又看了一遍默认网关，发现默认网关错了，其实是192.168.5.1。。。。。。。。登陆。。。。使用admin默认密码。。。成功。。。。。果然除了我没人用5g频段，飙起</li></ul><blockquote><p>但是不能就这么完了呀，弄了挺长时间的，不甘心啊。。。</p></blockquote><ul><li>于是</li><li>用自己手机连上！ 攻击自己手机！</li><li>结果又尴尬了，攻击一直失败，才了解到现在很多设备早就能够抵御这种攻击了。。。</li><li>所以，主动下线，，，上线，，，相当于很配合的提供了握手包。。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;刚来实验室，问到实验室的2.4g频段wifi密码，但是5g频段密码没人知道。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
-    
-    
       <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务器搭建博客总结</title>
-    <link href="http://www.dyngq.top/2019/07/22/20190722-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/"/>
-    <id>http://www.dyngq.top/2019/07/22/20190722-服务器搭建博客总结/</id>
-    <published>2019-07-21T16:00:01.000Z</published>
-    <updated>2021-03-04T13:09:19.474Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>记录一下搭建和迁移等，目前已经迁移到阿里云＋阿里云OSS上</p></blockquote><a id="more"></a><ul><li>很多人都有自己的博客，只有Github的话不够美观直接，建立博客也是熟悉服务器的一个过程。</li><li>因为之前搭建过，由于灵越3543上自用的Ubuntu上软件依赖混乱缺失了很多，无法安装SSH服务等，所以直接格式化了，扩大了空间，重装了系统；所以需要将原来的Hexo博客及逆行转移，之后进行了更详细的优化，购买了域名等等。</li></ul><h2 id="阿里云ECS-OSS-（2020更新方案）"><a href="#阿里云ECS-OSS-（2020更新方案）" class="headerlink" title="阿里云ECS+OSS （2020更新方案）"></a>阿里云ECS+OSS （2020更新方案）</h2><ol><li>Nginx反向代理，强制https访问，80端口重定向443端口 <a href="https://zhuanlan.zhihu.com/p/32055783" target="_blank" rel="noopener">参考链接：Nginx的https配置记录以及http强制跳转到https的方法梳理</a></li><li>服务器上搭建git服务，并通过钩子钩到相应的搭建好环境的文件夹</li><li>OSS利用typora的图片上传功能直接上传到图床，并且自动修改为可访问的超链接</li><li>每次部署可以同步推送到服务器、GitHub、Codeing等</li></ol><h2 id="dyngq-top"><a href="#dyngq-top" class="headerlink" title="dyngq.top"></a>dyngq.top</h2><h3 id="A-使用了Hexo博客"><a href="#A-使用了Hexo博客" class="headerlink" title="A. 使用了Hexo博客"></a>A. 使用了Hexo博客</h3><ul><li>因为搭建简单，而且可以借助Github Pages进行发布，不需要另外购买需要一直开启的服务器，在原来的3543机器上就可以完成搭建与发布，类似于服务器但是不需要每时每刻都开启。</li><li>最初的搭建很简单，有很详细的官方配置介绍。</li><li>git安装hexo或者直接将文件夹需要的部分复制过来</li><li>安装node.js</li><li>相关部署配置等</li></ul><h3 id="B-域名"><a href="#B-域名" class="headerlink" title="B. 域名"></a>B. 域名</h3><ul><li>域名在阿里云购买了.top域名，首年9块钱，续费每年29块钱，还可以。</li><li>域名包含简单的解析服务，需要对Pages服务和域名解析控制台都配置一下域名解析。</li><li>ping一下网址就可以得到ip，小常识</li></ul><h3 id="C-主题"><a href="#C-主题" class="headerlink" title="C. 主题"></a>C. 主题</h3><ul><li>主题的选择有很多</li><li>主题配置 <a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next主题配置文档链接</a></li></ul><h3 id="D-动态背景动画"><a href="#D-动态背景动画" class="headerlink" title="D. 动态背景动画"></a>D. 动态背景动画</h3><ul><li>需要git clone一个库，否则不会生效</li></ul><h3 id="E-杂七杂八的配置很多"><a href="#E-杂七杂八的配置很多" class="headerlink" title="E. 杂七杂八的配置很多"></a>E. 杂七杂八的配置很多</h3><ul><li>根据自己需要来，需要的时候再配置就可以了。</li></ul><h3 id="F-搭建CDN加速（舍弃）"><a href="#F-搭建CDN加速（舍弃）" class="headerlink" title="F. 搭建CDN加速（舍弃）"></a>F. 搭建CDN加速（舍弃）</h3><h3 id="G-选择双仓库多解析"><a href="#G-选择双仓库多解析" class="headerlink" title="G. 选择双仓库多解析"></a>G. 选择双仓库多解析</h3><ul><li>如果是直接在服务器上运行hexo服务的话就不需要，这一条这上一条的CDN搭建的目的原因都是因为，百度无法爬取Github Pages的页面，Google无法访问阿里DNS解析的dns3.hichina.com, dns4.hichina.com服务器，所以无法完成搜索引擎的收录工作。</li><li>谷歌收录软件（Google Search Console）无法访问www.dyngq.top但是最后完成了对dyngq.top的网站地图sitemap的提交，有点意外，应该不是无法访问服务器的缘故，说不清楚，还待研究</li><li>google和百度的收录应该都搞定了，问题关键在于不要加www.</li><li>不管怎么样，提交的链接想尽办法不要加www.，直接<a href="http://dyngq.top" target="_blank" rel="noopener">http://dyngq.top</a>就可以了</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;记录一下搭建和迁移等，目前已经迁移到阿里云＋阿里云OSS上&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="dyngq" scheme="http://www.dyngq.top/categories/dyngq/"/>
-    
-    
-      <category term="dyngq" scheme="http://www.dyngq.top/tags/dyngq/"/>
     
   </entry>
   
