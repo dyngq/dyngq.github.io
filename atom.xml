@@ -319,9 +319,9 @@
     <link href="http://www.dyngq.top/2020/06/18/20200618-%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%8C%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
     <id>http://www.dyngq.top/2020/06/18/20200618-优化方法，激活函数/</id>
     <published>2020-06-18T00:40:00.000Z</published>
-    <updated>2021-03-15T08:22:41.096Z</updated>
+    <updated>2021-03-15T13:55:15.463Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>总结机器学习常用的优化方法；</p><p>总结深度学习常用的激活函数；</p></blockquote><a id="more"></a><h2 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h2>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>总结机器学习常用的优化方法；</p><p>总结深度学习常用的激活函数；</p></blockquote><a id="more"></a><h2 id="0x00-无约束优化方法"><a href="#0x00-无约束优化方法" class="headerlink" title="0x00 无约束优化方法"></a>0x00 无约束优化方法</h2><p>直接法和迭代法；</p><p>迭代法主要有，一阶的梯度下降法，二阶的牛顿法</p><h3 id="1-1-梯度下降-一阶泰勒展开"><a href="#1-1-梯度下降-一阶泰勒展开" class="headerlink" title="1-1 梯度下降 一阶泰勒展开"></a>1-1 梯度下降 一阶泰勒展开</h3><h3 id="1-2-牛顿法-二阶泰勒展开"><a href="#1-2-牛顿法-二阶泰勒展开" class="headerlink" title="1-2 牛顿法 二阶泰勒展开"></a>1-2 牛顿法 二阶泰勒展开</h3><p>对于二次函数（或在局部是二次的函数），Hessian矩阵H正定，那么H^{-1}可计算，牛顿法会使参数直接跳到极小值点。对于非二次的函数，只要Hessian矩阵在当前保持正定，牛顿法依然适用，可以迭代地更新下去。</p><p><strong>相比起一阶方法，牛顿法能够充分利用二阶微分的信息，减少迭代的次数，缩短训练时间。</strong></p><p>最优化问题中，牛顿法为什么比梯度下降法求解需要的迭代次数更少？</p><p>​    牛顿法是二阶收敛，梯度下降是一阶收敛，所以牛顿法就更快。如果更通俗地说的话，比如你想找一条最短的路径走到一个盆地的最底部，梯度下降法每次只从你当前所处位置选一个坡度最大的方向走一步，牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑你走了一步之后，坡度是否会变得更大。所以，可以说牛顿法比梯度下降法看得更远一点，能更快地走到最底部。</p><p>​    根据wiki上的解释，从几何上说，牛顿法就是用一个二次曲面去拟合你当前所处位置的局部曲面，而梯度下降法是用一个平面去拟合当前的局部曲面，通常情况下，二次曲面的拟合会比平面更好，所以牛顿法选择的下降路径会更符合真实的最优下降路径。</p><p><img src="https://img.dyngq.top/images/20210315215425.png" alt="image-20210315215419874" style="zoom: 67%;"></p><p>但它有以下<strong>缺陷</strong>：</p><ol><li>牛顿法需要计算矩阵的逆。一个$k\times k$的矩阵的求逆运算的复杂度是$(k^3)$，这将大大增加计算的负担。</li><li>牛顿法在局部二次曲面上会直接求得极小值点，而极小值点的梯度为零。这就使得模型陷入了局部最优，无法通过梯度更新逃离局部最优解。</li><li>牛顿法只适用于Hessian矩阵正定的情况。在高维空间中，这一点不一定成立。例如，在鞍点附近，Hessian矩阵同时具有正负特征值。牛顿法将会得到错误的方向。</li><li>最严重的问题是，牛顿法会被吸引到<strong>鞍点</strong>。但高维参数空间中，鞍点比局部极值普遍。梯度下降法会沿着梯度的反方向前进，如果梯度反方向没有鞍点，那么它不会主动去找鞍点。所以梯度下降能够逃离鞍点，但牛顿法不能。牛顿法旨在寻找梯度为零的点，它会主动找到鞍点，并锁死在那里（因为鞍点的梯度为零）。</li></ol><h3 id="1-3-拟牛顿法"><a href="#1-3-拟牛顿法" class="headerlink" title="1-3 拟牛顿法"></a>1-3 拟牛顿法</h3><p><img src="D:\Pictures\markdown.img\image-20210315215515144.png" alt="image-20210315215515144"></p>]]></content>
     
     <summary type="html">
     
@@ -510,9 +510,9 @@
       <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
     
     
-      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
-    
       <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
+    
+      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
     
   </entry>
   
