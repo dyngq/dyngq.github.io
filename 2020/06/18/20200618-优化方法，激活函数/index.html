@@ -109,8 +109,8 @@
 <meta property="og:description" content="总结机器学习常用的优化方法； 总结深度学习常用的激活函数；">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20210315215425.png">
-<meta property="og:image" content="d:/Pictures/markdown.img/image-20210315215515144.png">
-<meta property="og:updated_time" content="2021-03-15T13:55:15.463Z">
+<meta property="og:image" content="https://img.dyngq.top/images/20210315215517.png">
+<meta property="og:updated_time" content="2021-03-17T10:26:07.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化方法，激活函数">
 <meta name="twitter:description" content="总结机器学习常用的优化方法； 总结深度学习常用的激活函数；">
@@ -538,7 +538,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">907</span>
+              <span title="本文字数">931</span>
             </span>
           
 
@@ -564,7 +564,7 @@
 <p>总结深度学习常用的激活函数；</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="0x00-无约束优化方法"><a href="#0x00-无约束优化方法" class="headerlink" title="0x00 无约束优化方法"></a>0x00 无约束优化方法</h2><p>直接法和迭代法；</p>
+<h2 id="0x01-无约束优化方法"><a href="#0x01-无约束优化方法" class="headerlink" title="0x01 无约束优化方法"></a>0x01 无约束优化方法</h2><p>直接法和迭代法；</p>
 <p>迭代法主要有，一阶的梯度下降法，二阶的牛顿法</p>
 <h3 id="1-1-梯度下降-一阶泰勒展开"><a href="#1-1-梯度下降-一阶泰勒展开" class="headerlink" title="1-1 梯度下降 一阶泰勒展开"></a>1-1 梯度下降 一阶泰勒展开</h3><h3 id="1-2-牛顿法-二阶泰勒展开"><a href="#1-2-牛顿法-二阶泰勒展开" class="headerlink" title="1-2 牛顿法 二阶泰勒展开"></a>1-2 牛顿法 二阶泰勒展开</h3><p>对于二次函数（或在局部是二次的函数），Hessian矩阵H正定，那么H^{-1}可计算，牛顿法会使参数直接跳到极小值点。对于非二次的函数，只要Hessian矩阵在当前保持正定，牛顿法依然适用，可以迭代地更新下去。</p>
 <p><strong>相比起一阶方法，牛顿法能够充分利用二阶微分的信息，减少迭代的次数，缩短训练时间。</strong></p>
@@ -579,8 +579,8 @@
 <li>牛顿法只适用于Hessian矩阵正定的情况。在高维空间中，这一点不一定成立。例如，在鞍点附近，Hessian矩阵同时具有正负特征值。牛顿法将会得到错误的方向。</li>
 <li>最严重的问题是，牛顿法会被吸引到<strong>鞍点</strong>。但高维参数空间中，鞍点比局部极值普遍。梯度下降法会沿着梯度的反方向前进，如果梯度反方向没有鞍点，那么它不会主动去找鞍点。所以梯度下降能够逃离鞍点，但牛顿法不能。牛顿法旨在寻找梯度为零的点，它会主动找到鞍点，并锁死在那里（因为鞍点的梯度为零）。</li>
 </ol>
-<h3 id="1-3-拟牛顿法"><a href="#1-3-拟牛顿法" class="headerlink" title="1-3 拟牛顿法"></a>1-3 拟牛顿法</h3><p><img src="D:\Pictures\markdown.img\image-20210315215515144.png" alt="image-20210315215515144"></p>
-
+<h3 id="1-3-拟牛顿法"><a href="#1-3-拟牛顿法" class="headerlink" title="1-3 拟牛顿法"></a>1-3 拟牛顿法</h3><p><img src="https://img.dyngq.top/images/20210315215517.png" alt="image-20210315215515144"></p>
+<h3 id="1-4-其他进阶优化算法"><a href="#1-4-其他进阶优化算法" class="headerlink" title="1-4 其他进阶优化算法"></a>1-4 其他进阶优化算法</h3><h4 id="1-4-1"><a href="#1-4-1" class="headerlink" title="1-4-1"></a>1-4-1</h4><h2 id="0x02-激活函数"><a href="#0x02-激活函数" class="headerlink" title="0x02 激活函数"></a>0x02 激活函数</h2>
       
     </div>
 
@@ -930,7 +930,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-无约束优化方法"><span class="nav-number">1.</span> <span class="nav-text">0x00 无约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-梯度下降-一阶泰勒展开"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 梯度下降 一阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-牛顿法-二阶泰勒展开"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 牛顿法 二阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-拟牛顿法"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 拟牛顿法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-无约束优化方法"><span class="nav-number">1.</span> <span class="nav-text">0x01 无约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-梯度下降-一阶泰勒展开"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 梯度下降 一阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-牛顿法-二阶泰勒展开"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 牛顿法 二阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-拟牛顿法"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 拟牛顿法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-其他进阶优化算法"><span class="nav-number">1.4.</span> <span class="nav-text">1-4 其他进阶优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">1-4-1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-激活函数"><span class="nav-number">2.</span> <span class="nav-text">0x02 激活函数</span></a></li></ol></div>
             
 
           </div>
@@ -970,7 +970,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">38k</span>
   
 
   

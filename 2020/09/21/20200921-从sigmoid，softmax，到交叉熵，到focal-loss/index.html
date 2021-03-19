@@ -108,10 +108,24 @@
 <meta property="og:site_name" content="dyngq">
 <meta property="og:description" content="sigmoid，softmax； 交叉熵损失，样本不均衡的focalloss损失；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-15T08:17:01.846Z">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205433.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205447.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205509.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205528.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317182905.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205550.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210317205747.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319224146.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319224209.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319224236.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319224249.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319224302.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210319212805.png">
+<meta property="og:updated_time" content="2021-03-19T14:43:27.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从sigmoid，softmax，到交叉熵，到focal-loss.md">
 <meta name="twitter:description" content="sigmoid，softmax； 交叉熵损失，样本不均衡的focalloss损失；">
+<meta name="twitter:image" content="https://img.dyngq.top/images/20210317205433.png">
 
 
 
@@ -535,7 +549,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">44</span>
+              <span title="本文字数">376</span>
             </span>
           
 
@@ -561,7 +575,33 @@
 <p>交叉熵损失，样本不均衡的focalloss损失；</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2>
+<h2 id="0x01-sigmoid"><a href="#0x01-sigmoid" class="headerlink" title="0x01 sigmoid"></a>0x01 sigmoid</h2><p><img src="https://img.dyngq.top/images/20210317205433.png" alt="image-20210317205423645" style="zoom:50%;"></p>
+<p><strong>求导</strong></p>
+<p><img src="https://img.dyngq.top/images/20210317205447.png" alt="image-20210317205446308" style="zoom: 67%;"></p>
+<h2 id="0x02-softmax"><a href="#0x02-softmax" class="headerlink" title="0x02 softmax"></a>0x02 softmax</h2><p><img src="https://img.dyngq.top/images/20210317205509.png" alt="image-20210317205508221" style="zoom:67%;"></p>
+<p><img src="https://img.dyngq.top/images/20210317205528.png" alt="image-20210317205527163" style="zoom:67%;"></p>
+<h2 id="0x03-Cross-Entropy与logsoftmax"><a href="#0x03-Cross-Entropy与logsoftmax" class="headerlink" title="0x03  Cross-Entropy与logsoftmax"></a>0x03  Cross-Entropy与logsoftmax</h2><p>先说<code>LogSoftmax</code>，</p>
+<p><img src="https://img.dyngq.top/images/20210317182905.png" alt="image-20210317182903831"></p>
+<p>logsoftmax省了一个指数计算，省了一个除法，数值上相对稳定一些。</p>
+<p>其实 <code>Softmax_Cross_Entropy</code>里面也是这么实现的。这也就引出了<strong>交叉熵</strong>与<strong>softmax</strong>的关系。</p>
+<p><strong>cross-entropy</strong> 不是机器学习独有的概念，本质上是用来衡量<strong>两个概率分布的相似性</strong>的。</p>
+<p><strong>cross-entropy</strong> 公式为：</p>
+<p><img src="https://img.dyngq.top/images/20210317205550.png" alt="image-20210317205549767" style="zoom:80%;"></p>
+<p>其中预测概率<strong>q(k)</strong>就对应着<strong>softmax</strong>所输出的值，前边是log，所以，一般都直接采用<strong>logsoftmax</strong>节省计算。</p>
+<p>P.S. 相对熵 KL散度</p>
+<p><img src="https://img.dyngq.top/images/20210317205747.png" alt="image-20210317205746072" style="zoom:50%;"></p>
+<h2 id="0x04-Focal-Loss"><a href="#0x04-Focal-Loss" class="headerlink" title="0x04 Focal-Loss"></a>0x04 Focal-Loss</h2><blockquote>
+<p>何恺明 Kaiming 团队</p>
+</blockquote>
+<p>交叉熵</p>
+<p><img src="https://img.dyngq.top/images/20210319224146.png" alt="image-20210319224143004" style="zoom: 67%;"></p>
+<p><img src="https://img.dyngq.top/images/20210319224209.png" alt="image-20210319224208761" style="zoom:67%;"></p>
+<p><img src="https://img.dyngq.top/images/20210319224236.png" alt="image-20210319224234969" style="zoom:67%;"></p>
+<p><img src="https://img.dyngq.top/images/20210319224249.png" alt="image-20210319224248148" style="zoom:67%;"></p>
+<p><img src="https://img.dyngq.top/images/20210319224302.png" alt="image-20210319224301439"></p>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><p>师弟手绘 FUJUFILM</p>
+<p><img src="https://img.dyngq.top/images/20210319212805.png" alt="image-20210319212804699"></p>
+
       
     </div>
 
@@ -911,7 +951,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01"><span class="nav-number">1.</span> <span class="nav-text">0x01</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-sigmoid"><span class="nav-number">1.</span> <span class="nav-text">0x01 sigmoid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-softmax"><span class="nav-number">2.</span> <span class="nav-text">0x02 softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-Cross-Entropy与logsoftmax"><span class="nav-number">3.</span> <span class="nav-text">0x03  Cross-Entropy与logsoftmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-Focal-Loss"><span class="nav-number">4.</span> <span class="nav-text">0x04 Focal-Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix"><span class="nav-number">5.</span> <span class="nav-text">Appendix</span></a></li></ol></div>
             
 
           </div>
@@ -951,7 +991,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">38k</span>
   
 
   
