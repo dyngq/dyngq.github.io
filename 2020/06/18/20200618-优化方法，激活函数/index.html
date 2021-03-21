@@ -110,7 +110,11 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20210315215425.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210315215517.png">
-<meta property="og:updated_time" content="2021-03-17T10:26:07.678Z">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321183746.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321180800.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321180926.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321180941.png">
+<meta property="og:updated_time" content="2021-03-21T13:50:32.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化方法，激活函数">
 <meta name="twitter:description" content="总结机器学习常用的优化方法； 总结深度学习常用的激活函数；">
@@ -538,7 +542,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">931</span>
+              <span title="本文字数">1.6k</span>
             </span>
           
 
@@ -580,7 +584,27 @@
 <li>最严重的问题是，牛顿法会被吸引到<strong>鞍点</strong>。但高维参数空间中，鞍点比局部极值普遍。梯度下降法会沿着梯度的反方向前进，如果梯度反方向没有鞍点，那么它不会主动去找鞍点。所以梯度下降能够逃离鞍点，但牛顿法不能。牛顿法旨在寻找梯度为零的点，它会主动找到鞍点，并锁死在那里（因为鞍点的梯度为零）。</li>
 </ol>
 <h3 id="1-3-拟牛顿法"><a href="#1-3-拟牛顿法" class="headerlink" title="1-3 拟牛顿法"></a>1-3 拟牛顿法</h3><p><img src="https://img.dyngq.top/images/20210315215517.png" alt="image-20210315215515144"></p>
-<h3 id="1-4-其他进阶优化算法"><a href="#1-4-其他进阶优化算法" class="headerlink" title="1-4 其他进阶优化算法"></a>1-4 其他进阶优化算法</h3><h4 id="1-4-1"><a href="#1-4-1" class="headerlink" title="1-4-1"></a>1-4-1</h4><h2 id="0x02-激活函数"><a href="#0x02-激活函数" class="headerlink" title="0x02 激活函数"></a>0x02 激活函数</h2>
+<h2 id="0x02-常用优化方法"><a href="#0x02-常用优化方法" class="headerlink" title="0x02 常用优化方法"></a>0x02 常用优化方法</h2><h3 id="2-1-SGD-mini-batch-gradient-descent"><a href="#2-1-SGD-mini-batch-gradient-descent" class="headerlink" title="2-1 SGD (mini-batch gradient descent)"></a>2-1 SGD (mini-batch gradient descent)</h3><p>小批量梯度下降，一次只取一小批；不需要像批梯度下降一样遍历全部，节省了计算；也不像随机梯度下降一样只取一次，降低了方差。</p>
+<h3 id="2-2-Momentum-动量"><a href="#2-2-Momentum-动量" class="headerlink" title="2-2 Momentum 动量"></a>2-2 Momentum 动量</h3><p>相当于给了一种加速度。</p>
+<p>当前时刻的决定，与之前时刻的运动方向相关。在某方向上，若是与之前方向不同，则抑制；若是相同，则更快。</p>
+<p><img src="https://img.dyngq.top/images/20210321183746.png" alt="image-20210321183744459" style="zoom: 33%;"></p>
+<h3 id="2-3-Adagrad-环境感知"><a href="#2-3-Adagrad-环境感知" class="headerlink" title="2-3 Adagrad 环境感知"></a>2-3 Adagrad 环境感知</h3><p>对于频繁更新的参数，降低学习率；对于很少更新的参数，提高学习率</p>
+<p>分母具有退火作用，随着迭代，分母越来越大，学习率越来越小</p>
+<h3 id="2-4-Adam-融合2-2-amp-2-3"><a href="#2-4-Adam-融合2-2-amp-2-3" class="headerlink" title="2-4 Adam 融合2-2&amp;2-3"></a>2-4 Adam 融合2-2&amp;2-3</h3><p>一阶矩</p>
+<p>二阶矩</p>
+<h3 id="2-5-Adadelta"><a href="#2-5-Adadelta" class="headerlink" title="2-5 Adadelta"></a>2-5 Adadelta</h3><p>Adagrad会累加之前所有的梯度平方，而Adadelta只累加固定大小的项，并且也不直接存储这些项，仅仅是近似计算对应的平均值。</p>
+<h3 id="2-6-RMSprop"><a href="#2-6-RMSprop" class="headerlink" title="2-6 RMSprop"></a>2-6 RMSprop</h3><p>RMSprop可以算作Adadelta的一个特例</p>
+<p>RMSprop算是Adagrad的一种发展，和Adadelta的变体，效果趋于二者之间</p>
+<p>适合处理非平稳目标 - 对于<strong>RNN</strong>效果很好</p>
+<h3 id="2-7-Nesterov-提前量"><a href="#2-7-Nesterov-提前量" class="headerlink" title="2-7 Nesterov 提前量"></a>2-7 Nesterov 提前量</h3><p>根据当前动量多走一步，根据下一步，调整当前步。</p>
+<p>​    举个通俗的例子就是，你在下坡时，如果在下坡快到底，但又未到底时，动量梯度下降会让你冲到坡的对面去。Nesterov梯度下降会预知你的下一步将会时到坡的对面去，所以会提示你提前刹车，避免过度冲到坡的对面去。这包含了一种提前计算下一步的梯度，来指导当前梯度的想法。</p>
+<h3 id="2-8-Nadam"><a href="#2-8-Nadam" class="headerlink" title="2-8 Nadam"></a>2-8 Nadam</h3><h3 id="2-9-Adamax"><a href="#2-9-Adamax" class="headerlink" title="2-9 Adamax"></a>2-9 Adamax</h3><h2 id="0x03-激活函数"><a href="#0x03-激活函数" class="headerlink" title="0x03 激活函数"></a>0x03 激活函数</h2><p>最欣赏的解释：</p>
+<p><img src="https://img.dyngq.top/images/20210321180800.png" alt="image-20210321180759351"></p>
+<p>其他的贴上之前的简单整理</p>
+<p><img src="https://img.dyngq.top/images/20210321180926.png" alt="image-20210321180925758"></p>
+<p><img src="https://img.dyngq.top/images/20210321180941.png" alt="image-20210321180939945"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://zhuanlan.zhihu.com/p/22252270" target="_blank" rel="noopener">深度学习最全优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）</a></p>
+
       
     </div>
 
@@ -930,7 +954,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-无约束优化方法"><span class="nav-number">1.</span> <span class="nav-text">0x01 无约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-梯度下降-一阶泰勒展开"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 梯度下降 一阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-牛顿法-二阶泰勒展开"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 牛顿法 二阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-拟牛顿法"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 拟牛顿法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-其他进阶优化算法"><span class="nav-number">1.4.</span> <span class="nav-text">1-4 其他进阶优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">1-4-1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-激活函数"><span class="nav-number">2.</span> <span class="nav-text">0x02 激活函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-无约束优化方法"><span class="nav-number">1.</span> <span class="nav-text">0x01 无约束优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-梯度下降-一阶泰勒展开"><span class="nav-number">1.1.</span> <span class="nav-text">1-1 梯度下降 一阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-牛顿法-二阶泰勒展开"><span class="nav-number">1.2.</span> <span class="nav-text">1-2 牛顿法 二阶泰勒展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-拟牛顿法"><span class="nav-number">1.3.</span> <span class="nav-text">1-3 拟牛顿法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-常用优化方法"><span class="nav-number">2.</span> <span class="nav-text">0x02 常用优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-SGD-mini-batch-gradient-descent"><span class="nav-number">2.1.</span> <span class="nav-text">2-1 SGD (mini-batch gradient descent)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Momentum-动量"><span class="nav-number">2.2.</span> <span class="nav-text">2-2 Momentum 动量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Adagrad-环境感知"><span class="nav-number">2.3.</span> <span class="nav-text">2-3 Adagrad 环境感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Adam-融合2-2-amp-2-3"><span class="nav-number">2.4.</span> <span class="nav-text">2-4 Adam 融合2-2&amp;2-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-Adadelta"><span class="nav-number">2.5.</span> <span class="nav-text">2-5 Adadelta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-RMSprop"><span class="nav-number">2.6.</span> <span class="nav-text">2-6 RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-Nesterov-提前量"><span class="nav-number">2.7.</span> <span class="nav-text">2-7 Nesterov 提前量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-Nadam"><span class="nav-number">2.8.</span> <span class="nav-text">2-8 Nadam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9-Adamax"><span class="nav-number">2.9.</span> <span class="nav-text">2-9 Adamax</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-激活函数"><span class="nav-number">3.</span> <span class="nav-text">0x03 激活函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>

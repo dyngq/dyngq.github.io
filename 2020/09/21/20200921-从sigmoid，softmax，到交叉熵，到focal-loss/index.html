@@ -112,6 +112,11 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210317205447.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210317205509.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210317205528.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321175518.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321180106.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321175517.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321180249.png">
+<meta property="og:image" content="https://img.dyngq.top/images/20210321164713.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210317182905.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210317205550.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210317205747.png">
@@ -121,7 +126,7 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210319224249.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210319224302.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210319212805.png">
-<meta property="og:updated_time" content="2021-03-19T14:43:27.460Z">
+<meta property="og:updated_time" content="2021-03-21T10:03:01.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从sigmoid，softmax，到交叉熵，到focal-loss.md">
 <meta name="twitter:description" content="sigmoid，softmax； 交叉熵损失，样本不均衡的focalloss损失；">
@@ -549,7 +554,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">376</span>
+              <span title="本文字数">507</span>
             </span>
           
 
@@ -580,6 +585,17 @@
 <p><img src="https://img.dyngq.top/images/20210317205447.png" alt="image-20210317205446308" style="zoom: 67%;"></p>
 <h2 id="0x02-softmax"><a href="#0x02-softmax" class="headerlink" title="0x02 softmax"></a>0x02 softmax</h2><p><img src="https://img.dyngq.top/images/20210317205509.png" alt="image-20210317205508221" style="zoom:67%;"></p>
 <p><img src="https://img.dyngq.top/images/20210317205528.png" alt="image-20210317205527163" style="zoom:67%;"></p>
+<p>求导，并且简单推导下只有一层hidden layer加softmax的多分类神经网络</p>
+<p>x为输入，z为中间隐层神经元，a为最终输出结果</p>
+<p><img src="https://img.dyngq.top/images/20210321175518.png" alt="image-20210321175444430"></p>
+<p>损失函数</p>
+<p><img src="https://img.dyngq.top/images/20210321180106.png" alt="image-20210321180104828" style="zoom:80%;"></p>
+<p>对某个参数进行求导</p>
+<p><img src="https://img.dyngq.top/images/20210321175517.png" alt="image-20210321175515040" style="zoom: 80%;"></p>
+<p>对于划线部分，分为两种情况</p>
+<p><img src="https://img.dyngq.top/images/20210321180249.png" alt="image-20210321180247838"></p>
+<p>softmax实质是将，最后一层的、数量与预测种类相同的神经元的<strong>输出</strong>，转化为<strong>概率</strong>。</p>
+<p><img src="https://img.dyngq.top/images/20210321164713.png" alt="image-20210321164711451" style="zoom:67%;"></p>
 <h2 id="0x03-Cross-Entropy与logsoftmax"><a href="#0x03-Cross-Entropy与logsoftmax" class="headerlink" title="0x03  Cross-Entropy与logsoftmax"></a>0x03  Cross-Entropy与logsoftmax</h2><p>先说<code>LogSoftmax</code>，</p>
 <p><img src="https://img.dyngq.top/images/20210317182905.png" alt="image-20210317182903831"></p>
 <p>logsoftmax省了一个指数计算，省了一个除法，数值上相对稳定一些。</p>
