@@ -110,9 +110,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20210311192912.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210313204857.png">
-<meta property="og:image" content="d:/Pictures/markdown.img/equation">
-<meta property="og:image" content="d:/Pictures/markdown.img/equation">
-<meta property="og:updated_time" content="2021-03-13T13:33:58.453Z">
+<meta property="og:updated_time" content="2021-04-09T02:42:37.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
 <meta name="twitter:description" content="树类模型的发展与总结">
@@ -811,7 +809,7 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
 <h3 id="LightGBM与-XGBoost-的对比"><a href="#LightGBM与-XGBoost-的对比" class="headerlink" title="LightGBM与 XGBoost 的对比"></a>LightGBM与 XGBoost 的对比</h3><p>本节主要总结下 LightGBM 相对于 XGBoost 的优点，从内存和速度两方面进行介绍。</p>
 <p><strong>内存更小</strong></p>
 <ol>
-<li>XGBoost 使用预排序后需要记录特征值及其对应样本的统计值的索引，而 LightGBM 使用了直方图算法将特征值转变为 bin 值，且不需要记录特征到样本的索引，将空间复杂度从 <img src="D:\Pictures\markdown.img\equation" alt="[公式]"> 降低为 <img src="D:\Pictures\markdown.img\equation" alt="[公式]"> ，极大的减少了内存消耗；</li>
+<li>XGBoost 使用预排序后需要记录特征值及其对应样本的统计值的索引，而 LightGBM 使用了直方图算法将特征值转变为 bin 值，且不需要记录特征到样本的索引，将空间复杂度从 $O(2\times data)$降低为 $O(bin)$ ，极大的减少了内存消耗；</li>
 <li>LightGBM 采用了直方图算法将存储特征值转变为存储 bin 值，降低了内存消耗；</li>
 <li>LightGBM 在训练过程中采用互斥特征捆绑算法减少了特征数量，降低了内存消耗。</li>
 </ol>
@@ -891,8 +889,8 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/09/21/20200921-从sigmoid，softmax，到交叉熵，到focal-loss/" rel="next" title="从sigmoid，softmax，到交叉熵，到focal-loss.md">
-                <i class="fa fa-chevron-left"></i> 从sigmoid，softmax，到交叉熵，到focal-loss.md
+              <a href="/2020/09/21/20200921-从sigmoid，softmax，到交叉熵，到focal-loss/" rel="next" title="从sigmoid，softmax，到交叉熵，到focal-loss">
+                <i class="fa fa-chevron-left"></i> 从sigmoid，softmax，到交叉熵，到focal-loss
               </a>
             
           </div>
