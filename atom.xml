@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dyngq.top/"/>
-  <updated>2022-06-20T11:44:21.561Z</updated>
+  <updated>2023-01-06T09:49:58.437Z</updated>
   <id>http://www.dyngq.top/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再看AUC及GAUC</title>
+    <link href="http://www.dyngq.top/2022/12/30/20221230-%E5%86%8D%E7%9C%8BAUC%E5%8F%8AGAUC/"/>
+    <id>http://www.dyngq.top/2022/12/30/20221230-再看AUC及GAUC/</id>
+    <published>2022-12-30T14:30:00.000Z</published>
+    <updated>2023-01-06T09:49:58.437Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;</p></blockquote><h2 id="0x00-AUC"><a href="#0x00-AUC" class="headerlink" title="0x00 AUC"></a>0x00 AUC</h2><ul><li><ol><li>作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?</li></ol><ul><li>Good: 正样本被预测的概率都集中在一起而且倾向于1，</li><li>Good: 负样本被预测的概率都集中在一起而且倾向于0；</li></ul></li></ul><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;0x00-AUC&quot;&gt;&lt;a href=&quot;#0x00-AUC&quot; class=&quot;headerlink&quot; title=&quot;0x00 AUC&quot;&gt;&lt;/a&gt;0x00 AUC&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Good: 正样本被预测的概率都集中在一起而且倾向于1，&lt;/li&gt;
+&lt;li&gt;Good: 负样本被预测的概率都集中在一起而且倾向于0；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="RS" scheme="http://www.dyngq.top/categories/RS/"/>
+    
+    
+      <category term="AI" scheme="http://www.dyngq.top/tags/AI/"/>
+    
+      <category term="RS" scheme="http://www.dyngq.top/tags/RS/"/>
+    
+  </entry>
   
   <entry>
     <title>植树节-有趣的码上种树-腾讯极客技术挑战赛</title>
@@ -487,32 +523,6 @@
     
     
       <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 总结</title>
-    <link href="http://www.dyngq.top/2020/02/07/20200207-docker/"/>
-    <id>http://www.dyngq.top/2020/02/07/20200207-docker/</id>
-    <published>2020-02-07T00:45:00.000Z</published>
-    <updated>2022-06-20T11:44:21.552Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 <a href="https://tianchi.aliyun.com/competition/entrance/231759/introduction" target="_blank" rel="noopener">【入门】Docker练习场</a>，梳理了一下docke的基本操作。</p></blockquote><a id="more"></a><h2 id="window下docker解决方案"><a href="#window下docker解决方案" class="headerlink" title="window下docker解决方案"></a>window下docker解决方案</h2><ul><li>docker对于unix是比较友好的，无需累述；docker在windows下一直没有好的解决方案，今天花了一天的时间终于找到了最好的解决方案，并且完成了比赛。</li><li>的目前为止最好的解决方案还是docker for windows，之前的解决方案可能是VM、或者win10子系统WSL里的docker，wsl虽然很方便也有方法能起来docker，但是很容易碰见这样那样的问题，docker守护进程方面很难弄。之所以说docker for windows是最好的解决方案是因为他的新版本解决了对于hyper-v的依赖，使得他自己与VM等不会发生冲突，这就解决了他之前最大的弊端，使用起来没有复杂的障碍与冲突。详细的进步在<a href="https://www.zhihu.com/question/339939686" target="_blank" rel="noopener">知乎：Windows下想使用Linux环境，WSL、Docker、VM应该怎么选择？</a>。</li><li>windows下安装也很简单，<a href="https://store.docker.com/editions/community/docker-ce-desktop-windows" target="_blank" rel="noopener">Welcome to Docker Hub: Download and Take a Tutorial</a>。</li><li>记得开启docker的镜像加速，不然下载镜像会很慢，可以使用阿里云的加速，<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">阿里云加速链接</a>。</li></ul><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><div class="table-container"><table><thead><tr><th style="text-align:center">命令</th><th style="text-align:center">操作</th></tr></thead><tbody><tr><td style="text-align:center">docker images</td><td style="text-align:center">查看已存在镜像</td></tr><tr><td style="text-align:center">docker ps</td><td style="text-align:center">查看正在运行的容器</td></tr><tr><td style="text-align:center">docker ps -a</td><td style="text-align:center">查看所有容器</td></tr><tr><td style="text-align:center">docker run -it [打包的镜像名称]:[tag] bash</td><td style="text-align:center">启动镜像</td></tr><tr><td style="text-align:center">docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</td><td style="text-align:center">将容器打包成镜像</td></tr><tr><td style="text-align:center">docker rm</td><td style="text-align:center">删除容器</td></tr><tr><td style="text-align:center">docker rmi</td><td style="text-align:center">删除镜像</td></tr><tr><td style="text-align:center">docker bulid -t [打包的镜像名称]:[tag]</td><td style="text-align:center">根据Dockerfile打包镜像</td></tr><tr><td style="text-align:center">docker start</td><td style="text-align:center">启动容器</td></tr><tr><td style="text-align:center">docker attach</td><td style="text-align:center">进入容器</td></tr></tbody></table></div><h3 id="将容器打包成镜像"><a href="#将容器打包成镜像" class="headerlink" title="将容器打包成镜像"></a>将容器打包成镜像</h3><p>docker commit -a “dyngq” -m “test” [容器名称或id] [打包的镜像名称]:[tag]</p><p>-a :提交的镜像作者；<br>-c :使用Dockerfile指令来创建镜像；<br>-m :提交时的说明文字；<br>-p :在commit时，将容器暂停。</p><h3 id="Dockerfile示例"><a href="#Dockerfile示例" class="headerlink" title="Dockerfile示例"></a>Dockerfile示例</h3><p><a href="./docker/tianchi_submit_demo/Dockerfile">Dockfile</a></p><pre><code># Base Images## 从带有numpy的python镜像FROM numpy:1.0## 把当前文件夹里的文件构建到镜像的根目录下ADD . /## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）WORKDIR /## 镜像启动后统一执行 sh run.shCMD [&quot;sh&quot;, &quot;run.sh&quot;]</code></pre><h3 id="其他一些常用参考链接"><a href="#其他一些常用参考链接" class="headerlink" title="其他一些常用参考链接"></a>其他一些常用参考链接</h3><ul><li><a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程的docker教学</a></li><li><a href="https://www.optbbs.com/forum.php?mod=viewthread&amp;ordertype=1&amp;tid=8431044" target="_blank" rel="noopener">docker如何部署您的第一个应用程序</a></li><li>pass</li></ul><h2 id="天池"><a href="#天池" class="headerlink" title="天池"></a>天池</h2><blockquote><p><a href="https://tianchi.aliyun.com/competition/entrance/231759/tab/174" target="_blank" rel="noopener">手把手超详细操作说明</a></p></blockquote><ol><li>创建阿里云的docker仓库</li><li>pull拉取提供的python3镜像</li><li>启动镜像，在这个容器内安装numpy<br> ( pip install numpy -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a>)</li><li>将安装有numpy的容器打包成镜像</li><li>写好Dockerfile，写好sh和py</li><li>push上去</li><li>提交结果</li></ol><p>本次提交的所有文件都在./docker文件夹内</p><p>py文件</p><pre><code># import pandas as pdimport numpy as npimport json# df = pd.read_csv(&quot;/tcdata/num_list.csv&quot;)# df = pd.read_csv(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;)# print(df)numbers = np.loadtxt(open(&quot;./tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&#39;int&#39;)# numbers = np.loadtxt(open(&quot;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&quot;,&quot;rb&quot;),delimiter=&quot;,&quot;,skiprows=0,dtype=&#39;int&#39;)# numbers = np.random.randint(1,30,size=50,dtype=&#39;int32&#39;)# print(numbers)# np.savetxt(&#39;./docker/tianchi_submit_demo/data/tcdata/num_list.csv&#39;, numbers,delimiter = &#39;,&#39;)# print(&quot;hello_world&quot;)# print(numbers,type(numbers.tolist()))r_sum = np.sum(numbers)top10 = numbers[np.argpartition(numbers,-10)[-10:]]top10 = np.sort(top10).tolist()top10.reverse()# print(top10, type(top10))result = {    &quot;Q1&quot;: &quot;Hello world&quot;,    &quot;Q2&quot;: r_sum.tolist(),    # C004 注意：TOP10 若包含重复值    &quot;Q3&quot;: top10}with open(&quot;result.json&quot;, &quot;w&quot;) as f:    json.dump(result, f) </code></pre><p><img src="images/dyngq_2020-02-07-23-47-46.png" alt="&#39;dyngq_images&#39;"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;之前大体上玩儿过，但是一直没有完整的使用过；这次借着天池的一个新人赛 &lt;a href=&quot;https://tianchi.aliyun.com/competition/entrance/231759/introduction&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;【入门】Docker练习场&lt;/a&gt;，梳理了一下docke的基本操作。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Sec" scheme="http://www.dyngq.top/categories/Sec/"/>
-    
-    
-      <category term="Sec" scheme="http://www.dyngq.top/tags/Sec/"/>
-    
-      <category term="Docker" scheme="http://www.dyngq.top/tags/Docker/"/>
     
   </entry>
   
