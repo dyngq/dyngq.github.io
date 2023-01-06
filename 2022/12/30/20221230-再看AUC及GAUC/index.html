@@ -100,18 +100,20 @@
   };
 </script>
 
-  <meta name="description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x00 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
+  <meta name="description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x01 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
 <meta name="keywords" content="AI,RS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="再看AUC及GAUC">
 <meta property="og:url" content="http://www.dyngq.top/2022/12/30/20221230-再看AUC及GAUC/index.html">
 <meta property="og:site_name" content="dyngq&#39;s blog">
-<meta property="og:description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x00 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
+<meta property="og:description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x01 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2023-01-06T09:49:58.437Z">
+<meta property="og:image" content="https://zhuanlan.zhihu.com/p/84350940">
+<meta property="og:updated_time" content="2023-01-06T10:00:32.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="再看AUC及GAUC">
-<meta name="twitter:description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x00 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
+<meta name="twitter:description" content="AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;  0x01 AUC  作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?   Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0；">
+<meta name="twitter:image" content="https://zhuanlan.zhihu.com/p/84350940">
 
 
 
@@ -551,7 +553,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">148</span>
+              <span title="本文字数">202</span>
             </span>
           
 
@@ -575,7 +577,7 @@
         <blockquote>
 <p>AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;</p>
 </blockquote>
-<h2 id="0x00-AUC"><a href="#0x00-AUC" class="headerlink" title="0x00 AUC"></a>0x00 AUC</h2><ul>
+<h2 id="0x01-AUC"><a href="#0x01-AUC" class="headerlink" title="0x01 AUC"></a>0x01 AUC</h2><ul>
 <li><ol>
 <li>作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?</li>
 </ol>
@@ -586,6 +588,12 @@
 </li>
 </ul>
 <a id="more"></a>
+<h2 id="0x02-GAUC"><a href="#0x02-GAUC" class="headerlink" title="0x02 GAUC"></a>0x02 GAUC</h2><ul>
+<li>传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果</li>
+</ul>
+<h2 id="0x03-Related"><a href="#0x03-Related" class="headerlink" title="0x03 Related"></a>0x03 Related</h2><ul>
+<li><img src="https://zhuanlan.zhihu.com/p/84350940" alt="图解AUC和GAUC"></li>
+</ul>
 
       
     </div>
@@ -916,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-AUC"><span class="nav-number">1.</span> <span class="nav-text">0x00 AUC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-AUC"><span class="nav-number">1.</span> <span class="nav-text">0x01 AUC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-GAUC"><span class="nav-number">2.</span> <span class="nav-text">0x02 GAUC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-Related"><span class="nav-number">3.</span> <span class="nav-text">0x03 Related</span></a></li></ol></div>
             
 
           </div>
