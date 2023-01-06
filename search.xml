@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[再看AUC及GAUC]]></title>
     <url>%2F2022%2F12%2F30%2F20221230-%E5%86%8D%E7%9C%8BAUC%E5%8F%8AGAUC%2F</url>
-    <content type="text"><![CDATA[AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率; 0x01 AUC 作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad? Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0； 0x02 GAUC 传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果 0x03 Related]]></content>
+    <content type="text"><![CDATA[AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率; 0x01 AUC 作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad? Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0； 0x02 GAUC 传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果 0x03 Related 图解AUC和GAUC]]></content>
       <categories>
         <category>RS</category>
       </categories>
@@ -232,8 +232,8 @@
         <category>Sec</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Sec</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
