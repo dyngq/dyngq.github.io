@@ -6,7 +6,8 @@
     <content type="text"><![CDATA[AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率; 0x01 AUC 作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad? Good: 正样本被预测的概率都集中在一起而且倾向于1， Good: 负样本被预测的概率都集中在一起而且倾向于0； 两种计算方式及对应的两种解释 2.1 2.2 0x02 GAUC 传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果 0x03 Related 图解AUC和GAUC]]></content>
       <categories>
         <category>AI</category>
-        <category>RS</category>
+        <category>RecommendSystem</category>
+        <category>Base</category>
       </categories>
       <tags>
         <tag>AI</tag>
