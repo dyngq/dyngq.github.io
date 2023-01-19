@@ -254,7 +254,9 @@
     <url>%2F2019%2F09%2F01%2F20211119-%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%2F</url>
     <content type="text"><![CDATA[1.推荐算法]]></content>
       <categories>
-        <category>RS</category>
+        <category>AI</category>
+        <category>RecommendSystem</category>
+        <category>Base</category>
       </categories>
       <tags>
         <tag>AI</tag>
