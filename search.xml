@@ -110,7 +110,7 @@
   <entry>
     <title><![CDATA[从sigmoid，softmax，到交叉熵，到focal-loss]]></title>
     <url>%2F2020%2F09%2F21%2F20200921-%E4%BB%8Esigmoid%EF%BC%8Csoftmax%EF%BC%8C%E5%88%B0%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%8C%E5%88%B0focal-loss%2F</url>
-    <content type="text"><![CDATA[sigmoid，softmax； 交叉熵损失，样本不均衡的focalloss损失； 0x01 sigmoid 求导 0x02 softmax 求导，并且简单推导下只有一层hidden layer加softmax的多分类神经网络 x为输入，z为中间隐层神经元，a为最终输出结果 损失函数 对某个参数进行求导 对于划线部分，分为两种情况 softmax实质是将，最后一层的、数量与预测种类相同的神经元的输出，转化为概率。 0x03 Cross-Entropy与logsoftmax先说LogSoftmax， logsoftmax省了一个指数计算，省了一个除法，数值上相对稳定一些。 其实 Softmax_Cross_Entropy里面也是这么实现的。这也就引出了交叉熵与softmax的关系。 cross-entropy 不是机器学习独有的概念，本质上是用来衡量两个概率分布的相似性的。 cross-entropy 公式为： 其中预测概率q(k)就对应着softmax所输出的值，前边是log，所以，一般都直接采用logsoftmax节省计算。 P.S. 相对熵 KL散度 0x04 Focal-Loss 何恺明 Kaiming 团队 交叉熵 Appendix师弟手绘 FUJUFILM]]></content>
+    <content type="text"><![CDATA[sigmoid，softmax； 交叉熵损失，样本不均衡的focalloss损失； 0x01 sigmoid 求导 0x02 softmax 求导，并且简单推导下只有一层hidden layer加softmax的多分类神经网络 x为输入，z为中间隐层神经元，a为最终输出结果 损失函数 对某个参数进行求导 对于划线部分，分为两种情况 softmax实质是将，最后一层的、数量与预测种类相同的神经元的输出，转化为概率。 0x03 Entropy 信息论 香农 ： 定义：无损编码事件信息的最小平均编码长度。 “““ 熵是服从某一特定概率分布事件的理论最小平均编码长度”，只要我们知道了任何事件的概率分布，我们就可以计算它的熵；那如果我们不知道事件的概率分布，又想计算熵，该怎么做呢？那我们来对熵做一个估计吧，熵的估计的过程自然而然的引出了交叉熵。””” 交叉熵就是在真实概率P下，对预测概率Q的最小编码长度，的平均 熵： 交叉熵： 0x04 Cross-Entropy与logsoftmax先说LogSoftmax， logsoftmax省了一个指数计算，省了一个除法，数值上相对稳定一些。 其实 Softmax_Cross_Entropy里面也是这么实现的。这也就引出了交叉熵与softmax的关系。 cross-entropy 不是机器学习独有的概念，本质上是用来衡量两个概率分布的相似性的。 cross-entropy 公式为： 其中预测概率q(k)就对应着softmax所输出的值，前边是log，所以，一般都直接采用logsoftmax节省计算。 交叉熵用作损失函数 P.S. 相对熵 KL散度 0x04 Focal-Loss 何恺明 Kaiming 团队 交叉熵 Appendix 一文搞懂熵(Entropy),交叉熵(Cross-Entropy) 师弟手绘 FUJUFILM]]></content>
       <categories>
         <category>AI</category>
       </categories>
