@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.dyngq.top/"/>
-  <updated>2023-01-19T06:43:03.981Z</updated>
+  <updated>2023-02-03T05:19:54.536Z</updated>
   <id>http://www.dyngq.top/</id>
   
   <author>
@@ -21,33 +21,15 @@
     <link href="http://www.dyngq.top/2022/12/30/20221230-%E5%86%8D%E7%9C%8BAUC%E5%8F%8AGAUC/"/>
     <id>http://www.dyngq.top/2022/12/30/20221230-再看AUC及GAUC/</id>
     <published>2022-12-30T14:30:00.000Z</published>
-    <updated>2023-01-19T06:43:03.981Z</updated>
+    <updated>2023-02-03T05:19:54.536Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;</p></blockquote><h2 id="0x01-AUC"><a href="#0x01-AUC" class="headerlink" title="0x01 AUC"></a>0x01 AUC</h2><ul><li><ol><li>作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?</li></ol><ul><li>Good: 正样本被预测的概率都集中在一起而且倾向于1，</li><li>Good: 负样本被预测的概率都集中在一起而且倾向于0；</li></ul></li><li><ol><li>两种计算方式及对应的两种解释</li></ol><ul><li>2.1 </li><li>2.2 </li></ul></li></ul><a id="more"></a><h2 id="0x02-GAUC"><a href="#0x02-GAUC" class="headerlink" title="0x02 GAUC"></a>0x02 GAUC</h2><ul><li>传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果</li></ul><h2 id="0x03-Related"><a href="#0x03-Related" class="headerlink" title="0x03 Related"></a>0x03 Related</h2><ul><li><a href="https://zhuanlan.zhihu.com/p/84350940" target="_blank" rel="noopener">图解AUC和GAUC</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;</p></blockquote><a id="more"></a><h2 id="0x01-AUC"><a href="#0x01-AUC" class="headerlink" title="0x01 AUC"></a>0x01 AUC</h2><ul><li><ol><li>作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?</li></ol><ul><li>Good: 正样本被预测的概率都集中在一起而且倾向于1，</li><li>Good: 负样本被预测的概率都集中在一起而且倾向于0；</li></ul></li><li><ol><li>两种计算方式及对应的两种解释</li></ol><ul><li>2.1 </li><li>2.2 </li></ul></li></ul><h2 id="0x02-GAUC"><a href="#0x02-GAUC" class="headerlink" title="0x02 GAUC"></a>0x02 GAUC</h2><ul><li>传统的AUC可以评判二分类，但是推荐领域要算的是对于每个人的二分类结果</li></ul><h2 id="0x03-Related"><a href="#0x03-Related" class="headerlink" title="0x03 Related"></a>0x03 Related</h2><ul><li><a href="https://zhuanlan.zhihu.com/p/84350940" target="_blank" rel="noopener">图解AUC和GAUC</a></li></ul>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;AUC反映的是模型将”正样本预测为正例的可能性” 大于 “将负例预测为正例的可能性的” 概率;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;0x01-AUC&quot;&gt;&lt;a href=&quot;#0x01-AUC&quot; class=&quot;headerlink&quot; title=&quot;0x01 AUC&quot;&gt;&lt;/a&gt;0x01 AUC&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;ol&gt;
-&lt;li&gt;作为一个评价指标，评判模型预测的好坏。So, what is good，what is bad?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;Good: 正样本被预测的概率都集中在一起而且倾向于1，&lt;/li&gt;
-&lt;li&gt;Good: 负样本被预测的概率都集中在一起而且倾向于0；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;ol&gt;
-&lt;li&gt;两种计算方式及对应的两种解释&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;2.1 &lt;/li&gt;
-&lt;li&gt;2.2 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
