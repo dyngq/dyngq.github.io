@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -110,7 +110,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img.dyngq.top/images/20210311192912.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210313204857.png">
-<meta property="og:updated_time" content="2022-06-20T11:44:21.559Z">
+<meta property="og:updated_time" content="2024-02-23T16:34:03.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从决策树，随机森林，到XGBoost">
 <meta name="twitter:description" content="树类模型的发展与总结">
@@ -607,7 +607,7 @@ H(Y|X) = \sum_{i = 1}^{n}p_{i}H(Y|X = x_{i})</script><p>经验熵和经验条件
 <p>假设数据集为D，$|C_{k}|$表示第k类的样本数</p>
 <script type="math/tex; mode=display">
 H(D) = \sum_{k = 1}^{K}\frac{|C_{k}|}{|D|}log_{2}{\frac{|C_{k}|}{|D|}}</script><p><strong>经验条件熵</strong></p>
-<p>$D_{i}$表示因为特征A所划分的数据子集，$|D_{ik}|$表示$|D_{i}|$中属于第k类的数量</p>
+<p>$D<em>{i}$表示因为特征A所划分的数据子集，$|D</em>{ik}|$表示$|D_{i}|$中属于第k类的数量</p>
 <script type="math/tex; mode=display">
 H(D|A) = \sum_{i = 1}^{n}\frac{|D_{i}|}{|D|}\sum_{k = 1}^{K}\frac{|D_{ik}|}{|D|}log_{2}{\frac{|D_{ik}|}{|D|}}</script><p><strong>信息增益</strong></p>
 <p>信息增益表示<strong>得知X的概率使得对Y的不确定性的减小程度</strong></p>
@@ -629,7 +629,7 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
 <p>CART算法 classification and regression tree</p>
 <p>先生成尽可能大的决策树（完全生长），用验证集进行剪枝并选择最优子树</p>
 <p>基尼指数</p>
-<p>计算每种特征及特征中每种取值下的基尼指数，例如 $A$ 特征下 $a_{1},a_{2},…,a_{A}$</p>
+<p>计算每种特征及特征中每种取值下的基尼指数，例如 $A$ 特征下 $a<em>{1},a</em>{2},…,a_{A}$</p>
 <p>计算量变大了</p>
 <p>结束条件</p>
 <ol>
@@ -643,7 +643,7 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
 <h3 id="1-4-剪枝"><a href="#1-4-剪枝" class="headerlink" title="1-4 剪枝"></a>1-4 剪枝</h3><p><strong>后剪枝</strong> CART</p>
 <p>一般采用递归的方式</p>
 <p>$g(t)=\frac{C(t)-C(T_{t})}{\left|t\right|-1}$</p>
-<p>$T_{0}$中减去g(t)值最小的子树$T_{t}$就为$T_{1}$，这个最小的g(t)就为$\alpha_{1}$，之后不断剪枝，$\alpha$不断增大，就获得了$\alpha$区间和子树集合。</p>
+<p>$T<em>{0}$中减去g(t)值最小的子树$T</em>{t}$就为$T<em>{1}$，这个最小的g(t)就为$\alpha</em>{1}$，之后不断剪枝，$\alpha$不断增大，就获得了$\alpha$区间和子树集合。</p>
 <p>下一步利用交叉验证选取最好的子树，这一过程也就选择了最好的$\alpha$</p>
 <p><strong>预剪枝</strong> ID3 C4.5</p>
 <h2 id="0x02-集成学习"><a href="#0x02-集成学习" class="headerlink" title="0x02 集成学习"></a>0x02 集成学习</h2><blockquote>
@@ -1199,7 +1199,7 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2024</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1219,7 +1219,7 @@ Gini(D, A) = Gini(D | A) = \frac{|D_{1}|}{|D|}Gini(D_{1})+\frac{|D_{2}|}{|D|}Gin
 
 <!--
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

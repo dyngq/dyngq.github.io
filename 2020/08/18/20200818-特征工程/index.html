@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193902.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210193904.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20210210182028.png">
-<meta property="og:updated_time" content="2022-06-20T11:44:21.557Z">
+<meta property="og:updated_time" content="2024-02-23T16:34:03.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征工程 &amp; word2vector &amp; L1 L2 正则 &amp; (Batch) Normalization">
 <meta name="twitter:description" content="数据和特征，往往决定了结果的上限； 而算法和优化通常是为了接近这个上限。">
@@ -603,13 +603,13 @@
 <p>不适合：决策树类（信息增益比 与是否归一化无关） </p>
 </blockquote>
 <h3 id="1-1-归一化"><a href="#1-1-归一化" class="headerlink" title="1-1 归一化"></a>1-1 归一化</h3><ol>
-<li><p>等比缩放 ${x^{’} =\frac{x-min(x)}{x_{max}-x_{min}},x\in[0,1]}$</p>
+<li><p>等比缩放 ${x^{’} =\frac{x-min(x)}{x<em>{max}-x</em>{min}},x\in[0,1]}$</p>
 </li>
-<li><p>均值归一化 mean normalization $x^{’} =\frac{x-mean(x)}{x_{max}-x_{min}}, x\in[-1,1]$ </p>
+<li><p>均值归一化 mean normalization $x^{’} =\frac{x-mean(x)}{x<em>{max}-x</em>{min}}, x\in[-1,1]$ </p>
 </li>
 <li><p>缩放到单位长度 scaling to unit length $x^{’} =\frac{x}{||x||}$ , $||x||$是欧几里得长度</p>
 <ul>
-<li>L2范数（平滑，非稀疏）：$\left | x \right |_{2}  = \sqrt{\sum_{i=1}^{n}\left | x_{i} \right |^2} = \sqrt{x_{1}^2+x_{2}^2+…+x_{n}^2}$<ul>
+<li>L2范数（平滑，非稀疏）：$\left | x \right |<em>{2}  = \sqrt{\sum</em>{i=1}^{n}\left | x<em>{i} \right |^2} = \sqrt{x</em>{1}^2+x<em>{2}^2+…+x</em>{n}^2}$<ul>
 <li>欧几里得距离</li>
 </ul>
 </li>
@@ -742,7 +742,7 @@ S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<st
 <blockquote>
 <p>绝对值阻碍计算，但<strong>鲁棒性</strong> (Robust) 更强，对<strong>异常值</strong>更<strong>不敏感</strong>。</p>
 </blockquote>
-<p><strong>L2</strong>:  $ S = \sum_{i=1}^{n}（y_{i} - f(x_{i})）^2$ <strong>最小二乘误差 (least squares error, LSE)</strong></p>
+<p><strong>L2</strong>:  $ S = \sum<em>{i=1}^{n}（y</em>{i} - f(x_{i})）^2$ <strong>最小二乘误差 (least squares error, LSE)</strong></p>
 <blockquote>
 <p>求导、解方程等<strong>容易计算</strong>，比较常用</p>
 </blockquote>
@@ -1147,7 +1147,7 @@ S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<st
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2024</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1167,7 +1167,7 @@ S(x) = \sum_{i=1}^{n}\frac{e^x}{e^{x_{i}}}</script><p>Sigmoid 输出结果是<st
 
 <!--
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 

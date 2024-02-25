@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://img.dyngq.top/images/20201121214316.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20201121214318.png">
 <meta property="og:image" content="https://img.dyngq.top/images/20201121214321.png">
-<meta property="og:updated_time" content="2022-06-20T11:44:21.560Z">
+<meta property="og:updated_time" content="2024-02-23T16:34:03.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手撕BackPropagation (BP_Neural_Network)">
 <meta name="twitter:description" content="深度学习基础；反向传播；  手撕一下推导过程。">
@@ -668,7 +668,7 @@ b^1 = b^0-lr*{\frac{∂C_{}}{∂b_{0}}}</script><p>其中，lr是自定义的学
 </li>
 <li><p>那么另外，为什么需要正向传播记录的中间变量，也就是一些中间输出值呢。</p>
 <ul>
-<li><a href="#图-6.2">图-6.2</a>中李宏毅老师表示的比较清楚，计算梯度需要两部分，${\frac{∂C_{}}{∂w_{}}}={\frac{∂z_{}}{∂w_{}}}*{\frac{∂C_{}}{∂z_{}}}$；其中第一部分${\frac{∂z_{}}{∂w_{}}}$是需要正向传播过程中计算并且记录的，推导一下的话也就是一些中间输出；第二部分${\frac{∂C_{}}{∂z_{}}}$才是反向传播中计算的。</li>
+<li><a href="#图-6.2">图-6.2</a>中李宏毅老师表示的比较清楚，计算梯度需要两部分，${\frac{∂C<em>{}}{∂w</em>{}}}={\frac{∂z<em>{}}{∂w</em>{}}}*{\frac{∂C<em>{}}{∂z</em>{}}}$；其中第一部分${\frac{∂z<em>{}}{∂w</em>{}}}$是需要正向传播过程中计算并且记录的，推导一下的话也就是一些中间输出；第二部分${\frac{∂C<em>{}}{∂z</em>{}}}$才是反向传播中计算的。</li>
 </ul>
 </li>
 <li><p>通用推导</p>
@@ -1057,7 +1057,7 @@ b^1 = b^0-lr*{\frac{∂C_{}}{∂b_{0}}}</script><p>其中，lr是自定义的学
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2024</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1077,7 +1077,7 @@ b^1 = b^0-lr*{\frac{∂C_{}}{∂b_{0}}}</script><p>其中，lr是自定义的学
 
 <!--
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
